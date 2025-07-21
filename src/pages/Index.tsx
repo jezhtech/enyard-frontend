@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import ProductsShowcase from "@/components/ProductsShowcase";
+import InnovativeHero from "@/components/InnovativeHero";
+import InfiniteMarquee from "@/components/InfiniteMarquee";
+import ProductsGrid from "@/components/ProductsGrid";
+import ParallaxSection from "@/components/ParallaxSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -8,8 +10,10 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <main>
-        <HeroSection />
-        <ProductsShowcase />
+        <InnovativeHero />
+        <InfiniteMarquee />
+        <ProductsGrid />
+        <ParallaxSection />
       </main>
       <Footer />
     </div>
