@@ -8,52 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* ENYARD Two-Color Design System */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* ENYARD Vercel-Inspired Design System */
+    --background: 250 250% 100%;
+    --foreground: 210 40% 8%;
     
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 8%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 210 40% 8%;
     
-    --primary: 0 0% 0%;
+    --primary: 210 40% 8%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 40% 8%;
     
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
     
-    --accent: 0 0% 4%;
+    --accent: 210 40% 8%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 90%;
-    --input: 0 0% 100%;
-    --ring: 0 0% 0%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 40% 8%;
     
-    --radius: 12px;
+    --radius: 16px;
+
+    /* Vercel-Inspired Gradient System */
+    --gradient-primary: linear-gradient(135deg, #ff7e00 0%, #ff3366 30%, #9333ea 60%, #00b4db 100%);
+    --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-mesh: linear-gradient(135deg, #ff7e00 0%, #ff3366 25%, #9333ea 50%, #00b4db 75%, #00f5ff 100%);
+    --gradient-hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --gradient-vercel: linear-gradient(135deg, #ff6b6b 0%, #ffa500 25%, #32cd32 50%, #00bfff 75%, #9370db 100%);
     
-/* Custom ENYARD tokens */
-    --enyard-glass: 0 0% 100% / 0.8;
-    --enyard-shadow: 0 0% 0% / 0.04;
-    --enyard-glow: 0 0% 0% / 0.02;
-    --enyard-accent: 0 0% 0% / 0.1;
-    --enyard-mesh: 0 0% 0% / 0.03;
+    /* Glass and Effects */
+    --glass-bg: 255 255 255 / 0.1;
+    --glass-border: 255 255 255 / 0.2;
+    --shadow-lg: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --shadow-colored: 0 25px 50px -12px rgb(139 92 246 / 0.25);
     
-    /* Advanced Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 20%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 98%));
-    --gradient-mesh: radial-gradient(circle at 20% 50%, hsl(0 0% 0% / 0.1) 0%, transparent 50%), 
-                     radial-gradient(circle at 80% 20%, hsl(0 0% 0% / 0.08) 0%, transparent 50%),
-                     radial-gradient(circle at 40% 80%, hsl(0 0% 0% / 0.06) 0%, transparent 50%);
-    --gradient-orb: radial-gradient(circle, hsl(0 0% 0% / 0.1) 0%, transparent 70%);
-    --gradient-border: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    /* Animation Variables */
+    --animation-speed: 0.3s;
+    --animation-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -226,21 +228,33 @@ All colors MUST be HSL.
     100% { transform: translateX(-50%); }
   }
   
-  /* Gradient Text */
+  /* Vercel-Style Gradients */
+  .gradient-vercel {
+    background: var(--gradient-vercel);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero-bg);
+  }
+  
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+  
   .text-gradient {
-    background: var(--gradient-hero);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .text-gradient-animate {
-    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+    background: var(--gradient-primary);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientShift 3s ease infinite;
+    animation: gradientShift 4s ease infinite;
   }
   
   @keyframes gradientShift {

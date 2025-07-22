@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
-import InnovativeHero from "@/components/InnovativeHero";
+import VercelHero from "@/components/VercelHero";
+import InnovativeFeatures from "@/components/InnovativeFeatures";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import ProductsGrid from "@/components/ProductsGrid";
 import ParallaxSection from "@/components/ParallaxSection";
@@ -10,7 +11,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <main>
-        <InnovativeHero />
+        <VercelHero />
+        <InnovativeFeatures />
         <InfiniteMarquee />
         <ProductsGrid />
         <ParallaxSection />
