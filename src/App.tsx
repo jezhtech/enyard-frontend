@@ -7,6 +7,12 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import AdminPanel from "./pages/AdminPanel";
 import ClientDashboard from "./pages/ClientDashboard";
+import About from "./pages/About";
+import Career from "./pages/Career";
+import Blog from "./pages/Blog";
+import Documentation from "./pages/Documentation";
+import Downloads from "./pages/Downloads";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,8 +30,8 @@ const App = () => (
           <Route path="/dashboard" element={<ClientDashboard />} />
           
           {/* Company Routes */}
-          <Route path="/about" element={<NotFound />} />
-          <Route path="/career" element={<NotFound />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/career" element={<Career />} />
           
           {/* Product Routes */}
           <Route path="/products/timex" element={<NotFound />} />
@@ -35,12 +41,12 @@ const App = () => (
           <Route path="/products/medzorx" element={<NotFound />} />
           
           {/* Resource Routes */}
-          <Route path="/blog" element={<NotFound />} />
-          <Route path="/documentation" element={<NotFound />} />
-          <Route path="/downloads" element={<NotFound />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/downloads" element={<Downloads />} />
           
           {/* Other Routes */}
-          <Route path="/contact" element={<NotFound />} />
+          <Route path="/contact" element={<Contact />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
