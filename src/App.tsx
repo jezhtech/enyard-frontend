@@ -14,6 +14,11 @@ import Documentation from "./pages/Documentation";
 import Downloads from "./pages/Downloads";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import TimeX from "./pages/TimeX";
+import CoreX from "./pages/CoreX";
+import ChurchX from "./pages/ChurchX";
+import MedzorX from "./pages/MedzorX";
+import FleetX from "./pages/FleetX";
 
 const queryClient = new QueryClient();
 
@@ -34,11 +39,11 @@ const App = () => (
           <Route path="/career" element={<Career />} />
           
           {/* Product Routes */}
-          <Route path="/products/timex" element={<NotFound />} />
-          <Route path="/products/corex" element={<NotFound />} />
-          <Route path="/products/fleetx" element={<NotFound />} />
-          <Route path="/products/churchx" element={<NotFound />} />
-          <Route path="/products/medzorx" element={<NotFound />} />
+          <Route path="/products/timex" element={<TimeX />} />
+          <Route path="/products/corex" element={<CoreX />} />
+          <Route path="/products/fleetx" element={<FleetX />} />
+          <Route path="/products/churchx" element={<ChurchX />} />
+          <Route path="/products/medzorx" element={<MedzorX />} />
           
           {/* Resource Routes */}
           <Route path="/blog" element={<Blog />} />
