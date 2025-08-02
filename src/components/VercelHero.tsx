@@ -14,47 +14,86 @@ const VercelHero = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Animated Background Gradient */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Innovative Multi-layered Background */}
+      <div className="absolute inset-0">
+        {/* Base gradient background */}
         <div 
-          className="absolute bottom-0 left-0 w-full h-[70%] opacity-60"
+          className="absolute inset-0"
           style={{
-            background: 'linear-gradient(135deg, #ff6b6b 0%, #ffa500 25%, #32cd32 50%, #00bfff 75%, #9370db 100%)',
-            clipPath: 'polygon(0 100%, 100% 100%, 100% 40%, 0 80%)',
+            background: `
+              radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 75% 25%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 25% 75%, rgba(34, 197, 94, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+              linear-gradient(135deg, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(248, 250, 252, 1) 25%,
+                rgba(241, 245, 249, 1) 50%,
+                rgba(248, 250, 252, 1) 75%,
+                rgba(255, 255, 255, 1) 100%
+              )
+            `
           }}
         />
         
-        {/* Geometric Shape - Triangle */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
-          <div className="relative">
-            {/* Main Triangle */}
-            <div 
-              className="w-96 h-96 relative"
-              style={{
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 100%)',
-                clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-                backdropFilter: 'blur(10px)',
-              }}
-            />
-            
-            {/* Inner Triangle Lines */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg width="300" height="300" viewBox="0 0 300 300" className="opacity-30">
-                {Array.from({length: 20}).map((_, i) => (
-                  <polygon
-                    key={i}
-                    points={`150,${20 + i * 12} ${30 + i * 6},${280 - i * 6} ${270 - i * 6},${280 - i * 6}`}
-                    fill="none"
-                    stroke="rgba(255,255,255,0.8)"
-                    strokeWidth="1"
-                  />
-                ))}
-              </svg>
-            </div>
-          </div>
-        </div>
+        {/* Dynamic flowing shapes */}
+        <div 
+          className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-20 animate-pulse"
+          style={{
+            background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f59e0b 100%)',
+            filter: 'blur(60px)',
+            animationDuration: '8s',
+          }}
+        />
+        <div 
+          className="absolute top-20 -right-32 w-80 h-80 rounded-full opacity-25 animate-pulse"
+          style={{
+            background: 'linear-gradient(225deg, #3b82f6 0%, #22c55e 50%, #ec4899 100%)',
+            filter: 'blur(50px)',
+            animationDuration: '6s',
+            animationDelay: '2s',
+          }}
+        />
+        <div 
+          className="absolute -bottom-32 left-1/4 w-72 h-72 rounded-full opacity-20 animate-pulse"
+          style={{
+            background: 'linear-gradient(45deg, #22c55e 0%, #06b6d4 50%, #8b5cf6 100%)',
+            filter: 'blur(40px)',
+            animationDuration: '10s',
+            animationDelay: '4s',
+          }}
+        />
+        
+        {/* Geometric overlay pattern */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 1px 1px, rgba(0,0,0,0.3) 1px, transparent 0)
+            `,
+            backgroundSize: '40px 40px'
+          }}
+        />
+        
+        {/* Flowing gradient overlay */}
+        <div 
+          className="absolute bottom-0 left-0 w-full h-3/4 opacity-80"
+          style={{
+            background: `
+              linear-gradient(135deg, 
+                rgba(168, 85, 247, 0.1) 0%,
+                rgba(236, 72, 153, 0.1) 20%,
+                rgba(251, 146, 60, 0.1) 40%,
+                rgba(34, 197, 94, 0.1) 60%,
+                rgba(6, 182, 212, 0.1) 80%,
+                rgba(139, 92, 246, 0.1) 100%
+              )
+            `,
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 30%, 80% 25%, 60% 35%, 40% 25%, 20% 40%, 0 35%)',
+          }}
+        />
       </div>
 
       {/* Content */}
