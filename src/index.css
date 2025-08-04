@@ -40,12 +40,12 @@ All colors MUST be HSL.
     --radius: 16px;
 
     /* Vercel-Inspired Gradient System */
-    --gradient-primary: linear-gradient(135deg, #ff7e00 0%, #ff3366 30%, #9333ea 60%, #00b4db 100%);
-    --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-mesh: linear-gradient(135deg, #ff7e00 0%, #ff3366 25%, #9333ea 50%, #00b4db 75%, #00f5ff 100%);
-    --gradient-hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    --gradient-vercel: linear-gradient(135deg, #ff6b6b 0%, #ffa500 25%, #32cd32 50%, #00bfff 75%, #9370db 100%);
+    --gradient-primary: linear-gradient(135deg, #ffffff 0%, #667eea 10%, #764ba2 20%, #f093fb 30%, #f5576c 40%, #4facfe 50%, #00f2fe 60%, #43e97b 70%, #38f9d7 80%, #000000 100%);
+    --gradient-secondary: linear-gradient(135deg, #ffffff 0%, #fa709a 20%, #fee140 40%, #ff9a9e 60%, #fecfef 80%, #000000 100%);
+    --gradient-accent: linear-gradient(135deg, #ffffff 0%, #a8edea 20%, #fed6e3 40%, #ffecd2 60%, #fcb69f 80%, #000000 100%);
+    --gradient-mesh: linear-gradient(135deg, #ffffff 0%, #667eea 10%, #764ba2 20%, #f093fb 30%, #f5576c 40%, #4facfe 50%, #00f2fe 60%, #43e97b 70%, #38f9d7 80%, #000000 90%, #ffffff 100%);
+    --gradient-hero-bg: linear-gradient(135deg, #ffffff 0%, #667eea 25%, #764ba2 50%, #f093fb 75%, #000000 100%);
+    --gradient-vercel: linear-gradient(135deg, #ffffff 0%, #ff6b6b 15%, #ffa500 30%, #32cd32 45%, #00bfff 60%, #9370db 75%, #ff69b4 90%, #000000 100%);
     
     /* Glass and Effects */
     --glass-bg: 255 255 255 / 0.1;
@@ -250,16 +250,58 @@ All colors MUST be HSL.
   
   .text-gradient-animate {
     background: var(--gradient-primary);
-    background-size: 200% 200%;
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientShift 4s ease infinite;
+    animation: gradientShift 8s ease-in-out infinite, glow 6s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3)) drop-shadow(0 0 40px rgba(240, 147, 251, 0.2));
+    position: relative;
+  }
+  
+  .text-gradient-animate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 8s ease-in-out infinite reverse;
+    opacity: 0.3;
+    z-index: -1;
   }
   
   @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+
+  
+  @keyframes glow {
+    0% {
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 40px rgba(102, 126, 234, 0.3)) drop-shadow(0 0 60px rgba(240, 147, 251, 0.2));
+    }
+    25% {
+      filter: drop-shadow(0 0 25px rgba(245, 87, 108, 0.4)) drop-shadow(0 0 50px rgba(79, 172, 254, 0.3)) drop-shadow(0 0 75px rgba(0, 242, 254, 0.2));
+    }
+    50% {
+      filter: drop-shadow(0 0 30px rgba(67, 233, 123, 0.4)) drop-shadow(0 0 60px rgba(56, 249, 215, 0.3)) drop-shadow(0 0 90px rgba(0, 0, 0, 0.2));
+    }
+    75% {
+      filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 75px rgba(102, 126, 234, 0.2));
+    }
+    100% {
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 40px rgba(102, 126, 234, 0.3)) drop-shadow(0 0 60px rgba(240, 147, 251, 0.2));
+    }
   }
   
   /* Stagger Animation */
@@ -288,5 +330,20 @@ All colors MUST be HSL.
   .parallax {
     transform: translateZ(0);
     will-change: transform;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

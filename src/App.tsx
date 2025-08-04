@@ -19,6 +19,10 @@ import CoreX from "./pages/CoreX";
 import ChurchX from "./pages/ChurchX";
 import MedzorX from "./pages/MedzorX";
 import FleetX from "./pages/FleetX";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Security from "./pages/Security";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +32,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
@@ -52,6 +57,9 @@ const App = () => (
           
           {/* Other Routes */}
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/security" element={<Security />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />

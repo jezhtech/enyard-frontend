@@ -20,10 +20,10 @@ const ParallaxSection = () => {
   }, []);
 
   const techStack = [
-    { icon: Cpu, label: "Advanced AI Models", description: "GPT-4 & Custom ML" },
-    { icon: Database, label: "Real-time Processing", description: "Microsecond Response" },
-    { icon: Network, label: "Global CDN", description: "Edge Computing" },
-    { icon: Bot, label: "Intelligent Automation", description: "Self-Learning Systems" },
+    { icon: Cpu, label: "Advanced Intelligence", description: "Cutting-edge algorithms that understand your business" },
+    { icon: Database, label: "Real-time Analytics", description: "Instant insights that drive strategic decisions" },
+    { icon: Network, label: "Global Enterprise Network", description: "Seamless connectivity across your entire organization" },
+    { icon: Bot, label: "Autonomous Systems", description: "Self-optimizing platforms that evolve with your needs" },
   ];
 
   return (
@@ -53,12 +53,12 @@ const ParallaxSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-5xl md:text-6xl font-bold leading-tight">
-                Built on the
-                <span className="text-gradient-animate block">Future Stack</span>
+                Engineered for
+                <span className="text-gradient-animate block">Excellence</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Our infrastructure combines cutting-edge AI, cloud-native architecture, 
-                and quantum-ready systems to deliver unprecedented performance and reliability.
+                Our platform combines cutting-edge technology with enterprise-grade reliability to create 
+                experiences that exceed expectations. The future of business is not just intelligent—it's extraordinary.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ const ParallaxSection = () => {
             </div>
 
             <Button size="lg" className="group">
-              Explore Our Technology
+              Discover Excellence
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
             </Button>
           </div>

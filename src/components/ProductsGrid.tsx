@@ -29,45 +29,45 @@ const ProductsGrid = () => {
   const products = [
     {
       name: "TimeX",
-      description: "Revolutionary attendance management with AI-powered insights and predictive analytics",
+      description: "Revolutionary attendance management that thinks like you do. Automatically detect patterns, predict trends, and eliminate time theft with intelligent biometric technology that adapts to your workplace.",
       icon: Clock,
-      features: ["Biometric Integration", "AI Analytics", "Smart Scheduling", "Fraud Detection"],
+      features: ["Smart Biometric Recognition", "Predictive Analytics", "Automated Scheduling", "Fraud Prevention"],
       stats: { users: "50k+", accuracy: "99.9%", saved: "40%" },
       color: "from-blue-500/20 to-cyan-500/20",
       accentColor: "blue-500",
     },
     {
       name: "CoreX",
-      description: "Next-generation ERP solution that adapts to your business like a living organism",
+      description: "The ERP that grows with your business. Watch as it learns your processes, anticipates your needs, and automates complex workflows. From startup to enterprise, it's the only system you'll ever need.",
       icon: Building2,
-      features: ["AI-Driven Insights", "Real-time Analytics", "Smart Automation", "Predictive Planning"],
+      features: ["Intelligent Process Automation", "Real-time Business Insights", "Smart Workflow Management", "Predictive Planning"],
       stats: { users: "100k+", efficiency: "75%", growth: "200%" },
       color: "from-green-500/20 to-emerald-500/20",
       accentColor: "green-500",
     },
     {
       name: "FleetX",
-      description: "Intelligent fleet management that thinks ahead and optimizes every journey",
+      description: "Fleet management that thinks ahead. Optimize routes in real-time, predict maintenance needs, and slash costs with intelligent systems that learn from every journey and improve continuously.",
       icon: Truck,
-      features: ["Route AI", "Predictive Maintenance", "Cost Optimization", "Real-time Tracking"],
+      features: ["Real-time Route Optimization", "Predictive Maintenance", "Cost Intelligence", "Live Fleet Tracking"],
       stats: { vehicles: "25k+", savings: "30%", uptime: "98%" },
       color: "from-orange-500/20 to-amber-500/20",
       accentColor: "orange-500",
     },
     {
       name: "ChurchX",
-      description: "Comprehensive spiritual community platform that brings congregations together",
+      description: "Bring your congregation together like never before. Manage members intelligently, plan events seamlessly, and foster community with tools that understand the unique needs of spiritual organizations.",
       icon: Church,
-      features: ["Member Portal", "Event Management", "Donation Platform", "Communication Hub"],
+      features: ["Smart Member Management", "Event Planning Automation", "Donation Intelligence", "Community Hub"],
       stats: { churches: "5k+", members: "500k+", engagement: "85%" },
       color: "from-purple-500/20 to-violet-500/20",
       accentColor: "purple-500",
     },
     {
       name: "MedzorX",
-      description: "Advanced hospital management system powered by medical AI and automation",
+      description: "Healthcare management that saves lives. From intelligent diagnostics to automated patient care, our platform helps medical professionals focus on what matters most—delivering exceptional care.",
       icon: Heart,
-      features: ["AI Diagnostics", "Patient Analytics", "Smart Scheduling", "Compliance Tracking"],
+      features: ["Intelligent Medical Diagnostics", "Patient Care Analytics", "Smart Appointment Management", "Compliance Automation"],
       stats: { hospitals: "200+", patients: "1M+", efficiency: "60%" },
       color: "from-red-500/20 to-rose-500/20",
       accentColor: "red-500",
@@ -87,12 +87,12 @@ const ProductsGrid = () => {
             data-index="-1"
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Our Product
-              <span className="text-gradient-animate"> Universe</span>
+              Solutions That
+              <span className="text-gradient-animate"> Redefine Possibility</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Five revolutionary solutions that don't just manage your business—they transform it. 
-              Each powered by cutting-edge AI that learns, adapts, and evolves with you.
+              Five revolutionary platforms that don't just solve problems—they anticipate them. 
+              Each solution learns, adapts, and evolves to become more valuable every day.
             </p>
           </div>
         </div>
@@ -192,9 +192,9 @@ const ProductsGrid = () => {
             <div className="flex items-center justify-center mb-6">
               <TrendingUp className="h-12 w-12 text-primary" />
             </div>
-            <h3 className="text-3xl font-bold mb-4">Ready to Scale Beyond Limits?</h3>
+            <h3 className="text-3xl font-bold mb-4">Ready to Redefine Your Future?</h3>
             <p className="text-muted-foreground mb-8 text-lg">
-              Join thousands of businesses already transforming their operations with our AI-powered ecosystem.
+              Join forward-thinking enterprises already transforming their operations with our intelligent ecosystem.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="group px-8">
