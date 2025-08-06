@@ -40,6 +40,7 @@ const ClientDashboard = () => {
       nextPayment: "2024-02-15",
       paymentMethod: "**** **** **** 4532",
     },
+    b2bCredits: 1200, // Mock B2B credits
   };
 
   const getStatusColor = (status: string) => {
@@ -127,6 +128,18 @@ const ClientDashboard = () => {
                 </div>
                 <DollarSign className="h-8 w-8 text-green-500" />
               </div>
+            </CardContent>
+          </Card>
+          <Card className="glass border-0 shadow-enyard">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-muted-foreground">B2B Credits</p>
+                  <p className="text-2xl font-bold">{clientData.b2bCredits}</p>
+                </div>
+                <Badge variant="secondary">Credits</Badge>
+              </div>
+              <Button size="sm" className="mt-4 w-full">Load Credits</Button>
             </CardContent>
           </Card>
         </div>
@@ -221,23 +234,16 @@ const ClientDashboard = () => {
 
               <Card className="glass border-0 shadow-enyard">
                 <CardHeader>
-                  <CardTitle>Payment Actions</CardTitle>
-                  <CardDescription>Manage your billing and payments</CardDescription>
+                  <CardTitle>B2B Credits</CardTitle>
+                  <CardDescription>Manage and load credits for B2B transactions</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <Button className="w-full">
-                    <CreditCard className="h-4 w-4 mr-2" />
-                    Make Payment
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    Update Payment Method
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    Download Invoice
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    Upgrade Plan
-                  </Button>
+                  <div className="flex justify-between items-center">
+                    <span>Current Credits</span>
+                    <span className="font-semibold">{clientData.b2bCredits}</span>
+                  </div>
+                  <Button className="w-full">Load More Credits</Button>
+                  <p className="text-xs text-muted-foreground">Credits can be used for B2B services and are non-refundable once used.</p>
                 </CardContent>
               </Card>
             </div>

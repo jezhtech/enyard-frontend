@@ -204,7 +204,7 @@ const Terms = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We've crafted our terms with four core principles that ensure fairness, 
-              transparency, and mutual respect between ENYARD and our valued customers.
+              transparency, and mutual respect between Enyard Private Limited and our valued customers.
             </p>
           </div>
           
@@ -252,12 +252,12 @@ const Terms = () => {
               {expandedSections.has('overview') && (
                 <div className="mt-8 space-y-6 text-gray-700 leading-relaxed">
                   <p>
-                    These Terms of Service ("Terms") govern your use of ENYARD's software solutions, 
+                    These Terms of Service ("Terms") govern your use of Enyard Private Limited's software solutions, 
                     services, and platforms. By accessing or using our services, you agree to be bound 
                     by these Terms and all applicable laws and regulations.
                   </p>
                   <p>
-                    ENYARD provides enterprise software solutions including attendance management, 
+                    Enyard Private Limited provides enterprise software solutions including attendance management, 
                     ERP systems, fleet management, church management, and hospital management platforms. 
                     These Terms apply to all users, customers, and visitors of our services.
                   </p>
@@ -462,9 +462,31 @@ const Terms = () => {
                         </li>
                         <li className="flex items-start space-x-3">
                           <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                          <span>Refund policies clearly defined</span>
+                          <span>Refund policies clearly defined (see below)</span>
                         </li>
                       </ul>
+                      <div className="mt-8">
+                        <h4 className="font-semibold text-gray-900 mb-2">Refund Policy</h4>
+                        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                          <li>Refunds are available within 14 days of purchase for unused services or credits.</li>
+                          <li>To request a refund, contact our support team with your order details.</li>
+                          <li>Refunds are processed to the original payment method within 7 business days after approval.</li>
+                          <li>No refunds for services already rendered or credits already used.</li>
+                        </ul>
+                        <h4 className="font-semibold text-gray-900 mt-6 mb-2">Pricing Policy</h4>
+                        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                          <li>All prices are listed in USD and are subject to change with 30 days notice.</li>
+                          <li>Transparent pricing with no hidden fees. All applicable taxes will be clearly stated at checkout.</li>
+                          <li>Discounts and promotional offers are subject to their own terms and may be withdrawn at any time.</li>
+                        </ul>
+                        <h4 className="font-semibold text-gray-900 mt-6 mb-2">Checkout Policy</h4>
+                        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                          <li>All purchases must be completed through our secure online checkout process.</li>
+                          <li>Payment information is encrypted and securely processed. We do not store full payment details.</li>
+                          <li>Upon successful payment, credits or services are immediately available in your account.</li>
+                          <li>For B2B credits, loading and usage details are available in your dashboard.</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
