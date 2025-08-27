@@ -117,11 +117,14 @@ const Footer = () => {
               <Link to="/products/fleetx" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
                 FleetX - Fleet Management
               </Link>
-              <Link to="/products/churchx" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                ChurchX - Church Management
+              <Link to="/products/xsafety" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                XSafety - Safety Management System
               </Link>
               <Link to="/products/medzorx" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
                 MedzorX - Hospital Management
+              </Link>
+              <Link to="/products/penguin" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                Penguin - Cybersecurity Learning Platform
               </Link>
             </div>
           </div>

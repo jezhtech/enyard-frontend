@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, Clock, Building2, Truck, Church, Heart, BookOpen, Download, FileText, Users, Briefcase } from "lucide-react";
+import { ChevronDown, Menu, X, Clock, Building2, Truck, Church, Heart, BookOpen, Download, FileText, Users, Briefcase, Shield, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -25,8 +25,9 @@ const Navigation = () => {
     {
       title: "Specialized Solutions",
       items: [
-        { label: "ChurchX", href: "/products/churchx", icon: Church, description: "Comprehensive church management platform" },
-        { label: "MedzorX", href: "/products/medzorx", icon: Heart, description: "Advanced hospital management system" }
+        { label: "XSafety", href: "/products/xsafety", icon: Shield, description: "Advanced safety management system for airlines" },
+        { label: "MedzorX", href: "/products/medzorx", icon: Heart, description: "Advanced hospital management system" },
+        { label: "Penguin", href: "/products/penguin", icon: Terminal, description: "Cybersecurity learning platform for enthusiasts" }
       ]
     }
   ];

@@ -44,7 +44,7 @@ const Contact = () => {
       icon: Mail,
       title: 'Email Support',
       description: 'Get detailed responses to your questions',
-      contact: 'support@enyard.com',
+      contact: 'support@enyard.in',
       availability: 'Replies within 2-4 hours',
       type: 'primary'
     },
@@ -52,8 +52,8 @@ const Contact = () => {
       icon: Phone,
       title: 'Phone Support',
       description: 'Speak directly with our experts',
-      contact: '+1 (555) 123-4567',
-      availability: 'Mon-Fri, 9 AM - 6 PM EST',
+      contact: '+91 9385722102',
+      availability: 'Mon to Fri 9am to 6pm IST',
       type: 'secondary'
     },
     {
@@ -74,41 +74,7 @@ const Contact = () => {
     }
   ];
 
-  const offices = [
-    {
-      city: 'San Francisco',
-      address: '123 Tech Street, Suite 500',
-      country: 'United States',
-      phone: '+1 (555) 123-4567',
-      email: 'sf@enyard.com',
-      timezone: 'PST',
-      isHeadquarters: true
-    },
-    {
-      city: 'London',
-      address: '456 Innovation Lane, Floor 3',
-      country: 'United Kingdom',
-      phone: '+44 20 7123 4567',
-      email: 'london@enyard.com',
-      timezone: 'GMT'
-    },
-    {
-      city: 'Singapore',
-      address: '789 Business District, Tower A',
-      country: 'Singapore',
-      phone: '+65 6123 4567',
-      email: 'sg@enyard.com',
-      timezone: 'SGT'
-    },
-    {
-      city: 'Toronto',
-      address: '321 Startup Hub, Level 8',
-      country: 'Canada',
-      phone: '+1 (416) 123-4567',
-      email: 'toronto@enyard.com',
-      timezone: 'EST'
-    }
-  ];
+
 
   const inquiryTypes = [
     { value: 'general', label: 'General Inquiry' },
@@ -145,7 +111,7 @@ const Contact = () => {
         
         <div className="container relative z-10 text-center">
           <div className="stagger-item" style={{ animationDelay: '0.1s' }}>
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-gradient-animate">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-black">
               Contact Us
             </h1>
           </div>
@@ -183,7 +149,7 @@ const Contact = () => {
       <section className="py-24 relative">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gradient">Get In Touch</h2>
+            <h2 className="text-4xl font-bold mb-4 text-black">Get In Touch</h2>
             <p className="text-muted-foreground">Choose the best way to reach us</p>
           </div>
           
@@ -313,9 +279,9 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-gradient">
-                  Why Choose ENYARD?
-                </h3>
+                                 <h3 className="text-2xl font-bold mb-6 text-black">
+                   Why Choose ENYARD?
+                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-gradient-primary mt-2" />
@@ -365,7 +331,11 @@ const Contact = () => {
                   For urgent technical issues or critical support needs, our emergency 
                   hotline is available 24/7.
                 </p>
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => window.open('tel:+919150537718', '_self')}
+                >
                   <Phone className="h-4 w-4 mr-2" />
                   Call Emergency Support
                 </Button>
@@ -375,63 +345,163 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Global Offices */}
+      {/* Global Office Details */}
       <section className="py-24 relative">
         <div className="absolute inset-0 mesh-background opacity-10" />
         <div className="container relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gradient">
-              Global Presence
+            <h2 className="text-4xl font-bold mb-4 text-black">
+              Our Global Offices
             </h2>
             <p className="text-muted-foreground">
-              We're here to serve you across the globe
+              Serving enterprises worldwide with local presence and global expertise
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {offices.map((office, index) => (
-              <Card key={index} className="p-6 magnetic-card glass relative">
-                {office.isHeadquarters && (
-                  <Badge className="absolute top-4 right-4 bg-primary/10 text-primary border-primary/20">
-                    HQ
-                  </Badge>
-                )}
-                
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold mb-1">{office.city}</h3>
-                  <p className="text-muted-foreground text-sm">{office.country}</p>
+          {/* Innovative Global Map Layout */}
+          <div className="relative">
+            {/* World Map Background */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-5">
+              <Globe className="w-96 h-96 text-primary" />
+            </div>
+            
+                         {/* Office Locations - Dual Headquarters Layout */}
+             <div className="relative z-10">
+               {/* Dual Headquarters - India & UAE */}
+               <div className="flex flex-col lg:flex-row justify-center gap-8 mb-12">
+                                   {/* India Office - Primary HQ */}
+                  <Card className="p-8 glass-strong max-w-md text-center relative">
+                    <h3 className="text-2xl font-bold mb-2 text-black">India Office</h3>
+                   <p className="text-muted-foreground mb-4">Primary Headquarters</p>
+                   
+                   <div className="space-y-2 text-sm">
+                     <div className="flex items-center justify-center">
+                       <MapPin className="h-4 w-4 mr-2 text-primary" />
+                       <span>Karungal, Kanyakumari, Tamil Nadu</span>
+                     </div>
+                     <div className="flex items-center justify-center">
+                       <Mail className="h-4 w-4 mr-2 text-primary" />
+                       <span>info@enyard.in</span>
+                     </div>
+                     <div className="flex items-center justify-center">
+                       <Phone className="h-4 w-4 mr-2 text-primary" />
+                       <span>+91 91505 37718</span>
+                     </div>
+                   </div>
+                 </Card>
+
+                                   {/* UAE Office - Secondary HQ */}
+                  <Card className="p-8 glass-strong max-w-md text-center relative">
+                    <h3 className="text-2xl font-bold mb-2 text-black">UAE Office</h3>
+                   <p className="text-muted-foreground mb-4">Regional Headquarters</p>
+                   
+                   <div className="space-y-2 text-sm">
+                     <div className="flex items-center justify-center">
+                       <MapPin className="h-4 w-4 mr-2 text-primary" />
+                       <span>Aj Bahar Building, Office 8, Deira</span>
+                     </div>
+                     <div className="flex items-center justify-center">
+                       <Mail className="h-4 w-4 mr-2 text-primary" />
+                       <span>info@enyard.in</span>
+                     </div>
+                     <div className="flex items-center justify-center">
+                       <Phone className="h-4 w-4 mr-2 text-primary" />
+                       <span>+971 564549360</span>
+                     </div>
+                     <div className="flex items-center justify-center">
+                       <Phone className="h-4 w-4 mr-2 text-primary" />
+                       <span>+971 50 298 2413</span>
+                     </div>
+                   </div>
+                 </Card>
+               </div>
+               
+                               {/* Regional Offices - Horizontal Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* USA Office */}
+                  <Card className="p-6 glass magnetic-card group hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-bl-full transform translate-x-8 -translate-y-8" />
+                    <div className="relative z-10">
+                      <div className="flex items-center mb-3">
+                        <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse" />
+                        <h4 className="font-bold text-black">USA Office</h4>
+                      </div>
+                      <div className="space-y-2 text-xs">
+                        <div className="flex items-start">
+                          <MapPin className="h-3 w-3 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
+                          <span className="leading-tight">13279 Bluejacket Street, Overland Park, KS</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Phone className="h-3 w-3 mr-2 text-muted-foreground flex-shrink-0" />
+                          <span>+1 913 735 4276</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+
+                  {/* Oman Office */}
+                  <Card className="p-6 glass magnetic-card group hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-bl-full transform translate-x-8 -translate-y-8" />
+                    <div className="relative z-10">
+                      <div className="flex items-center mb-3">
+                        <div className="w-3 h-3 bg-purple-500 rounded-full mr-2 animate-pulse" />
+                        <h4 className="font-bold text-black">Oman Office</h4>
+                      </div>
+                      <div className="space-y-2 text-xs">
+                        <div className="flex items-start">
+                          <MapPin className="h-3 w-3 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
+                          <span className="leading-tight">Murooj Grand Al Khuwair, Muscat</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Phone className="h-3 w-3 mr-2 text-muted-foreground flex-shrink-0" />
+                          <span>+971 564549360</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+
+                  {/* Papua New Guinea Office */}
+                  <Card className="p-6 glass magnetic-card group hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-bl-full transform translate-x-8 -translate-y-8" />
+                    <div className="relative z-10">
+                      <div className="flex items-center mb-3">
+                        <div className="w-3 h-3 bg-orange-500 rounded-full mr-2 animate-pulse" />
+                        <h4 className="font-bold text-black">PNG Office</h4>
+                      </div>
+                      <div className="space-y-2 text-xs">
+                        <div className="flex items-start">
+                          <MapPin className="h-3 w-3 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
+                          <span className="leading-tight">Sec 112, Lot 25, Bomana, Boroko, NCD</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Phone className="h-3 w-3 mr-2 text-muted-foreground flex-shrink-0" />
+                          <span>+675 77342791</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
                 
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-start">
-                    <MapPin className="h-4 w-4 mr-2 text-muted-foreground mt-0.5" />
-                    <span>{office.address}</span>
+                {/* Connection Lines Visualization */}
+                <div className="hidden lg:block mt-8">
+                  <div className="flex justify-center">
+                    <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                   </div>
-                  <div className="flex items-center">
-                    <Phone className="h-4 w-4 mr-2 text-muted-foreground" />
-                    <span>{office.phone}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Mail className="h-4 w-4 mr-2 text-muted-foreground" />
-                    <span>{office.email}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-2 text-muted-foreground" />
-                    <span>{office.timezone}</span>
+                  <div className="flex justify-center mt-2">
+                    <span className="text-xs text-muted-foreground">Global Network Connections</span>
                   </div>
                 </div>
-              </Card>
-            ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* FAQ Section */}
       <section className="py-24">
         <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-8 text-gradient">
-            Frequently Asked Questions
-          </h2>
+                     <h2 className="text-4xl font-bold mb-8 text-black">
+             Frequently Asked Questions
+           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
             Can't find the answer you're looking for? Our support team is ready to help.
           </p>

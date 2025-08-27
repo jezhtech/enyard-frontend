@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import VercelHero from "@/components/VercelHero";
+import PenguinCountdown from "@/components/PenguinCountdown";
 import InnovativeFeatures from "@/components/InnovativeFeatures";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import ProductsGrid from "@/components/ProductsGrid";
@@ -12,6 +13,7 @@ const Index = () => {
       <Navigation />
       <main>
         <VercelHero />
+        <PenguinCountdown />
         <InnovativeFeatures />
         <InfiniteMarquee />
         <ProductsGrid />

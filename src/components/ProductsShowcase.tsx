@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Building2, Truck, Church, Heart, ArrowRight } from "lucide-react";
+import { Clock, Building2, Truck, Shield, Heart, ArrowRight, Terminal } from "lucide-react";
 
 const ProductsShowcase = () => {
   const products = [
@@ -26,10 +26,10 @@ const ProductsShowcase = () => {
       color: "from-orange-500/20 to-orange-600/20",
     },
     {
-      name: "ChurchX",
-      description: "Comprehensive church management platform",
-      icon: Church,
-      features: ["Member Management", "Event Planning", "Donation Tracking"],
+      name: "XSafety",
+      description: "Advanced safety management system for airlines",
+      icon: Shield,
+      features: ["Incident Monitoring", "Hazard Analysis", "Safety Auditing"],
       color: "from-purple-500/20 to-purple-600/20",
     },
     {
@@ -38,6 +38,13 @@ const ProductsShowcase = () => {
       icon: Heart,
       features: ["Patient Records", "Appointment Scheduling", "Medical Analytics"],
       color: "from-red-500/20 to-red-600/20",
+    },
+    {
+      name: "Penguin",
+      description: "Cybersecurity learning platform for enthusiasts",
+      icon: Terminal,
+      features: ["Interactive Labs", "Vulnerability Databases", "Tool Integrations"],
+      color: "from-gray-500/20 to-gray-600/20",
     },
   ];
 
@@ -50,7 +57,7 @@ const ProductsShowcase = () => {
             <span className="text-gradient"> Ecosystem</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Five powerful solutions, one unified platform. Each product is enhanced 
+            Six powerful solutions, one unified platform. Each product is enhanced 
             with AI capabilities to streamline your operations.
           </p>
         </div>

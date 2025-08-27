@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Building2, Truck, Church, Heart, ArrowRight, Star, Zap, Users, TrendingUp } from "lucide-react";
+import { Clock, Building2, Truck, Shield, Heart, ArrowRight, Star, Zap, Users, TrendingUp, Target, CheckCircle, Terminal } from "lucide-react";
 
 const ProductsGrid = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
@@ -33,8 +33,10 @@ const ProductsGrid = () => {
       icon: Clock,
       features: ["Smart Biometric Recognition", "Predictive Analytics", "Automated Scheduling", "Fraud Prevention"],
       stats: { users: "50k+", accuracy: "99.9%", saved: "40%" },
-      color: "from-blue-500/20 to-cyan-500/20",
+      color: "from-blue-500 to-cyan-500",
       accentColor: "blue-500",
+      gradient: "from-blue-500/20 via-cyan-500/20 to-blue-600/20",
+      badge: "AI-Powered"
     },
     {
       name: "CoreX",
@@ -42,8 +44,10 @@ const ProductsGrid = () => {
       icon: Building2,
       features: ["Intelligent Process Automation", "Real-time Business Insights", "Smart Workflow Management", "Predictive Planning"],
       stats: { users: "100k+", efficiency: "75%", growth: "200%" },
-      color: "from-green-500/20 to-emerald-500/20",
+      color: "from-green-500 to-emerald-500",
       accentColor: "green-500",
+      gradient: "from-green-500/20 via-emerald-500/20 to-green-600/20",
+      badge: "Enterprise Ready"
     },
     {
       name: "FleetX",
@@ -51,17 +55,21 @@ const ProductsGrid = () => {
       icon: Truck,
       features: ["Real-time Route Optimization", "Predictive Maintenance", "Cost Intelligence", "Live Fleet Tracking"],
       stats: { vehicles: "25k+", savings: "30%", uptime: "98%" },
-      color: "from-orange-500/20 to-amber-500/20",
+      color: "from-orange-500 to-amber-500",
       accentColor: "orange-500",
+      gradient: "from-orange-500/20 via-amber-500/20 to-orange-600/20",
+      badge: "Smart Fleet"
     },
     {
-      name: "ChurchX",
-      description: "Bring your congregation together like never before. Manage members intelligently, plan events seamlessly, and foster community with tools that understand the unique needs of spiritual organizations.",
-      icon: Church,
-      features: ["Smart Member Management", "Event Planning Automation", "Donation Intelligence", "Community Hub"],
-      stats: { churches: "5k+", members: "500k+", engagement: "85%" },
-      color: "from-purple-500/20 to-violet-500/20",
+      name: "XSafety",
+      description: "Advanced safety management system for airlines with AI-enabled features. Monitor incidents, hazards, conduct comprehensive auditing, and implement corrective actions with intelligent systems that ensure aviation safety compliance.",
+      icon: Shield,
+      features: ["Incident Monitoring & Analysis", "Hazard Identification", "AI-Powered Auditing", "Corrective Action Management"],
+      stats: { airlines: "50+", incidents: "0", compliance: "100%" },
+      color: "from-purple-500 to-violet-500",
       accentColor: "purple-500",
+      gradient: "from-purple-500/20 via-violet-500/20 to-purple-600/20",
+      badge: "Aviation Safety"
     },
     {
       name: "MedzorX",
@@ -69,142 +77,209 @@ const ProductsGrid = () => {
       icon: Heart,
       features: ["Intelligent Medical Diagnostics", "Patient Care Analytics", "Smart Appointment Management", "Compliance Automation"],
       stats: { hospitals: "200+", patients: "1M+", efficiency: "60%" },
-      color: "from-red-500/20 to-rose-500/20",
+      color: "from-red-500 to-rose-500",
       accentColor: "red-500",
+      gradient: "from-red-500/20 via-rose-500/20 to-red-600/20",
+      badge: "Life Saving"
+    },
+    {
+      name: "Penguin",
+      description: "A comprehensive platform for cybersecurity enthusiasts to learn about various tools and multi-vulnerability exploitation in a single, interactive environment. Launching soon!",
+      icon: Terminal,
+      features: ["Interactive Labs", "Vulnerability Databases", "Tool Integrations", "Guided Learning Paths"],
+      stats: { launch: "Oct 1, 2025", tools: "100+", labs: "50+" },
+      color: "from-gray-500 to-slate-600",
+      accentColor: "gray-500",
+      gradient: "from-gray-500/20 via-slate-500/20 to-gray-600/20",
+      badge: "Launching Soon"
     },
   ];
 
   return (
     <section className="py-32 relative overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 grid-lines opacity-30" />
+      {/* Enhanced Background */}
+      <div className="absolute inset-0">
+        {/* Gradient Mesh Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
+        
+        {/* Floating Geometric Shapes */}
+        <div className="absolute top-20 left-20 w-32 h-32 opacity-[0.08] animate-pulse">
+          <div className="w-full h-full bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full blur-xl" />
+        </div>
+        <div className="absolute top-40 right-32 w-24 h-24 opacity-[0.06] animate-pulse" style={{ animationDelay: '2s' }}>
+          <div className="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-xl" />
+        </div>
+        <div className="absolute bottom-40 left-32 w-28 h-28 opacity-[0.05] animate-pulse" style={{ animationDelay: '4s' }}>
+          <div className="w-full h-full bg-gradient-to-br from-green-400 to-emerald-400 rounded-full blur-xl" />
+        </div>
+        
+        {/* Subtle Grid Pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `
+              linear-gradient(90deg, #000 1px, transparent 1px),
+              linear-gradient(0deg, #000 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px'
+          }}
+        />
+      </div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
+        {/* Enhanced Section Header */}
         <div className="text-center mb-20">
           <div 
             className={`scroll-reveal ${visibleItems.has(-1) ? 'revealed' : ''}`}
             data-index="-1"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            {/* Animated Badge */}
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full px-6 py-3 mb-6 border border-blue-200/50">
+              <Star className="w-5 h-5 text-blue-600" />
+              <span className="font-semibold">Innovation Hub</span>
+            </div>
+            
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-black">
               Solutions That
-              <span className="text-gradient-animate"> Redefine Possibility</span>
+              <span className="block text-black"> Redefine Possibility</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Five revolutionary platforms that don't just solve problems—they anticipate them. 
+            <p className="text-xl text-black max-w-4xl mx-auto leading-relaxed">
+              Six revolutionary platforms that don't just solve problems—they anticipate them. 
               Each solution learns, adapts, and evolves to become more valuable every day.
             </p>
           </div>
         </div>
 
-        {/* Products Mosaic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 mb-20">
+        {/* Enhanced Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {products.map((product, index) => {
             const IconComponent = product.icon;
-            const isVisible = visibleItems.has(index);
-            
-            // Define custom grid layouts for visual interest
-            const gridClasses = [
-              "lg:col-span-6", // TimeX - wide
-              "lg:col-span-6", // CoreX - wide  
-              "lg:col-span-4", // FleetX - medium
-              "lg:col-span-4", // ChurchX - medium
-              "lg:col-span-4", // MedzorX - medium
-            ];
-
             return (
               <Card 
-                key={product.name}
-                data-index={index}
-                className={`magnetic-card glass-strong border-0 relative overflow-hidden group ${gridClasses[index]} ${
-                  isVisible ? 'scroll-reveal revealed' : 'scroll-reveal'
+                key={product.name} 
+                className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 ${
+                  visibleItems.has(index) ? 'scroll-reveal revealed' : 'scroll-reveal'
                 }`}
+                data-index={index}
                 style={{ 
-                  animationDelay: `${index * 0.1}s`,
-                  minHeight: index < 2 ? '400px' : '350px'
+                  background: `linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%)`,
+                  backdropFilter: 'blur(20px)'
                 }}
               >
-                {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-100 transition-all duration-700`} />
+                {/* Background Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
-                {/* Animated Border */}
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'var(--gradient-border)' }} />
-                
+                {/* Badge */}
+                <div className="absolute top-4 right-4 z-10">
+                  <div className={`px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${product.color} shadow-lg`}>
+                    {product.badge}
+                  </div>
+                </div>
+
+                {/* Card Content */}
                 <CardHeader className="relative z-10 pb-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 bg-primary/10 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-8 w-8 text-primary" />
-                    </div>
-                    <div className="flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-medium">4.9</span>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`p-4 rounded-2xl bg-gradient-to-br ${product.color} bg-opacity-10 group-hover:bg-opacity-20 transition-all duration-300`}>
+                      <IconComponent className="w-8 h-8 text-black group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
-                  <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors">
+                  
+                  <CardTitle className="text-2xl font-bold mb-3 text-black group-hover:text-black transition-colors">
                     {product.name}
                   </CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
+                  
+                  <CardDescription className="text-black leading-relaxed text-base">
                     {product.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="relative z-10">
+                <CardContent className="relative z-10 space-y-6">
                   {/* Features */}
-                  <div className="grid grid-cols-2 gap-2 mb-6">
-                    {product.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 group/feature">
-                        <Zap className="h-3 w-3 text-primary group-hover/feature:rotate-12 transition-transform" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-black text-sm uppercase tracking-wide">Key Features</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {product.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center space-x-3">
+                          <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${product.color} flex-shrink-0`} />
+                          <span className="text-sm text-black">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 mb-6 p-4 glass rounded-lg">
-                    {Object.entries(product.stats).map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <div className="text-lg font-bold text-primary">{value}</div>
-                        <div className="text-xs text-muted-foreground capitalize">{key}</div>
-                      </div>
-                    ))}
-                  </div>
+                  {/* Statistics */}
+                  {product.stats && (
+                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
+                      {Object.entries(product.stats).map(([key, value], statIndex) => (
+                        <div key={statIndex} className="text-center">
+                          <div className="text-lg font-bold text-black mb-1">
+                            {value}
+                          </div>
+                          <div className="text-xs text-black uppercase tracking-wide">
+                            {key}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
-                  {/* CTA */}
+                  {/* Action Button */}
                   <Button 
-                    variant="ghost" 
-                    className="group/btn w-full justify-between text-primary hover:text-primary hover:bg-primary/10"
+                    className="w-full bg-black hover:bg-gray-800 text-white hover:shadow-lg group/btn transition-all duration-300"
+                    size="lg"
                   >
-                    <span>Explore {product.name}</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
+                    <span className="flex items-center">
+                      Explore {product.name}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </Button>
                 </CardContent>
+
+                {/* Hover Effects */}
+                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`} />
               </Card>
             );
           })}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Enhanced Bottom CTA */}
         <div 
           className={`text-center ${visibleItems.has(99) ? 'scroll-reveal revealed' : 'scroll-reveal'}`}
           data-index="99"
         >
-          <div className="glass-strong rounded-3xl p-12 max-w-4xl mx-auto border">
-            <div className="flex items-center justify-center mb-6">
-              <TrendingUp className="h-12 w-12 text-primary" />
-            </div>
-            <h3 className="text-3xl font-bold mb-4">Ready to Redefine Your Future?</h3>
-            <p className="text-muted-foreground mb-8 text-lg">
-              Join forward-thinking enterprises already transforming their operations with our intelligent ecosystem.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group px-8">
-                Start Free Trial
-                <Zap className="ml-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="glass px-8">
-                <Users className="mr-2 h-4 w-4" />
-                Book Live Demo
-              </Button>
+          <div className="relative overflow-hidden rounded-3xl p-12 max-w-4xl mx-auto">
+            {/* Background with Glass Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-3xl" />
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/20" />
+            
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="flex items-center justify-center mb-6">
+                <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full">
+                  <TrendingUp className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+                Ready to Redefine Your Future?
+              </h3>
+              
+              <p className="text-black mb-8 text-lg max-w-2xl mx-auto">
+                Join forward-thinking ventures already transforming their operations with our intelligent ecosystem.
+                Experience the power of AI-driven innovation.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="group px-8 py-4 bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Zap className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  Start Free Trial
+                </Button>
+                
+                <Button variant="outline" size="lg" className="px-8 py-4 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300">
+                  <Users className="mr-2 h-5 w-5" />
+                  Book Live Demo
+                </Button>
+              </div>
             </div>
           </div>
         </div>

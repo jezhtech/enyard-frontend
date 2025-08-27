@@ -16,9 +16,10 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import TimeX from "./pages/TimeX";
 import CoreX from "./pages/CoreX";
-import ChurchX from "./pages/ChurchX";
+import XSafety from "./pages/XSafety";
 import MedzorX from "./pages/MedzorX";
 import FleetX from "./pages/FleetX";
+import Penguin from "./pages/Penguin";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Security from "./pages/Security";
@@ -47,8 +48,9 @@ const App = () => (
           <Route path="/products/timex" element={<TimeX />} />
           <Route path="/products/corex" element={<CoreX />} />
           <Route path="/products/fleetx" element={<FleetX />} />
-          <Route path="/products/churchx" element={<ChurchX />} />
+          <Route path="/products/xsafety" element={<XSafety />} />
           <Route path="/products/medzorx" element={<MedzorX />} />
+          <Route path="/products/penguin" element={<Penguin />} />
           
           {/* Resource Routes */}
           <Route path="/blog" element={<Blog />} />
