@@ -4,10 +4,22 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, AlertTriangle, FileText, Users, Calendar, Play, Code, Terminal, Zap, Plane, Activity, CheckCircle } from "lucide-react";
+import {
+  Shield,
+  AlertTriangle,
+  FileText,
+  Users,
+  Calendar,
+  Play,
+  Code,
+  Terminal,
+  Zap,
+  Plane,
+  Activity,
+  CheckCircle,
+} from "lucide-react";
 
 const XSafety = () => {
-  const [activeModule, setActiveModule] = useState(0);
   const [typedText, setTypedText] = useState("");
 
   const fullText = `// XSafety Aviation Safety Management System
@@ -49,34 +61,58 @@ console.log('✈️ Aviation Safety System Online');`;
     {
       icon: AlertTriangle,
       title: "Incident Monitoring",
-      description: "Real-time tracking and analysis of safety incidents with AI-powered pattern recognition",
-      features: ["Automated incident reporting", "Risk assessment algorithms", "Trend analysis", "Alert systems"]
+      description:
+        "Real-time tracking and analysis of safety incidents with AI-powered pattern recognition",
+      features: [
+        "Automated incident reporting",
+        "Risk assessment algorithms",
+        "Trend analysis",
+        "Alert systems",
+      ],
     },
     {
       icon: FileText,
       title: "Hazard Analysis",
-      description: "Comprehensive hazard identification and risk assessment using advanced analytics",
-      features: ["Hazard identification", "Risk matrix", "Mitigation strategies", "Continuous monitoring"]
+      description:
+        "Comprehensive hazard identification and risk assessment using advanced analytics",
+      features: [
+        "Hazard identification",
+        "Risk matrix",
+        "Mitigation strategies",
+        "Continuous monitoring",
+      ],
     },
     {
       icon: Shield,
       title: "Safety Auditing",
-      description: "AI-enabled auditing processes that ensure compliance with aviation safety standards",
-      features: ["Automated compliance checks", "Audit trail management", "Regulatory updates", "Performance metrics"]
+      description:
+        "AI-enabled auditing processes that ensure compliance with aviation safety standards",
+      features: [
+        "Automated compliance checks",
+        "Audit trail management",
+        "Regulatory updates",
+        "Performance metrics",
+      ],
     },
     {
       icon: CheckCircle,
       title: "Corrective Actions",
-      description: "Intelligent corrective action management with tracking and verification systems",
-      features: ["Action tracking", "Verification processes", "Effectiveness monitoring", "Continuous improvement"]
-    }
+      description:
+        "Intelligent corrective action management with tracking and verification systems",
+      features: [
+        "Action tracking",
+        "Verification processes",
+        "Effectiveness monitoring",
+        "Continuous improvement",
+      ],
+    },
   ];
 
   const stats = [
     { label: "Airlines Protected", value: "50+" },
     { label: "Safety Incidents", value: "0" },
     { label: "Compliance Rate", value: "100%" },
-    { label: "Risk Reduction", value: "85%" }
+    { label: "Risk Reduction", value: "85%" },
   ];
 
   const plans = [
@@ -84,35 +120,54 @@ console.log('✈️ Aviation Safety System Online');`;
       name: "Regional",
       price: "$299",
       period: "/month",
-      features: ["Up to 100 aircraft", "Basic safety modules", "Standard reporting", "Email support", "Mobile app"],
-      popular: false
+      features: [
+        "Up to 100 aircraft",
+        "Basic safety modules",
+        "Standard reporting",
+        "Email support",
+        "Mobile app",
+      ],
+      popular: false,
     },
     {
       name: "National",
       price: "$599",
       period: "/month",
-      features: ["Up to 500 aircraft", "All safety modules", "Advanced AI analytics", "24/7 support", "Custom integrations", "API access"],
-      popular: true
+      features: [
+        "Up to 500 aircraft",
+        "All safety modules",
+        "Advanced AI analytics",
+        "24/7 support",
+        "Custom integrations",
+        "API access",
+      ],
+      popular: true,
     },
     {
       name: "International",
       price: "Custom",
       period: "",
-      features: ["Unlimited aircraft", "Full AI suite", "Multi-region compliance", "Dedicated support", "Custom development"],
-      popular: false
-    }
+      features: [
+        "Unlimited aircraft",
+        "Full AI suite",
+        "Multi-region compliance",
+        "Dedicated support",
+        "Custom development",
+      ],
+      popular: false,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 mesh-background opacity-30" />
         <div className="floating-orb w-96 h-96 bg-primary/10 -top-48 -right-48" />
         <div className="floating-orb w-64 h-64 bg-purple-500/10 top-1/2 -left-32" />
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -129,9 +184,10 @@ console.log('✈️ Aviation Safety System Online');`;
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  Advanced safety management system for airlines with AI-enabled features. 
-                  Monitor incidents, hazards, conduct comprehensive auditing, and implement 
-                  corrective actions with intelligent systems that ensure aviation safety compliance.
+                  Advanced safety management system for airlines with AI-enabled
+                  features. Monitor incidents, hazards, conduct comprehensive
+                  auditing, and implement corrective actions with intelligent
+                  systems that ensure aviation safety compliance.
                 </p>
               </div>
 
@@ -151,8 +207,12 @@ console.log('✈️ Aviation Safety System Online');`;
               <div className="grid grid-cols-2 gap-4 pt-8">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-2xl font-bold text-primary">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -192,12 +252,17 @@ console.log('✈️ Aviation Safety System Online');`;
                       <IconComponent className="w-8 h-8 text-primary" />
                     </div>
                     <CardTitle className="text-xl">{module.title}</CardTitle>
-                    <p className="text-base text-muted-foreground">{module.description}</p>
+                    <p className="text-base text-muted-foreground">
+                      {module.description}
+                    </p>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
                       {module.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-2 text-sm">
+                        <li
+                          key={featureIndex}
+                          className="flex items-center space-x-2 text-sm"
+                        >
                           <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
@@ -225,13 +290,16 @@ console.log('✈️ Aviation Safety System Online');`;
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {plans.map((plan) => (
-              <Card key={plan.name} className={`relative overflow-hidden ${plan.popular ? 'border-primary shadow-lg scale-105' : 'glass'}`}>
+              <Card
+                key={plan.name}
+                className={`relative overflow-hidden ${plan.popular ? "border-primary shadow-lg scale-105" : "glass"}`}
+              >
                 {plan.popular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Badge className="bg-primary">Most Popular</Badge>
                   </div>
                 )}
-                
+
                 <CardHeader className="text-center">
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
                   <div className="mt-4">
@@ -249,19 +317,17 @@ console.log('✈️ Aviation Safety System Online');`;
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-6">
-                    Get Started
-                  </Button>
+                  <Button className="w-full mt-6">Get Started</Button>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
 };
 
-export default XSafety; 
+export default XSafety;

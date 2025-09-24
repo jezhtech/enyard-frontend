@@ -1,5 +1,20 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Instagram, Github, ChevronDown, ChevronUp, Globe, Building2, BookOpen, Code, Download, HeadphonesIcon } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Instagram,
+  Github,
+  ChevronDown,
+  ChevronUp,
+  Globe,
+  Building2,
+  BookOpen,
+  Code,
+  Download,
+  HeadphonesIcon,
+} from "lucide-react";
 import { useState } from "react";
 
 const Footer = () => {
@@ -7,58 +22,43 @@ const Footer = () => {
     {
       id: "india",
       country: "India",
-      address: [
-        "Karungal, Kanyakumari,",
-        "Tamil Nadu, India -629157"
-      ],
+      address: ["Karungal, Kanyakumari,", "Tamil Nadu, India -629157"],
       email: "info@enyard.in",
       phone: ["+91 91505 37718", "+91 84288 07007"],
-      icon: "🏛️"
+      icon: "🏛️",
     },
     {
       id: "uae",
       country: "UAE",
-      address: [
-        "AJ Bahar Building, Office 8,",
-        "Salah El Din Street, Deira"
-      ],
+      address: ["AJ Bahar Building, Office 8,", "Salah El Din Street, Deira"],
       email: "info@enyard.in",
       phone: ["+971564549360", "+971 50 298 2413"],
-      icon: "🏢"
+      icon: "🏢",
     },
     {
       id: "usa",
       country: "USA",
-      address: [
-        "13279 Bluejacket Street",
-        "Overland Park, KS 66213"
-      ],
+      address: ["13279 Bluejacket Street", "Overland Park, KS 66213"],
       email: "info@enyard.in",
       phone: ["+1 913 735 4276"],
-      icon: "🗽"
+      icon: "🗽",
     },
     {
       id: "oman",
       country: "Oman",
-      address: [
-        "Murooj Grand Al Khuwair",
-        "Muscat"
-      ],
+      address: ["Murooj Grand Al Khuwair", "Muscat"],
       email: "info@enyard.in",
       phone: ["+971564549360"],
-      icon: "🕌"
+      icon: "🕌",
     },
     {
       id: "papua-new-guinea",
       country: "Papua New Guinea",
-      address: [
-        "Sec 112, Lot 25, Bomana,",
-        "Boroko, NCD"
-      ],
+      address: ["Sec 112, Lot 25, Bomana,", "Boroko, NCD"],
       email: "info@enyard.in",
       phone: ["+675 77342791"],
-      icon: "🌴"
-    }
+      icon: "🌴",
+    },
   ];
 
   return (
@@ -67,35 +67,36 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img 
-              src="/lovable-uploads/98fab40e-4f49-42c5-bf83-50cb4020d1a4.png" 
-              alt="ENYARD" 
+            <img
+              src="/lovable-uploads/98fab40e-4f49-42c5-bf83-50cb4020d1a4.png"
+              alt="ENYARD"
               className="h-8 w-auto brightness-0 invert"
             />
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Pioneering the future of enterprise software with AI-integrated solutions 
-              that transform how businesses operate in the digital age.
+              Pioneering the future of enterprise software with AI-integrated
+              solutions that transform how businesses operate in the digital
+              age.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://www.linkedin.com/company/enyardcorp" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/company/enyardcorp"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/enyardcorp/" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/enyardcorp/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a 
-                href="https://github.com/enyard" 
-                target="_blank" 
+              <a
+                href="https://github.com/enyard"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
               >
@@ -108,23 +109,41 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Products</h4>
             <div className="space-y-2">
-              <Link to="/products/timex" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/products/timex"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 TimeX - Attendance Management
               </Link>
-              <Link to="/products/corex" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/products/corex"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 CoreX - ERP Solution
               </Link>
-              <Link to="/products/fleetx" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/products/fleetx"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 FleetX - Fleet Management
               </Link>
-              <Link to="/products/xsafety" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/products/xsafety"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 XSafety - Safety Management System
               </Link>
-              <Link to="/products/medzorx" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/products/medzorx"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 MedzorX - Hospital Management
               </Link>
-              <Link to="/products/penguin" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
-                Penguin - Cybersecurity Learning Platform
+              <Link
+                to="/products/penquin"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
+                PENQUIN - Cybersecurity Learning Platform
               </Link>
             </div>
           </div>
@@ -133,16 +152,28 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Company</h4>
             <div className="space-y-2">
-              <Link to="/about" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/about"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 About Us
               </Link>
-              <Link to="/career" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/career"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 Career
               </Link>
-              <Link to="/blog" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/blog"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 Blog
               </Link>
-              <Link to="/contact" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/contact"
+                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 Contact Us
               </Link>
             </div>
@@ -152,19 +183,31 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Resources</h4>
             <div className="space-y-2">
-              <Link to="/documentation" className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/documentation"
+                className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 <BookOpen className="h-4 w-4" />
                 <span>Documentation</span>
               </Link>
-              <Link to="/api" className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/api"
+                className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 <Code className="h-4 w-4" />
                 <span>API</span>
               </Link>
-              <Link to="/downloads" className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/downloads"
+                className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 <Download className="h-4 w-4" />
                 <span>Downloads</span>
               </Link>
-              <Link to="/support" className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <Link
+                to="/support"
+                className="flex items-center space-x-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+              >
                 <HeadphonesIcon className="h-4 w-4" />
                 <span>Support</span>
               </Link>
@@ -180,7 +223,8 @@ const Footer = () => {
               <h3 className="text-2xl font-bold">Our Global Offices</h3>
             </div>
             <p className="text-primary-foreground/70 text-sm max-w-2xl mx-auto">
-              Serving enterprises worldwide with local presence and global expertise
+              Serving enterprises worldwide with local presence and global
+              expertise
             </p>
           </div>
 
@@ -208,7 +252,9 @@ const Footer = () => {
                         <Building2 className="h-3 w-3 mt-0.5 text-primary-foreground/60 flex-shrink-0" />
                         <div className="text-xs text-primary-foreground/80">
                           {office.address.map((line, index) => (
-                            <div key={index} className="leading-relaxed">{line}</div>
+                            <div key={index} className="leading-relaxed">
+                              {line}
+                            </div>
                           ))}
                         </div>
                       </div>
@@ -225,7 +271,10 @@ const Footer = () => {
 
                       <div className="space-y-1">
                         {office.phone.map((phone, index) => (
-                          <div key={index} className="flex items-center space-x-2">
+                          <div
+                            key={index}
+                            className="flex items-center space-x-2"
+                          >
                             <Phone className="h-3 w-3 text-primary-foreground/60 flex-shrink-0" />
                             <span className="text-xs text-primary-foreground/80 hover:text-primary-foreground transition-colors cursor-pointer">
                               {phone}
@@ -250,13 +299,22 @@ const Footer = () => {
             © 2025 ENYARD. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">
+            <Link
+              to="/privacy"
+              className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm"
+            >
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">
+            <Link
+              to="/terms"
+              className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm"
+            >
               Terms of Service
             </Link>
-            <Link to="/security" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">
+            <Link
+              to="/security"
+              className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm"
+            >
               Security
             </Link>
           </div>

@@ -1,11 +1,11 @@
+import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import VercelHero from "@/components/VercelHero";
-import PenguinCountdown from "@/components/PenguinCountdown";
-import InnovativeFeatures from "@/components/InnovativeFeatures";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import ProductsGrid from "@/components/ProductsGrid";
+import PenquinCountdown from "@/components/PenquinCountdown";
+import InnovativeFeatures from "@/components/InnovativeFeatures";
 import ParallaxSection from "@/components/ParallaxSection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -13,7 +13,7 @@ const Index = () => {
       <Navigation />
       <main>
         <VercelHero />
-        <PenguinCountdown />
+        <PenquinCountdown />
         <InnovativeFeatures />
         <InfiniteMarquee />
         <ProductsGrid />

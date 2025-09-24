@@ -4,16 +4,26 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Terminal, Bug, Shield, Code, Users, Calendar, Play, Zap, Lightbulb, Lock, Search, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  Bug,
+  Code,
+  Play,
+  Zap,
+  Lightbulb,
+  Lock,
+  Search,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
-const Penguin = () => {
+const Penquin = () => {
   const [activeModule, setActiveModule] = useState(0);
   const [typedText, setTypedText] = useState("");
 
-  const fullText = `// Penguin Cybersecurity Learning Platform
-import { PenguinPlatform } from '@enyard/penguin';
+  const fullText = `// PENQUIN Cybersecurity Learning Platform
+import { PenquinPlatform } from '@enyard/penquin';
 
-const learningPlatform = new PenguinPlatform({
+const learningPlatform = new PenquinPlatform({
   modules: [
     'vulnerability-labs',
     'tool-showcase',
@@ -51,7 +61,8 @@ learningPlatform.startLearningSession('vulnerability-labs');
     {
       name: "Vulnerability Labs",
       icon: Bug,
-      description: "Hands-on labs to exploit and understand various software vulnerabilities.",
+      description:
+        "Hands-on labs to exploit and understand various software vulnerabilities.",
       features: [
         "OWASP Top 10 Scenarios",
         "Web Application Exploitation",
@@ -62,7 +73,8 @@ learningPlatform.startLearningSession('vulnerability-labs');
     {
       name: "Tool Showcase",
       icon: Code,
-      description: "Explore and learn to use industry-standard cybersecurity tools.",
+      description:
+        "Explore and learn to use industry-standard cybersecurity tools.",
       features: [
         "Nmap for Network Scanning",
         "Metasploit Framework",
@@ -73,7 +85,8 @@ learningPlatform.startLearningSession('vulnerability-labs');
     {
       name: "CTF Challenges",
       icon: Lock,
-      description: "Engage in Capture The Flag challenges to test and hone your skills.",
+      description:
+        "Engage in Capture The Flag challenges to test and hone your skills.",
       features: [
         "Beginner to Advanced Challenges",
         "Forensics & Reverse Engineering",
@@ -84,7 +97,8 @@ learningPlatform.startLearningSession('vulnerability-labs');
     {
       name: "Threat Intelligence",
       icon: Search,
-      description: "Stay updated with the latest threats, attack vectors, and defensive strategies.",
+      description:
+        "Stay updated with the latest threats, attack vectors, and defensive strategies.",
       features: [
         "Daily Threat Briefings",
         "Vulnerability Disclosures",
@@ -149,20 +163,31 @@ learningPlatform.startLearningSession('vulnerability-labs');
             <div className="floating-orb orb-3"></div>
           </div>
           <div className="relative z-10 container mx-auto px-4">
-            <Badge variant="secondary" className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm mb-4 animate-pulse">
+            <Badge
+              variant="secondary"
+              className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm mb-4 animate-pulse"
+            >
               Launching Soon: Oct 1, 2025
             </Badge>
             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-              Penguin: Your Cybersecurity Learning Hub
+              PENQUIN: Your Cybersecurity Learning Hub
             </h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90">
-              Empower cybersecurity enthusiasts with a single platform to master tools, explore vulnerabilities, and conquer challenges.
+              Empower cybersecurity enthusiasts with a single platform to master
+              tools, explore vulnerabilities, and conquer challenges.
             </p>
             <div className="flex justify-center space-x-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform">
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform"
+              >
                 Get Notified <Play className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform"
+              >
                 Explore Features <Lightbulb className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -178,7 +203,9 @@ learningPlatform.startLearningSession('vulnerability-labs');
                   Interactive Learning, Real-world Impact
                 </h2>
                 <p className="text-lg text-gray-300 mb-6">
-                  Penguin offers a unique, hands-on approach to cybersecurity education. Dive into interactive labs, master essential tools, and tackle real-world scenarios to build practical skills.
+                  PENQUIN offers a unique, hands-on approach to cybersecurity
+                  education. Dive into interactive labs, master essential tools,
+                  and tackle real-world scenarios to build practical skills.
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center text-gray-200">
@@ -191,10 +218,15 @@ learningPlatform.startLearningSession('vulnerability-labs');
                   </li>
                   <li className="flex items-center text-gray-200">
                     <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    <span>AI-powered guidance and personalized learning paths</span>
+                    <span>
+                      AI-powered guidance and personalized learning paths
+                    </span>
                   </li>
                 </ul>
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform">
+                <Button
+                  size="lg"
+                  className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform"
+                >
                   See How It Works <Zap className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -223,7 +255,8 @@ learningPlatform.startLearningSession('vulnerability-labs');
               Core Learning Modules
             </h2>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12">
-              Penguin is structured around key cybersecurity domains, offering deep dives into each area.
+              PENQUIN is structured around key cybersecurity domains, offering
+              deep dives into each area.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -239,7 +272,9 @@ learningPlatform.startLearningSession('vulnerability-labs');
                     <div className="p-4 rounded-full bg-blue-100 text-blue-600 shadow-md mb-4">
                       <module.icon className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-xl font-bold text-gray-900 mb-2">{module.name}</CardTitle>
+                    <CardTitle className="text-xl font-bold text-gray-900 mb-2">
+                      {module.name}
+                    </CardTitle>
                     <p className="text-gray-600 text-center text-sm">
                       {module.description}
                     </p>
@@ -247,7 +282,10 @@ learningPlatform.startLearningSession('vulnerability-labs');
                   <CardContent className="p-6 pt-0">
                     <ul className="space-y-2 text-left">
                       {module.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-gray-700">
+                        <li
+                          key={featureIndex}
+                          className="flex items-center text-gray-700"
+                        >
                           <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                           <span className="text-sm">{feature}</span>
                         </li>
@@ -270,17 +308,24 @@ learningPlatform.startLearningSession('vulnerability-labs');
                     Deep Dive into {modules[activeModule].name}
                   </h3>
                   <p className="text-lg text-gray-700 mb-6">
-                    {modules[activeModule].description} Explore the sub-modules and advanced topics within this domain.
+                    {modules[activeModule].description} Explore the sub-modules
+                    and advanced topics within this domain.
                   </p>
                   <ul className="space-y-4 mb-8">
                     {modules[activeModule].features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-gray-800">
+                      <li
+                        key={index}
+                        className="flex items-center text-gray-800"
+                      >
                         <CheckCircle className="w-5 h-5 text-blue-500 mr-3 flex-shrink-0" />
                         <span className="text-base font-medium">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform">
+                  <Button
+                    size="lg"
+                    className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 shadow-lg transform hover:scale-105 transition-transform"
+                  >
                     <span className="flex items-center">
                       Start Learning {modules[activeModule].name}
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -307,7 +352,8 @@ learningPlatform.startLearningSession('vulnerability-labs');
               Flexible Plans for Every Enthusiast
             </h2>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-              Choose the plan that best fits your learning journey and cybersecurity aspirations.
+              Choose the plan that best fits your learning journey and
+              cybersecurity aspirations.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -319,19 +365,32 @@ learningPlatform.startLearningSession('vulnerability-labs');
                   `}
                 >
                   <CardHeader className="p-8 pb-4">
-                    <CardTitle className="text-3xl font-bold mb-2">{tier.name}</CardTitle>
-                    <p className="text-gray-400">{tier.name === "Explorer" ? "Perfect for beginners" : tier.name === "Pro Hacker" ? "For serious learners" : "Master cybersecurity"}</p>
+                    <CardTitle className="text-3xl font-bold mb-2">
+                      {tier.name}
+                    </CardTitle>
+                    <p className="text-gray-400">
+                      {tier.name === "Explorer"
+                        ? "Perfect for beginners"
+                        : tier.name === "Pro Hacker"
+                          ? "For serious learners"
+                          : "Master cybersecurity"}
+                    </p>
                     <div className="my-6">
                       <span className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                         {tier.price}
                       </span>
-                      <span className="text-xl text-gray-400">{tier.frequency}</span>
+                      <span className="text-xl text-gray-400">
+                        {tier.frequency}
+                      </span>
                     </div>
                   </CardHeader>
                   <CardContent className="p-8 pt-0">
                     <ul className="space-y-3 mb-8 text-left">
                       {tier.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-gray-300">
+                        <li
+                          key={featureIndex}
+                          className="flex items-center text-gray-300"
+                        >
                           <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
@@ -355,4 +414,4 @@ learningPlatform.startLearningSession('vulnerability-labs');
   );
 };
 
-export default Penguin; 
+export default Penquin;

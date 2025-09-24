@@ -1,10 +1,33 @@
 import { useEffect, useRef, useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Building2, Truck, Shield, Heart, ArrowRight, Star, Zap, Users, TrendingUp, Target, CheckCircle, Terminal } from "lucide-react";
+import {
+  Clock,
+  Building2,
+  Truck,
+  Shield,
+  Heart,
+  ArrowRight,
+  Star,
+  Zap,
+  Users,
+  TrendingUp,
+  Target,
+  CheckCircle,
+  Terminal,
+} from "lucide-react";
+import BusinessForm from "./BusinessForm";
 
 const ProductsGrid = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -12,15 +35,17 @@ const ProductsGrid = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-index') || '0');
-            setVisibleItems(prev => new Set([...prev, index]));
+            const index = parseInt(
+              entry.target.getAttribute("data-index") || "0",
+            );
+            setVisibleItems((prev) => new Set([...prev, index]));
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    const elements = document.querySelectorAll('[data-index]');
+    const elements = document.querySelectorAll("[data-index]");
     elements.forEach((el) => observerRef.current?.observe(el));
 
     return () => observerRef.current?.disconnect();
@@ -29,69 +54,105 @@ const ProductsGrid = () => {
   const products = [
     {
       name: "TimeX",
-      description: "Revolutionary attendance management that thinks like you do. Automatically detect patterns, predict trends, and eliminate time theft with intelligent biometric technology that adapts to your workplace.",
+      description:
+        "Revolutionary attendance management that thinks like you do. Automatically detect patterns, predict trends, and eliminate time theft with intelligent biometric technology that adapts to your workplace.",
       icon: Clock,
-      features: ["Smart Biometric Recognition", "Predictive Analytics", "Automated Scheduling", "Fraud Prevention"],
+      features: [
+        "Smart Biometric Recognition",
+        "Predictive Analytics",
+        "Automated Scheduling",
+        "Fraud Prevention",
+      ],
       stats: { users: "50k+", accuracy: "99.9%", saved: "40%" },
       color: "from-blue-500 to-cyan-500",
       accentColor: "blue-500",
       gradient: "from-blue-500/20 via-cyan-500/20 to-blue-600/20",
-      badge: "AI-Powered"
+      badge: "AI-Powered",
     },
     {
       name: "CoreX",
-      description: "The ERP that grows with your business. Watch as it learns your processes, anticipates your needs, and automates complex workflows. From startup to enterprise, it's the only system you'll ever need.",
+      description:
+        "The ERP that grows with your business. Watch as it learns your processes, anticipates your needs, and automates complex workflows. From startup to enterprise, it's the only system you'll ever need.",
       icon: Building2,
-      features: ["Intelligent Process Automation", "Real-time Business Insights", "Smart Workflow Management", "Predictive Planning"],
+      features: [
+        "Intelligent Process Automation",
+        "Real-time Business Insights",
+        "Smart Workflow Management",
+        "Predictive Planning",
+      ],
       stats: { users: "100k+", efficiency: "75%", growth: "200%" },
       color: "from-green-500 to-emerald-500",
       accentColor: "green-500",
       gradient: "from-green-500/20 via-emerald-500/20 to-green-600/20",
-      badge: "Enterprise Ready"
+      badge: "Enterprise Ready",
     },
     {
       name: "FleetX",
-      description: "Fleet management that thinks ahead. Optimize routes in real-time, predict maintenance needs, and slash costs with intelligent systems that learn from every journey and improve continuously.",
+      description:
+        "Fleet management that thinks ahead. Optimize routes in real-time, predict maintenance needs, and slash costs with intelligent systems that learn from every journey and improve continuously.",
       icon: Truck,
-      features: ["Real-time Route Optimization", "Predictive Maintenance", "Cost Intelligence", "Live Fleet Tracking"],
+      features: [
+        "Real-time Route Optimization",
+        "Predictive Maintenance",
+        "Cost Intelligence",
+        "Live Fleet Tracking",
+      ],
       stats: { vehicles: "25k+", savings: "30%", uptime: "98%" },
       color: "from-orange-500 to-amber-500",
       accentColor: "orange-500",
       gradient: "from-orange-500/20 via-amber-500/20 to-orange-600/20",
-      badge: "Smart Fleet"
+      badge: "Smart Fleet",
     },
     {
       name: "XSafety",
-      description: "Advanced safety management system for airlines with AI-enabled features. Monitor incidents, hazards, conduct comprehensive auditing, and implement corrective actions with intelligent systems that ensure aviation safety compliance.",
+      description:
+        "Advanced safety management system for airlines with AI-enabled features. Monitor incidents, hazards, conduct comprehensive auditing, and implement corrective actions with intelligent systems that ensure aviation safety compliance.",
       icon: Shield,
-      features: ["Incident Monitoring & Analysis", "Hazard Identification", "AI-Powered Auditing", "Corrective Action Management"],
+      features: [
+        "Incident Monitoring & Analysis",
+        "Hazard Identification",
+        "AI-Powered Auditing",
+        "Corrective Action Management",
+      ],
       stats: { airlines: "50+", incidents: "0", compliance: "100%" },
       color: "from-purple-500 to-violet-500",
       accentColor: "purple-500",
       gradient: "from-purple-500/20 via-violet-500/20 to-purple-600/20",
-      badge: "Aviation Safety"
+      badge: "Aviation Safety",
     },
     {
       name: "MedzorX",
-      description: "Healthcare management that saves lives. From intelligent diagnostics to automated patient care, our platform helps medical professionals focus on what matters most—delivering exceptional care.",
+      description:
+        "Healthcare management that saves lives. From intelligent diagnostics to automated patient care, our platform helps medical professionals focus on what matters most—delivering exceptional care.",
       icon: Heart,
-      features: ["Intelligent Medical Diagnostics", "Patient Care Analytics", "Smart Appointment Management", "Compliance Automation"],
+      features: [
+        "Intelligent Medical Diagnostics",
+        "Patient Care Analytics",
+        "Smart Appointment Management",
+        "Compliance Automation",
+      ],
       stats: { hospitals: "200+", patients: "1M+", efficiency: "60%" },
       color: "from-red-500 to-rose-500",
       accentColor: "red-500",
       gradient: "from-red-500/20 via-rose-500/20 to-red-600/20",
-      badge: "Life Saving"
+      badge: "Life Saving",
     },
     {
-      name: "Penguin",
-      description: "A comprehensive platform for cybersecurity enthusiasts to learn about various tools and multi-vulnerability exploitation in a single, interactive environment. Launching soon!",
+      name: "PENQUIN",
+      description:
+        "A comprehensive platform for cybersecurity enthusiasts to learn about various tools and multi-vulnerability exploitation in a single, interactive environment. Launching soon!",
       icon: Terminal,
-      features: ["Interactive Labs", "Vulnerability Databases", "Tool Integrations", "Guided Learning Paths"],
+      features: [
+        "Interactive Labs",
+        "Vulnerability Databases",
+        "Tool Integrations",
+        "Guided Learning Paths",
+      ],
       stats: { launch: "Oct 1, 2025", tools: "100+", labs: "50+" },
       color: "from-gray-500 to-slate-600",
       accentColor: "gray-500",
       gradient: "from-gray-500/20 via-slate-500/20 to-gray-600/20",
-      badge: "Launching Soon"
+      badge: "Launching Soon",
     },
   ];
 
@@ -101,36 +162,42 @@ const ProductsGrid = () => {
       <div className="absolute inset-0">
         {/* Gradient Mesh Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
-        
+
         {/* Floating Geometric Shapes */}
         <div className="absolute top-20 left-20 w-32 h-32 opacity-[0.08] animate-pulse">
           <div className="w-full h-full bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full blur-xl" />
         </div>
-        <div className="absolute top-40 right-32 w-24 h-24 opacity-[0.06] animate-pulse" style={{ animationDelay: '2s' }}>
+        <div
+          className="absolute top-40 right-32 w-24 h-24 opacity-[0.06] animate-pulse"
+          style={{ animationDelay: "2s" }}
+        >
           <div className="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-xl" />
         </div>
-        <div className="absolute bottom-40 left-32 w-28 h-28 opacity-[0.05] animate-pulse" style={{ animationDelay: '4s' }}>
+        <div
+          className="absolute bottom-40 left-32 w-28 h-28 opacity-[0.05] animate-pulse"
+          style={{ animationDelay: "4s" }}
+        >
           <div className="w-full h-full bg-gradient-to-br from-green-400 to-emerald-400 rounded-full blur-xl" />
         </div>
-        
+
         {/* Subtle Grid Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `
               linear-gradient(90deg, #000 1px, transparent 1px),
               linear-gradient(0deg, #000 1px, transparent 1px)
             `,
-            backgroundSize: '60px 60px'
+            backgroundSize: "60px 60px",
           }}
         />
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Enhanced Section Header */}
         <div className="text-center mb-20">
-          <div 
-            className={`scroll-reveal ${visibleItems.has(-1) ? 'revealed' : ''}`}
+          <div
+            className={`scroll-reveal ${visibleItems.has(-1) ? "revealed" : ""}`}
             data-index="-1"
           >
             {/* Animated Badge */}
@@ -138,14 +205,15 @@ const ProductsGrid = () => {
               <Star className="w-5 h-5 text-blue-600" />
               <span className="font-semibold">Innovation Hub</span>
             </div>
-            
+
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-black">
               Solutions That
               <span className="block text-black"> Redefine Possibility</span>
             </h2>
             <p className="text-xl text-black max-w-4xl mx-auto leading-relaxed">
-              Six revolutionary platforms that don't just solve problems—they anticipate them. 
-              Each solution learns, adapts, and evolves to become more valuable every day.
+              Six revolutionary platforms that don't just solve problems—they
+              anticipate them. Each solution learns, adapts, and evolves to
+              become more valuable every day.
             </p>
           </div>
         </div>
@@ -155,23 +223,29 @@ const ProductsGrid = () => {
           {products.map((product, index) => {
             const IconComponent = product.icon;
             return (
-              <Card 
-                key={product.name} 
+              <Card
+                key={product.name}
                 className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 ${
-                  visibleItems.has(index) ? 'scroll-reveal revealed' : 'scroll-reveal'
+                  visibleItems.has(index)
+                    ? "scroll-reveal revealed"
+                    : "scroll-reveal"
                 }`}
                 data-index={index}
-                style={{ 
+                style={{
                   background: `linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%)`,
-                  backdropFilter: 'blur(20px)'
+                  backdropFilter: "blur(20px)",
                 }}
               >
                 {/* Background Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                />
+
                 {/* Badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <div className={`px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${product.color} shadow-lg`}>
+                  <div
+                    className={`px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${product.color} shadow-lg`}
+                  >
                     {product.badge}
                   </div>
                 </div>
@@ -179,15 +253,17 @@ const ProductsGrid = () => {
                 {/* Card Content */}
                 <CardHeader className="relative z-10 pb-4">
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`p-4 rounded-2xl bg-gradient-to-br ${product.color} bg-opacity-10 group-hover:bg-opacity-20 transition-all duration-300`}>
+                    <div
+                      className={`p-4 rounded-2xl bg-gradient-to-br ${product.color} bg-opacity-10 group-hover:bg-opacity-20 transition-all duration-300`}
+                    >
                       <IconComponent className="w-8 h-8 text-black group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
-                  
+
                   <CardTitle className="text-2xl font-bold mb-3 text-black group-hover:text-black transition-colors">
                     {product.name}
                   </CardTitle>
-                  
+
                   <CardDescription className="text-black leading-relaxed text-base">
                     {product.description}
                   </CardDescription>
@@ -196,11 +272,18 @@ const ProductsGrid = () => {
                 <CardContent className="relative z-10 space-y-6">
                   {/* Features */}
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-black text-sm uppercase tracking-wide">Key Features</h4>
+                    <h4 className="font-semibold text-black text-sm uppercase tracking-wide">
+                      Key Features
+                    </h4>
                     <div className="grid grid-cols-1 gap-2">
                       {product.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-3">
-                          <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${product.color} flex-shrink-0`} />
+                        <div
+                          key={featureIndex}
+                          className="flex items-center space-x-3"
+                        >
+                          <div
+                            className={`w-2 h-2 rounded-full bg-gradient-to-r ${product.color} flex-shrink-0`}
+                          />
                           <span className="text-sm text-black">{feature}</span>
                         </div>
                       ))}
@@ -210,21 +293,23 @@ const ProductsGrid = () => {
                   {/* Statistics */}
                   {product.stats && (
                     <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
-                      {Object.entries(product.stats).map(([key, value], statIndex) => (
-                        <div key={statIndex} className="text-center">
-                          <div className="text-lg font-bold text-black mb-1">
-                            {value}
+                      {Object.entries(product.stats).map(
+                        ([key, value], statIndex) => (
+                          <div key={statIndex} className="text-center">
+                            <div className="text-lg font-bold text-black mb-1">
+                              {value}
+                            </div>
+                            <div className="text-xs text-black uppercase tracking-wide">
+                              {key}
+                            </div>
                           </div>
-                          <div className="text-xs text-black uppercase tracking-wide">
-                            {key}
-                          </div>
-                        </div>
-                      ))}
+                        ),
+                      )}
                     </div>
                   )}
 
                   {/* Action Button */}
-                  <Button 
+                  <Button
                     className="w-full bg-black hover:bg-gray-800 text-white hover:shadow-lg group/btn transition-all duration-300"
                     size="lg"
                   >
@@ -236,22 +321,24 @@ const ProductsGrid = () => {
                 </CardContent>
 
                 {/* Hover Effects */}
-                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`} />
+                <div
+                  className={`absolute inset-0 rounded-xl bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
+                />
               </Card>
             );
           })}
         </div>
 
         {/* Enhanced Bottom CTA */}
-        <div 
-          className={`text-center ${visibleItems.has(99) ? 'scroll-reveal revealed' : 'scroll-reveal'}`}
+        <div
+          className={`text-center ${visibleItems.has(99) ? "scroll-reveal revealed" : "scroll-reveal"}`}
           data-index="99"
         >
           <div className="relative overflow-hidden rounded-3xl p-12 max-w-4xl mx-auto">
             {/* Background with Glass Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-3xl" />
             <div className="absolute inset-0 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/20" />
-            
+
             {/* Content */}
             <div className="relative z-10">
               <div className="flex items-center justify-center mb-6">
@@ -259,23 +346,32 @@ const ProductsGrid = () => {
                   <TrendingUp className="h-8 w-8 text-white" />
                 </div>
               </div>
-              
+
               <h3 className="text-3xl md:text-4xl font-bold mb-4 text-black">
                 Ready to Redefine Your Future?
               </h3>
-              
+
               <p className="text-black mb-8 text-lg max-w-2xl mx-auto">
-                Join forward-thinking ventures already transforming their operations with our intelligent ecosystem.
-                Experience the power of AI-driven innovation.
+                Join forward-thinking ventures already transforming their
+                operations with our intelligent ecosystem. Experience the power
+                of AI-driven innovation.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="group px-8 py-4 bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button
+                  size="lg"
+                  className="group px-8 py-4 bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={() => setIsDialogOpen(true)}
+                >
                   <Zap className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
                   Start Free Trial
                 </Button>
-                
-                <Button variant="outline" size="lg" className="px-8 py-4 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300">
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-4 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300"
+                >
                   <Users className="mr-2 h-5 w-5" />
                   Book Live Demo
                 </Button>
@@ -283,6 +379,7 @@ const ProductsGrid = () => {
             </div>
           </div>
         </div>
+        <BusinessForm isOpen={isDialogOpen} onOpenChange={setIsDialogOpen} />
       </div>
     </section>
   );
