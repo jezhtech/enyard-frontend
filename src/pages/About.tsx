@@ -230,22 +230,22 @@ const About = () => {
     },
     {
       name: "JezX",
-      category: "Social Media Platform",
-      description: "Next-generation social networking",
+      category: "Iot and Hosting Provider",
+      description: "Connected device management",
       logo: "💬",
       color: "from-blue-500 to-cyan-600",
     },
     {
       name: "NexorX",
-      category: "IoT Solutions",
-      description: "Connected device management",
+      category: "EduTech Platform",
+      description: "Educational technology solutions",
       logo: "🔗",
       color: "from-green-500 to-emerald-600",
     },
     {
       name: "Azra Martin",
-      category: "Fashion & Lifestyle",
-      description: "Premium lifestyle brand",
+      category: "Event Management Partner",
+      description: "Event management and planning",
       logo: "👗",
       color: "from-red-500 to-pink-600",
     },
@@ -258,8 +258,8 @@ const About = () => {
     },
     {
       name: "Ricspace",
-      category: "EduTech Platform",
-      description: "Educational technology solutions",
+      category: "Social Media Platform",
+      description: "Social media marketing and engagement",
       logo: "📚",
       color: "from-teal-500 to-blue-600",
     },
@@ -277,17 +277,12 @@ const About = () => {
       description: "Executive leadership and business development",
     },
     {
-      name: "Pooja",
-      position: "Advisor",
-      description: "Strategic advisory and business consulting",
-    },
-    {
-      name: "Vino Stalin",
-      position: "Advisor",
-      description: "Business strategy and operational excellence",
-    },
-    {
       name: "Jibisha",
+      position: "Operational Manager",
+      description: "Day-to-day operations and team management",
+    },
+    {
+      name: "Arshitha",
       position: "Operational Manager",
       description: "Day-to-day operations and team management",
     },
@@ -904,7 +899,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <Card
                 key={index}
