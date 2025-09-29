@@ -87,8 +87,8 @@ const Navigation = () => {
           description: "Advanced hospital management system",
         },
         {
-          label: "PENQUIN",
-          href: "/products/penquin",
+          label: "PenquinX",
+          href: "/products/penquinx",
           icon: Terminal,
           description: "Cybersecurity learning platform for enthusiasts",
         },
@@ -171,34 +171,37 @@ const Navigation = () => {
               </button>
 
               {activeDropdown === "company" && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl animate-fade-in z-50">
-                  <div className="p-6">
-                    <div className="space-y-4">
-                      {companyItems.map((item) => {
-                        const IconComponent = item.icon;
-                        return (
-                          <Link
-                            key={item.href}
-                            to={item.href}
-                            className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group"
-                          >
-                            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <IconComponent className="w-5 h-5 text-primary" />
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-sm">
-                                {item.label}
-                              </h3>
-                              <p className="text-xs text-muted-foreground">
-                                {item.description}
-                              </p>
-                            </div>
-                          </Link>
-                        );
-                      })}
+                <>
+                  <div className="absolute top-full h-2 w-full" />
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl animate-fade-in z-50">
+                    <div className="p-6">
+                      <div className="space-y-4">
+                        {companyItems.map((item) => {
+                          const IconComponent = item.icon;
+                          return (
+                            <Link
+                              key={item.href}
+                              to={item.href}
+                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group"
+                            >
+                              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <IconComponent className="w-5 h-5 text-primary" />
+                              </div>
+                              <div>
+                                <h3 className="font-semibold text-sm">
+                                  {item.label}
+                                </h3>
+                                <p className="text-xs text-muted-foreground">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
 
@@ -218,43 +221,46 @@ const Navigation = () => {
               </button>
 
               {activeDropdown === "products" && (
-                <div className="absolute top-full left-0 mt-2 w-[600px] bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl animate-fade-in z-50">
-                  <div className="p-8">
-                    <div className="grid grid-cols-2 gap-8">
-                      {productCategories.map((category) => (
-                        <div key={category.title}>
-                          <h3 className="font-semibold text-sm text-muted-foreground mb-4 uppercase tracking-wide">
-                            {category.title}
-                          </h3>
-                          <div className="space-y-3">
-                            {category.items.map((item) => {
-                              const IconComponent = item.icon;
-                              return (
-                                <Link
-                                  key={item.href}
-                                  to={item.href}
-                                  className="flex items-start space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group"
-                                >
-                                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform mt-1">
-                                    <IconComponent className="w-5 h-5 text-primary" />
-                                  </div>
-                                  <div className="flex-1">
-                                    <h4 className="font-semibold text-sm mb-1">
-                                      {item.label}
-                                    </h4>
-                                    <p className="text-xs text-muted-foreground leading-relaxed">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </Link>
-                              );
-                            })}
+                <>
+                  <div className="absolute top-full h-2 w-full" />
+                  <div className="absolute top-full left-0 mt-2 w-[600px] bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl animate-fade-in z-50">
+                    <div className="p-8">
+                      <div className="grid grid-cols-2 gap-8">
+                        {productCategories.map((category) => (
+                          <div key={category.title}>
+                            <h3 className="font-semibold text-sm text-muted-foreground mb-4 uppercase tracking-wide">
+                              {category.title}
+                            </h3>
+                            <div className="space-y-3">
+                              {category.items.map((item) => {
+                                const IconComponent = item.icon;
+                                return (
+                                  <Link
+                                    key={item.href}
+                                    to={item.href}
+                                    className="flex items-start space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group"
+                                  >
+                                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform mt-1">
+                                      <IconComponent className="w-5 h-5 text-primary" />
+                                    </div>
+                                    <div className="flex-1">
+                                      <h4 className="font-semibold text-sm mb-1">
+                                        {item.label}
+                                      </h4>
+                                      <p className="text-xs text-muted-foreground leading-relaxed">
+                                        {item.description}
+                                      </p>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
 
@@ -274,34 +280,37 @@ const Navigation = () => {
               </button>
 
               {activeDropdown === "resources" && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl animate-fade-in z-50">
-                  <div className="p-6">
-                    <div className="space-y-4">
-                      {resourceItems.map((item) => {
-                        const IconComponent = item.icon;
-                        return (
-                          <Link
-                            key={item.href}
-                            to={item.href}
-                            className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group"
-                          >
-                            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <IconComponent className="w-5 h-5 text-primary" />
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-sm">
-                                {item.label}
-                              </h3>
-                              <p className="text-xs text-muted-foreground">
-                                {item.description}
-                              </p>
-                            </div>
-                          </Link>
-                        );
-                      })}
+                <>
+                  <div className="absolute top-full h-2 w-full" />
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl animate-fade-in z-50">
+                    <div className="p-6">
+                      <div className="space-y-4">
+                        {resourceItems.map((item) => {
+                          const IconComponent = item.icon;
+                          return (
+                            <Link
+                              key={item.href}
+                              to={item.href}
+                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group"
+                            >
+                              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <IconComponent className="w-5 h-5 text-primary" />
+                              </div>
+                              <div>
+                                <h3 className="font-semibold text-sm">
+                                  {item.label}
+                                </h3>
+                                <p className="text-xs text-muted-foreground">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
 

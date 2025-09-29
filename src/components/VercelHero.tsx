@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, ChevronDown } from "lucide-react";
 import BusinessForm from "./BusinessForm";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 
 const VercelHero = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -199,16 +200,25 @@ const VercelHero = () => {
               </span>
             </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/90 backdrop-blur-sm border-gray-200 hover:bg-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 group shadow-sm"
-            >
-              <span className="flex items-center text-gray-700">
-                <Play className="mr-2 h-5 w-5" />
-                Witness the Revolution
-              </span>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-white/90 backdrop-blur-sm border-gray-200 hover:bg-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 group shadow-sm"
+                >
+                  <span className="flex items-center text-gray-700">
+                    <Play className="mr-2 h-5 w-5" />
+                    Witness the Revolution
+                  </span>
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="p-0 overflow-hidden max-w-2xl">
+                <video controls className="w-full aspect-video">
+                  <source src="/video.mp4" type="video/mp4" />
+                </video>
+              </DialogContent>
+            </Dialog>
           </div>
 
           {/* Scroll Indicator */}

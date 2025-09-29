@@ -18,15 +18,15 @@ import {
   Zap,
   Users,
   TrendingUp,
-  Target,
-  CheckCircle,
   Terminal,
 } from "lucide-react";
 import BusinessForm from "./BusinessForm";
+import { useNavigate } from "react-router-dom";
 
 const ProductsGrid = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const navigate = useNavigate();
 
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -68,6 +68,7 @@ const ProductsGrid = () => {
       accentColor: "blue-500",
       gradient: "from-blue-500/20 via-cyan-500/20 to-blue-600/20",
       badge: "AI-Powered",
+      href: "/products/timex",
     },
     {
       name: "CoreX",
@@ -85,6 +86,7 @@ const ProductsGrid = () => {
       accentColor: "green-500",
       gradient: "from-green-500/20 via-emerald-500/20 to-green-600/20",
       badge: "Enterprise Ready",
+      href: "/products/corex",
     },
     {
       name: "FleetX",
@@ -102,6 +104,7 @@ const ProductsGrid = () => {
       accentColor: "orange-500",
       gradient: "from-orange-500/20 via-amber-500/20 to-orange-600/20",
       badge: "Smart Fleet",
+      href: "/products/fleetx",
     },
     {
       name: "XSafety",
@@ -119,6 +122,7 @@ const ProductsGrid = () => {
       accentColor: "purple-500",
       gradient: "from-purple-500/20 via-violet-500/20 to-purple-600/20",
       badge: "Aviation Safety",
+      href: "/products/xsafety",
     },
     {
       name: "MedzorX",
@@ -136,6 +140,7 @@ const ProductsGrid = () => {
       accentColor: "red-500",
       gradient: "from-red-500/20 via-rose-500/20 to-red-600/20",
       badge: "Life Saving",
+      href: "/products/medzorx",
     },
     {
       name: "PENQUIN",
@@ -153,6 +158,7 @@ const ProductsGrid = () => {
       accentColor: "gray-500",
       gradient: "from-gray-500/20 via-slate-500/20 to-gray-600/20",
       badge: "Launching Soon",
+      href: "/products/penquinx",
     },
   ];
 
@@ -312,6 +318,7 @@ const ProductsGrid = () => {
                   <Button
                     className="w-full bg-black hover:bg-gray-800 text-white hover:shadow-lg group/btn transition-all duration-300"
                     size="lg"
+                    onClick={() => navigate(product.href)}
                   >
                     <span className="flex items-center">
                       Explore {product.name}
