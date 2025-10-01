@@ -451,7 +451,7 @@ const About = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 py-4 text-center">
           {/* Animated Badge */}
           <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-gray-200/50 shadow-sm">
             <span className="text-sm font-medium text-gray-700">
@@ -470,7 +470,7 @@ const About = () => {
           </div>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
             ENYARD is a premier global holding company operating across 5+
             countries with 10+ subsidiaries spanning IT, transportation,
             tourism, IoT, EduTech, and social media platforms.
@@ -497,6 +497,12 @@ const About = () => {
               variant="outline"
               size="lg"
               className="bg-white/90 backdrop-blur-sm border-gray-200 hover:bg-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 group shadow-sm"
+              onClick={() => {
+                const section = document.getElementById("leaders-section");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             >
               <span className="flex items-center text-gray-700">
                 Meet Our Leadership
@@ -524,7 +530,7 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-24 relative">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <Card key={index} className="p-8 text-center magnetic-card glass">
                 <stat.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
@@ -539,12 +545,12 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 grid-lines opacity-20" />
+      <section className="md:py-24 relative overflow-hidden">
+        <div className="absolute grid-line opacity-20" />
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-5xl font-bold mb-8 text-black">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-center">
+            <div className="lg:basis-1/2">
+              <h2 className="text-5xl font-bold mb-8 text-black text-wrap">
                 Our Mission & Vision
               </h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -579,8 +585,8 @@ const About = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="glass-strong rounded-3xl p-6 magnetic-card overflow-hidden">
+            <div className="relative lg:basis-1/2">
+              <div className="glass-strong rounded-3xl p-3 md:p-6 magnetic-card overflow-hidden">
                 {/* Innovative Code Editor Display */}
                 <div className="bg-gray-900 rounded-2xl">
                   {/* Editor Header */}
@@ -791,11 +797,11 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center">
             {subsidiaries.map((company, index) => (
               <Card
                 key={index}
-                className="p-8 magnetic-card glass relative overflow-hidden group hover:shadow-xl hover:scale-105 transition-all duration-500"
+                className="p-8 m-2 min-w-[400px] magnetic-card glass relative overflow-hidden group hover:shadow-xl hover:scale-105 transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10 text-center">
@@ -885,7 +891,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 relative">
+      <section id="leaders-section" className="py-24 relative">
         <div className="absolute inset-0 mesh-background opacity-10" />
         <div className="container relative z-10">
           <div className="text-center mb-16">

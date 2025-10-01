@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Database, Network, Bot } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ParallaxSection = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollY, setScrollY] = useState(0);
 
@@ -15,24 +17,40 @@ const ParallaxSection = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const techStack = [
-    { icon: Cpu, label: "Advanced Intelligence", description: "Cutting-edge algorithms that understand your business" },
-    { icon: Database, label: "Real-time Analytics", description: "Instant insights that drive strategic decisions" },
-    { icon: Network, label: "Global Enterprise Network", description: "Seamless connectivity across your entire organization" },
-    { icon: Bot, label: "Autonomous Systems", description: "Self-optimizing platforms that evolve with your needs" },
+    {
+      icon: Cpu,
+      label: "Advanced Intelligence",
+      description: "Cutting-edge algorithms that understand your business",
+    },
+    {
+      icon: Database,
+      label: "Real-time Analytics",
+      description: "Instant insights that drive strategic decisions",
+    },
+    {
+      icon: Network,
+      label: "Global Enterprise Network",
+      description: "Seamless connectivity across your entire organization",
+    },
+    {
+      icon: Bot,
+      label: "Autonomous Systems",
+      description: "Self-optimizing platforms that evolve with your needs",
+    },
   ];
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
       {/* Parallax Background Elements */}
-      <div 
+      <div
         className="absolute inset-0 opacity-20"
         style={{ transform: `translateY(${scrollY}px)` }}
       >
@@ -42,7 +60,7 @@ const ParallaxSection = () => {
       </div>
 
       {/* Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 grid-lines opacity-20"
         style={{ transform: `translateY(${scrollY * 0.3}px)` }}
       />
@@ -57,8 +75,10 @@ const ParallaxSection = () => {
                 <span className="text-gradient-animate block">Excellence</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Our platform combines cutting-edge technology with enterprise-grade reliability to create 
-                experiences that exceed expectations. The future of business is not just intelligent—it's extraordinary.
+                Our platform combines cutting-edge technology with
+                enterprise-grade reliability to create experiences that exceed
+                expectations. The future of business is not just
+                intelligent—it's extraordinary.
               </p>
             </div>
 
@@ -66,7 +86,7 @@ const ParallaxSection = () => {
               {techStack.map((tech, index) => {
                 const IconComponent = tech.icon;
                 return (
-                  <div 
+                  <div
                     key={tech.label}
                     className="flex items-start space-x-4 p-4 glass rounded-xl hover:scale-105 transition-all duration-300 group"
                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -75,15 +95,23 @@ const ParallaxSection = () => {
                       <IconComponent className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-1">{tech.label}</h3>
-                      <p className="text-muted-foreground">{tech.description}</p>
+                      <h3 className="text-lg font-semibold mb-1">
+                        {tech.label}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {tech.description}
+                      </p>
                     </div>
                   </div>
                 );
               })}
             </div>
 
-            <Button size="lg" className="group">
+            <Button
+              onClick={() => navigate("/about")}
+              size="lg"
+              className="group"
+            >
               Discover Excellence
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
             </Button>
@@ -91,7 +119,7 @@ const ParallaxSection = () => {
 
           {/* Visual Element */}
           <div className="relative">
-            <div 
+            <div
               className="glass-strong rounded-3xl p-8 border"
               style={{ transform: `translateY(${scrollY * -0.1}px)` }}
             >
@@ -114,17 +142,19 @@ const ParallaxSection = () => {
                   </div>
                   <div className="ml-4 text-green-500">'your-business'</div>
                   <div>)</div>
-                  <div className="text-green-500">// ✓ Success: Future unlocked</div>
+                  <div className="text-green-500">
+                    // ✓ Success: Future unlocked
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Floating Elements */}
-            <div 
+            <div
               className="absolute -top-8 -right-8 w-16 h-16 bg-primary/20 rounded-full blur-xl"
               style={{ transform: `translateY(${scrollY * 0.2}px)` }}
             />
-            <div 
+            <div
               className="absolute -bottom-8 -left-8 w-24 h-24 bg-accent/20 rounded-full blur-xl"
               style={{ transform: `translateY(${scrollY * -0.15}px)` }}
             />
