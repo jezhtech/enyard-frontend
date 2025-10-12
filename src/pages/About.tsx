@@ -14,9 +14,12 @@ import {
 	jinuMartin,
 	shabin,
 } from "../assets";
+import EnhancedCTA from "@/components/EnhancedCTA";
+import BusinessForm from "@/components/BusinessForm";
 
 const About = () => {
 	const [scrollY, setScrollY] = useState(0);
+	const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => setScrollY(window.scrollY);
@@ -941,6 +944,14 @@ const About = () => {
 					</div>
 				</div>
 			</section>
+			{/* Enhanced Bottom CTA */}
+			<EnhancedCTA
+				visible={true}
+				onStartTrial={() => setIsDialogOpen(true)}
+				onBookDemo={() => console.log("Book Demo Clicked")}
+			/>
+
+			<BusinessForm isOpen={isDialogOpen} onOpenChange={setIsDialogOpen} />
 
 			<Footer />
 		</div>
