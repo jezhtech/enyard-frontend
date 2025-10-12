@@ -822,9 +822,14 @@ const About = () => {
 								className="p-8 m-2 min-w-[400px] magnetic-card glass relative overflow-hidden group hover:shadow-xl hover:scale-105 transition-all duration-500">
 								<div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 								<div className="relative z-10 text-center">
-									<div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-2xl bg-white border border-gray-200 hover:border-gray-400 transition-all duration-500 shadow-lg text-4xl">
-										<img src={company.logo} alt={company.name} />
+									<div className="flex items-center justify-center w-[100px] h-[100px] mx-auto mb-6 rounded-2xl bg-white transition-all duration-500">
+										<img
+											src={company.logo}
+											alt={company.name}
+											className="w-[100px] h-[100px] object-contain"
+										/>
 									</div>
+
 									<h3 className="text-xl font-bold mb-3 text-black">
 										{company.name}
 									</h3>
