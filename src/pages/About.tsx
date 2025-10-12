@@ -4,315 +4,329 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Users, Target, Award, Lightbulb, Rocket, Heart } from "lucide-react";
+import {
+	lagoonTech,
+	chauffer,
+	fcFleet,
+	goyaka,
+	arshitha,
+	jibisha,
+	jinuMartin,
+	shabin,
+} from "../assets";
 
 const About = () => {
-  const [scrollY, setScrollY] = useState(0);
+	const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+	useEffect(() => {
+		const handleScroll = () => setScrollY(window.scrollY);
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
-  // SEO Meta Tags
-  useEffect(() => {
-    // Update document title
-    document.title =
-      "About ENYARD - Global Holding Company | Multi-Industry Innovation Hub";
+	// SEO Meta Tags
+	useEffect(() => {
+		// Update document title
+		document.title =
+			"About ENYARD - Global Holding Company | Multi-Industry Innovation Hub";
 
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "ENYARD is a premier global holding company operating across 5+ countries with 10+ subsidiaries spanning IT, transportation, tourism, IoT, EduTech, and social media platforms. Discover our portfolio including Lagoon Technologies, Boobazhop, UAE Chauffeur, and more.",
-      );
-    }
+		// Update meta description
+		const metaDescription = document.querySelector('meta[name="description"]');
+		if (metaDescription) {
+			metaDescription.setAttribute(
+				"content",
+				"ENYARD is a premier global holding company operating across 5+ countries with 10+ subsidiaries spanning IT, transportation, tourism, IoT, EduTech, and social media platforms. Discover our portfolio including Lagoon Technologies, Boobazhop, UAE Chauffeur, and more."
+			);
+		}
 
-    // Update meta keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute(
-        "content",
-        "ENYARD, global holding company, Lagoon Technologies, Boobazhop, UAE Chauffeur, JezX, NexorX, Azra Martin, Enyard Media, Ricspace, IT companies, transportation companies, tourism companies, IoT companies, EduTech companies, social media platforms, multi-industry company, international business, Jinu Martin, Shabin, Pooja, Vino Stalin, Jibisha",
-      );
-    }
+		// Update meta keywords
+		const metaKeywords = document.querySelector('meta[name="keywords"]');
+		if (metaKeywords) {
+			metaKeywords.setAttribute(
+				"content",
+				"ENYARD, global holding company, Lagoon Technologies, Boobazhop, UAE Chauffeur, JezX, NexorX, Azra Martin, Enyard Media, Ricspace, IT companies, transportation companies, tourism companies, IoT companies, EduTech companies, social media platforms, multi-industry company, international business, Jinu Martin, Shabin, Pooja, Vino Stalin, Jibisha"
+			);
+		}
 
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute(
-        "content",
-        "About ENYARD - Global Holding Company | Multi-Industry Innovation Hub",
-      );
-    }
+		// Update Open Graph tags
+		const ogTitle = document.querySelector('meta[property="og:title"]');
+		if (ogTitle) {
+			ogTitle.setAttribute(
+				"content",
+				"About ENYARD - Global Holding Company | Multi-Industry Innovation Hub"
+			);
+		}
 
-    const ogDescription = document.querySelector(
-      'meta[property="og:description"]',
-    );
-    if (ogDescription) {
-      ogDescription.setAttribute(
-        "content",
-        "ENYARD is a premier global holding company operating across 5+ countries with 10+ subsidiaries spanning IT, transportation, tourism, IoT, EduTech, and social media platforms.",
-      );
-    }
+		const ogDescription = document.querySelector(
+			'meta[property="og:description"]'
+		);
+		if (ogDescription) {
+			ogDescription.setAttribute(
+				"content",
+				"ENYARD is a premier global holding company operating across 5+ countries with 10+ subsidiaries spanning IT, transportation, tourism, IoT, EduTech, and social media platforms."
+			);
+		}
 
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.setAttribute("content", window.location.href);
-    }
+		const ogUrl = document.querySelector('meta[property="og:url"]');
+		if (ogUrl) {
+			ogUrl.setAttribute("content", window.location.href);
+		}
 
-    // Update Twitter Card tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) {
-      twitterTitle.setAttribute(
-        "content",
-        "About ENYARD - Global Holding Company | Multi-Industry Innovation Hub",
-      );
-    }
+		// Update Twitter Card tags
+		const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+		if (twitterTitle) {
+			twitterTitle.setAttribute(
+				"content",
+				"About ENYARD - Global Holding Company | Multi-Industry Innovation Hub"
+			);
+		}
 
-    const twitterDescription = document.querySelector(
-      'meta[name="twitter:description"]',
-    );
-    if (twitterDescription) {
-      twitterDescription.setAttribute(
-        "content",
-        "ENYARD is a premier global holding company operating across 5+ countries with 10+ subsidiaries spanning IT, transportation, tourism, IoT, EduTech, and social media platforms.",
-      );
-    }
+		const twitterDescription = document.querySelector(
+			'meta[name="twitter:description"]'
+		);
+		if (twitterDescription) {
+			twitterDescription.setAttribute(
+				"content",
+				"ENYARD is a premier global holding company operating across 5+ countries with 10+ subsidiaries spanning IT, transportation, tourism, IoT, EduTech, and social media platforms."
+			);
+		}
 
-    // Add structured data for Organization
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "ENYARD",
-      description:
-        "Global holding company operating across multiple industries including IT, transportation, tourism, IoT, EduTech, and social media platforms",
-      url: "https://enyard.in",
-      logo: "https://enyard.in/logo.png",
-      sameAs: [
-        "https://www.linkedin.com/company/enyardcorp",
-        "https://www.instagram.com/enyardcorp/",
-      ],
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Karungal",
-        addressRegion: "Kanyakumari",
-        addressCountry: "India",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+91-91505-37718",
-        contactType: "customer service",
-        email: "info@enyard.in",
-      },
-      foundingDate: "2015",
-      numberOfEmployees: "500+",
-      subOrganization: [
-        {
-          "@type": "Organization",
-          name: "Lagoon Technologies LLC",
-          description: "IT & Software Development company in USA",
-        },
-        {
-          "@type": "Organization",
-          name: "Lagoon Technologies Private Limited",
-          description: "IT & Software Development company in India",
-        },
-        {
-          "@type": "Organization",
-          name: "UAE Chauffeur",
-          description: "Luxury Transportation services in UAE",
-        },
-        {
-          "@type": "Organization",
-          name: "First Class Fleet",
-          description: "Premium Fleet Management services",
-        },
-        {
-          "@type": "Organization",
-          name: "First Lagoon Technology",
-          description: "Technology Solutions provider",
-        },
-        {
-          "@type": "Organization",
-          name: "Goyaka Tours & Travels",
-          description: "Travel & Tourism services in India",
-        },
-      ],
-      brand: [
-        "Boobazhop",
-        "Booba Taxi",
-        "JezX",
-        "NexorX",
-        "Azra Martin",
-        "Enyard Media",
-        "Ricspace",
-      ],
-    };
+		// Add structured data for Organization
+		const structuredData = {
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			name: "ENYARD",
+			description:
+				"Global holding company operating across multiple industries including IT, transportation, tourism, IoT, EduTech, and social media platforms",
+			url: "https://enyard.in",
+			logo: "https://enyard.in/logo.png",
+			sameAs: [
+				"https://www.linkedin.com/company/enyardcorp",
+				"https://www.instagram.com/enyardcorp/",
+			],
+			address: {
+				"@type": "PostalAddress",
+				addressLocality: "Karungal",
+				addressRegion: "Kanyakumari",
+				addressCountry: "India",
+			},
+			contactPoint: {
+				"@type": "ContactPoint",
+				telephone: "+91-91505-37718",
+				contactType: "customer service",
+				email: "info@enyard.in",
+			},
+			foundingDate: "2015",
+			numberOfEmployees: "500+",
+			subOrganization: [
+				{
+					"@type": "Organization",
+					name: "Lagoon Technologies LLC",
+					description: "IT & Software Development company in USA",
+				},
+				{
+					"@type": "Organization",
+					name: "Lagoon Technologies Private Limited",
+					description: "IT & Software Development company in India",
+				},
+				{
+					"@type": "Organization",
+					name: "UAE Chauffeur",
+					description: "Luxury Transportation services in UAE",
+				},
+				{
+					"@type": "Organization",
+					name: "First Class Fleet",
+					description: "Premium Fleet Management services",
+				},
+				{
+					"@type": "Organization",
+					name: "First Lagoon Technology",
+					description: "Technology Solutions provider",
+				},
+				{
+					"@type": "Organization",
+					name: "Goyaka Tours & Travels",
+					description: "Travel & Tourism services in India",
+				},
+			],
+			brand: [
+				"Boobazhop",
+				"Booba Taxi",
+				"JezX",
+				"NexorX",
+				"Azra Martin",
+				"Enyard Media",
+				"Ricspace",
+			],
+		};
 
-    // Remove existing structured data script if any
-    const existingScript = document.querySelector(
-      'script[type="application/ld+json"]',
-    );
-    if (existingScript) {
-      existingScript.remove();
-    }
+		// Remove existing structured data script if any
+		const existingScript = document.querySelector(
+			'script[type="application/ld+json"]'
+		);
+		if (existingScript) {
+			existingScript.remove();
+		}
 
-    // Add new structured data script
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.text = JSON.stringify(structuredData);
-    document.head.appendChild(script);
+		// Add new structured data script
+		const script = document.createElement("script");
+		script.type = "application/ld+json";
+		script.text = JSON.stringify(structuredData);
+		document.head.appendChild(script);
 
-    // Cleanup function
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, []);
+		// Cleanup function
+		return () => {
+			if (script.parentNode) {
+				script.parentNode.removeChild(script);
+			}
+		};
+	}, []);
 
-  const stats = [
-    { label: "Global Companies", value: "10+", icon: Users },
-    { label: "Countries Operating", value: "5+", icon: Target },
-    { label: "Industry Sectors", value: "7+", icon: Award },
-    { label: "Years of Excellence", value: "10+", icon: Lightbulb },
-  ];
+	const stats = [
+		{ label: "Global Companies", value: "10+", icon: Users },
+		{ label: "Countries Operating", value: "5+", icon: Target },
+		{ label: "Industry Sectors", value: "7+", icon: Award },
+		{ label: "Years of Excellence", value: "10+", icon: Lightbulb },
+	];
 
-  const subsidiaries = [
-    {
-      name: "Lagoon Technologies LLC",
-      industry: "IT & Software Development",
-      location: "UAE",
-      logo: "🏢",
-    },
-    {
-      name: "Lagoon Technologies Private Limited",
-      industry: "IT & Software Development",
-      location: "India",
-      logo: "💻",
-    },
-    {
-      name: "UAE Chauffeur",
-      industry: "Luxury Transportation",
-      location: "UAE",
-      logo: "🚗",
-    },
-    {
-      name: "First Class Fleet",
-      industry: "Premium Fleet Management",
-      location: "International",
-      logo: "✈️",
-    },
-    {
-      name: "Goyaka Tours & Travels",
-      industry: "Travel & Tourism",
-      location: "UAE",
-      logo: "🌍",
-    },
-  ];
+	const subsidiaries = [
+		{
+			name: "Lagoon Technologies LLC",
+			industry: "IT & Software Development",
+			location: "UAE",
+			logo: lagoonTech,
+		},
+		{
+			name: "Lagoon Technologies Private Limited",
+			industry: "IT & Software Development",
+			location: "India",
+			logo: lagoonTech,
+		},
+		{
+			name: "UAE Chauffeur",
+			industry: "Luxury Transportation",
+			location: "UAE",
+			logo: chauffer,
+		},
+		{
+			name: "First Class Fleet",
+			industry: "Premium Fleet Management",
+			location: "International",
+			logo: fcFleet,
+		},
+		{
+			name: "Goyaka Tours & Travels",
+			industry: "Travel & Tourism",
+			location: "UAE",
+			logo: goyaka,
+		},
+	];
 
-  const brands = [
-    {
-      name: "Boobazhop",
-      category: "E-commerce Platform",
-      description: "Innovative online shopping experience",
-      logo: "🛍️",
-      color: "from-pink-500 to-purple-600",
-    },
-    {
-      name: "Booba Taxi",
-      category: "Transportation App",
-      description: "Smart taxi booking platform",
-      logo: "🚕",
-      color: "from-yellow-500 to-orange-600",
-    },
-    {
-      name: "JezX",
-      category: "Iot and Hosting Provider",
-      description: "Connected device management",
-      logo: "💬",
-      color: "from-blue-500 to-cyan-600",
-    },
-    {
-      name: "NexorX",
-      category: "EduTech Platform",
-      description: "Educational technology solutions",
-      logo: "🔗",
-      color: "from-green-500 to-emerald-600",
-    },
-    {
-      name: "Azra Martin",
-      category: "Event Management Partner",
-      description: "Event management and planning",
-      logo: "👗",
-      color: "from-red-500 to-pink-600",
-    },
-    {
-      name: "Enyard Media",
-      category: "Digital Media",
-      description: "Content creation and distribution",
-      logo: "📺",
-      color: "from-indigo-500 to-purple-600",
-    },
-    {
-      name: "Ricspace",
-      category: "Social Media Platform",
-      description: "Social media marketing and engagement",
-      logo: "📚",
-      color: "from-teal-500 to-blue-600",
-    },
-  ];
+	const brands = [
+		{
+			name: "Boobazhop",
+			category: "E-commerce Platform",
+			description: "Innovative online shopping experience",
+			logo: "🛍️",
+			color: "from-pink-500 to-purple-600",
+		},
+		{
+			name: "Booba Taxi",
+			category: "Transportation App",
+			description: "Smart taxi booking platform",
+			logo: "🚕",
+			color: "from-yellow-500 to-orange-600",
+		},
+		{
+			name: "JezX",
+			category: "Iot and Hosting Provider",
+			description: "Connected device management",
+			logo: "💬",
+			color: "from-blue-500 to-cyan-600",
+		},
+		{
+			name: "NexorX",
+			category: "EduTech Platform",
+			description: "Educational technology solutions",
+			logo: "🔗",
+			color: "from-green-500 to-emerald-600",
+		},
+		{
+			name: "Azra Martin",
+			category: "Event Management Partner",
+			description: "Event management and planning",
+			logo: "👗",
+			color: "from-red-500 to-pink-600",
+		},
+		{
+			name: "Enyard Media",
+			category: "Digital Media",
+			description: "Content creation and distribution",
+			logo: "📺",
+			color: "from-indigo-500 to-purple-600",
+		},
+		{
+			name: "Ricspace",
+			category: "Social Media Platform",
+			description: "Social media marketing and engagement",
+			logo: "📚",
+			color: "from-teal-500 to-blue-600",
+		},
+	];
 
-  const team = [
-    {
-      name: "Jinu Martin",
-      position: "Director",
-      description: "Strategic leadership and corporate governance",
-    },
-    {
-      name: "Shabin",
-      position: "Director & CEO",
-      description: "Executive leadership and business development",
-    },
-    {
-      name: "Jibisha",
-      position: "Operational Manager",
-      description: "Day-to-day operations and team management",
-    },
-    {
-      name: "Arshitha",
-      position: "Operational Manager",
-      description: "Day-to-day operations and team management",
-    },
-  ];
+	const team = [
+		{
+			name: "Jinu Martin",
+			position: "Director",
+			description: "Strategic leadership and corporate governance",
+			profile: jinuMartin,
+		},
+		{
+			name: "Shabin",
+			position: "Director & CEO",
+			description: "Executive leadership and business development",
+			profile: shabin,
+		},
+		{
+			name: "Jibisha",
+			position: "Operational Manager",
+			description: "Day-to-day operations and team management",
+			profile: jibisha,
+		},
+		{
+			name: "Arshitha",
+			position: "Operational Manager",
+			description: "Day-to-day operations and team management",
+			profile: arshitha,
+		},
+	];
 
-  const values = [
-    {
-      title: "Innovation-First Excellence",
-      description:
-        "Every solution begins with breakthrough thinking, pushing boundaries and setting new industry standards through creative problem-solving.",
-      icon: Rocket,
-      gradient: "from-blue-500 to-purple-600",
-    },
-    {
-      title: "Research-Driven Precision",
-      description:
-        "Deep market analysis and systematic validation ensure our solutions are not just innovative, but perfectly aligned with real-world needs.",
-      icon: Heart,
-      gradient: "from-pink-500 to-red-500",
-    },
-    {
-      title: "Practical Implementation Mastery",
-      description:
-        "From concept to deployment, we excel at turning visionary ideas into robust, scalable solutions that deliver measurable results.",
-      icon: Award,
-      gradient: "from-yellow-500 to-orange-500",
-    },
-  ];
+	const values = [
+		{
+			title: "Innovation-First Excellence",
+			description:
+				"Every solution begins with breakthrough thinking, pushing boundaries and setting new industry standards through creative problem-solving.",
+			icon: Rocket,
+			gradient: "from-blue-500 to-purple-600",
+		},
+		{
+			title: "Research-Driven Precision",
+			description:
+				"Deep market analysis and systematic validation ensure our solutions are not just innovative, but perfectly aligned with real-world needs.",
+			icon: Heart,
+			gradient: "from-pink-500 to-red-500",
+		},
+		{
+			title: "Practical Implementation Mastery",
+			description:
+				"From concept to deployment, we excel at turning visionary ideas into robust, scalable solutions that deliver measurable results.",
+			icon: Award,
+			gradient: "from-yellow-500 to-orange-500",
+		},
+	];
 
-  return (
+	return (
 		<div className="min-h-screen bg-background">
 			<Navigation />
 
@@ -805,8 +819,8 @@ const About = () => {
 								className="p-8 m-2 min-w-[400px] magnetic-card glass relative overflow-hidden group hover:shadow-xl hover:scale-105 transition-all duration-500">
 								<div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 								<div className="relative z-10 text-center">
-									<div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-white group-hover:to-gray-50 transition-all duration-500 shadow-lg text-4xl">
-										{company.logo}
+									<div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-2xl bg-white border border-gray-200 hover:border-gray-400 transition-all duration-500 shadow-lg text-4xl">
+										<img src={company.logo} alt={company.name} />
 									</div>
 									<h3 className="text-xl font-bold mb-3 text-black">
 										{company.name}
@@ -906,6 +920,12 @@ const About = () => {
 								className="p-6 magnetic-card glass relative overflow-hidden group hover:shadow-lg transition-all duration-300">
 								<div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 								<div className="relative z-10 text-center">
+									<img
+										src={member.profile}
+										alt={member.name}
+										className="w-[150px] h-[150px] object-cover rounded-full mx-auto mb-4 shadow-md border border-gray-200"
+									/>
+
 									<h3 className="text-xl font-bold mb-2 text-black">
 										{member.name}
 									</h3>
