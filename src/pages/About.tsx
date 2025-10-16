@@ -815,18 +815,26 @@ const About = () => {
 						</p>
 					</div>
 
-					<div className="flex flex-wrap justify-center">
+					<div className="flex flex-wrap justify-center gap-6">
 						{subsidiaries.map((company, index) => (
 							<Card
 								key={index}
-								className="p-8 m-2 min-w-[400px] magnetic-card glass relative overflow-hidden group hover:shadow-xl hover:scale-105 transition-all duration-500">
+								className="
+				p-4 sm:p-6 md:p-8 
+				m-2 
+				w-[90%] sm:w-[300px] md:w-[340px] 
+				magnetic-card glass 
+				relative overflow-hidden group 
+				hover:shadow-xl hover:scale-105 
+				transition-all duration-500
+			">
 								<div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 								<div className="relative z-10 text-center">
-									<div className="flex items-center justify-center w-[100px] h-[100px] mx-auto mb-6 rounded-2xl bg-white transition-all duration-500">
+									<div className="flex items-center justify-center w-[80px] h-[80px] mx-auto mb-6 rounded-2xl bg-white transition-all duration-500">
 										<img
 											src={company.logo}
 											alt={company.name}
-											className="w-[100px] h-[100px] object-contain"
+											className="w-[80px] h-[80px] object-contain"
 										/>
 									</div>
 
