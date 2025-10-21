@@ -16,16 +16,10 @@ import {
 } from "../assets";
 import EnhancedCTA from "@/components/EnhancedCTA";
 import BusinessForm from "@/components/BusinessForm";
-import { Helmet } from "react-helmet";
-import { generateBreadCrumbs } from "@/types/breadcrumbs";
 
 const About = () => {
 	const [scrollY, setScrollY] = useState(0);
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
-	const breadCrumb = generateBreadCrumbs([
-		{ name: "Home", path: "/" },
-		{ name: "About", path: "/about" },
-	]);
 
 	useEffect(() => {
 		const handleScroll = () => setScrollY(window.scrollY);
@@ -108,7 +102,7 @@ const About = () => {
 			description:
 				"Global holding company operating across multiple industries including IT, transportation, tourism, IoT, EduTech, and social media platforms",
 			url: "https://enyard.in",
-			logo: "https://enyard.in/enyard-logo.jpg",
+			logo: "https://enyard.in/logo.png",
 			sameAs: [
 				"https://www.linkedin.com/company/enyardcorp",
 				"https://www.instagram.com/enyardcorp/",
@@ -336,93 +330,80 @@ const About = () => {
 	];
 
 	return (
-		<>
-			<Helmet>
-				<title>
-					About | ENYARD - Revolutionary AI Software Development Platform |
-					Transform Your Business
-				</title>
-				<meta
-					name="description"
-					content="ENYARD is a premier global holding company operating across 5+ countries"
-				/>
-				<link rel="canonical" href="https://enyard.in/about" />
-				<script type="application/ld+json">{JSON.stringify(breadCrumb)}</script>
-			</Helmet>
-			<div className="min-h-screen bg-background">
-				<Navigation />
+		<div className="min-h-screen bg-background">
+			<Navigation />
 
-				{/* Hero Section */}
-				<section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
-					{/* Innovative Multi-layered Creative Background */}
-					<div className="absolute inset-0">
-						{/* Pure white base */}
-						<div className="absolute inset-0 bg-white" />
+			{/* Hero Section */}
+			<section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+				{/* Innovative Multi-layered Creative Background */}
+				<div className="absolute inset-0">
+					{/* Pure white base */}
+					<div className="absolute inset-0 bg-white" />
 
-						{/* Subtle geometric grid pattern */}
-						<div
-							className="absolute inset-0 opacity-[0.03]"
-							style={{
-								backgroundImage: `
+					{/* Subtle geometric grid pattern */}
+					<div
+						className="absolute inset-0 opacity-[0.03]"
+						style={{
+							backgroundImage: `
                 linear-gradient(90deg, #000 1px, transparent 1px),
                 linear-gradient(0deg, #000 1px, transparent 1px)
               `,
-								backgroundSize: "60px 60px",
-							}}
-						/>
+							backgroundSize: "60px 60px",
+						}}
+					/>
 
-						{/* Floating geometric shapes */}
-						<div
-							className="absolute top-20 left-20 w-32 h-32 opacity-[0.08] animate-pulse"
-							style={{
-								background:
-									"linear-gradient(45deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%)",
-								borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
-								animationDuration: "8s",
-								filter: "blur(1px)",
-							}}
-						/>
-						<div
-							className="absolute top-40 right-32 w-24 h-24 opacity-[0.06] animate-pulse"
-							style={{
-								background:
-									"linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%)",
-								borderRadius: "50%",
-								animationDuration: "6s",
-								animationDelay: "2s",
-								filter: "blur(1px)",
-							}}
-						/>
-						<div
-							className="absolute bottom-32 left-1/3 w-40 h-40 opacity-[0.07] animate-pulse"
-							style={{
-								background:
-									"linear-gradient(225deg, #f3e8ff 0%, #e9d5ff 50%, #c084fc 100%)",
-								borderRadius: "63% 37% 54% 46% / 55% 48% 52% 45%",
-								animationDuration: "10s",
-								animationDelay: "4s",
-								filter: "blur(1px)",
-							}}
-						/>
+					{/* Floating geometric shapes */}
+					<div
+						className="absolute top-20 left-20 w-32 h-32 opacity-[0.08] animate-pulse"
+						style={{
+							background:
+								"linear-gradient(45deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%)",
+							borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
+							animationDuration: "8s",
+							filter: "blur(1px)",
+						}}
+					/>
+					<div
+						className="absolute top-40 right-32 w-24 h-24 opacity-[0.06] animate-pulse"
+						style={{
+							background:
+								"linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%)",
+							borderRadius: "50%",
+							animationDuration: "6s",
+							animationDelay: "2s",
+							filter: "blur(1px)",
+						}}
+					/>
+					<div
+						className="absolute bottom-32 left-1/3 w-40 h-40 opacity-[0.07] animate-pulse"
+						style={{
+							background:
+								"linear-gradient(225deg, #f3e8ff 0%, #e9d5ff 50%, #c084fc 100%)",
+							borderRadius: "63% 37% 54% 46% / 55% 48% 52% 45%",
+							animationDuration: "10s",
+							animationDelay: "4s",
+							filter: "blur(1px)",
+						}}
+					/>
 
-						{/* Subtle gradient overlays */}
-						<div
-							className="absolute inset-0 opacity-[0.15]"
-							style={{
-								background: `
+					{/* Subtle gradient overlays */}
+					<div
+						className="absolute inset-0 opacity-[0.15]"
+						style={{
+							background: `
                 radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
                 radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 40%),
                 radial-gradient(circle at 40% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 40%),
                 radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 40%)
               `,
-							}}
-						/>
+						}}
+					/>
 
-						{/* Animated mesh gradient */}
-						<div
-							className="absolute inset-0 opacity-[0.12]"
-							style={{
-								background: `
+					{/* Animated mesh gradient */}
+					<div
+						className="absolute inset-0 opacity-[0.12]"
+						style={{
+							background: `
                 conic-gradient(from 0deg at 50% 50%,
                   rgba(59, 130, 246, 0.1) 0deg,
                   rgba(168, 85, 247, 0.1) 72deg,
@@ -431,47 +412,47 @@ const About = () => {
                   rgba(59, 130, 246, 0.1) 288deg,
                   rgba(59, 130, 246, 0.1) 360deg)
               `,
-								animation: "rotate 20s linear infinite",
-							}}
-						/>
+							animation: "rotate 20s linear infinite",
+						}}
+					/>
 
-						{/* Subtle noise texture */}
+					{/* Subtle noise texture */}
+					<div
+						className="absolute inset-0 opacity-[0.02]"
+						style={{
+							backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+						}}
+					/>
+
+					{/* Floating particles */}
+					<div className="absolute inset-0">
 						<div
-							className="absolute inset-0 opacity-[0.02]"
-							style={{
-								backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-							}}
+							className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-30"
+							style={{ animationDelay: "0s" }}
 						/>
-
-						{/* Floating particles */}
-						<div className="absolute inset-0">
-							<div
-								className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-30"
-								style={{ animationDelay: "0s" }}
-							/>
-							<div
-								className="absolute top-1/3 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-30"
-								style={{ animationDelay: "1s" }}
-							/>
-							<div
-								className="absolute bottom-1/4 left-1/2 w-1 h-1 bg-green-400 rounded-full animate-ping opacity-30"
-								style={{ animationDelay: "2s" }}
-							/>
-							<div
-								className="absolute top-1/2 right-1/4 w-1 h-1 bg-pink-400 rounded-full animate-ping opacity-30"
-								style={{ animationDelay: "3s" }}
-							/>
-							<div
-								className="absolute bottom-1/3 left-1/4 w-1 h-1 bg-yellow-400 rounded-full animate-ping opacity-30"
-								style={{ animationDelay: "4s" }}
-							/>
-						</div>
-
-						{/* Subtle wave effect at bottom */}
 						<div
-							className="absolute bottom-0 left-0 w-full h-32 opacity-[0.08]"
-							style={{
-								background: `
+							className="absolute top-1/3 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-30"
+							style={{ animationDelay: "1s" }}
+						/>
+						<div
+							className="absolute bottom-1/4 left-1/2 w-1 h-1 bg-green-400 rounded-full animate-ping opacity-30"
+							style={{ animationDelay: "2s" }}
+						/>
+						<div
+							className="absolute top-1/2 right-1/4 w-1 h-1 bg-pink-400 rounded-full animate-ping opacity-30"
+							style={{ animationDelay: "3s" }}
+						/>
+						<div
+							className="absolute bottom-1/3 left-1/4 w-1 h-1 bg-yellow-400 rounded-full animate-ping opacity-30"
+							style={{ animationDelay: "4s" }}
+						/>
+					</div>
+
+					{/* Subtle wave effect at bottom */}
+					<div
+						className="absolute bottom-0 left-0 w-full h-32 opacity-[0.08]"
+						style={{
+							background: `
                 linear-gradient(135deg,
                   rgba(59, 130, 246, 0.1) 0%,
                   rgba(168, 85, 247, 0.1) 25%,
@@ -480,374 +461,365 @@ const About = () => {
                   rgba(59, 130, 246, 0.1) 100%
                 )
               `,
-								clipPath:
-									"polygon(0 100%, 100% 100%, 100% 60%, 80% 40%, 60% 60%, 40% 40%, 20% 60%, 0 40%)",
-							}}
-						/>
+							clipPath:
+								"polygon(0 100%, 100% 100%, 100% 60%, 80% 40%, 60% 60%, 40% 40%, 20% 60%, 0 40%)",
+						}}
+					/>
+				</div>
+
+				{/* Content */}
+				<div className="relative z-10 max-w-5xl mx-auto px-6 py-4 text-center">
+					{/* Animated Badge */}
+					<div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-gray-200/50 shadow-sm">
+						<span className="text-sm font-medium text-gray-700">
+							Global Holding Company
+						</span>
 					</div>
 
-					{/* Content */}
-					<div className="relative z-10 max-w-5xl mx-auto px-6 py-4 text-center">
-						{/* Animated Badge */}
-						<div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-gray-200/50 shadow-sm">
-							<span className="text-sm font-medium text-gray-700">
-								Global Holding Company
+					{/* Main Headline */}
+					<div className="space-y-6 mb-8">
+						<h1 className="text-6xl md:text-8xl font-bold tracking-tight">
+							<span className="block text-gray-900">ENYARD</span>
+							<span className="block text-gradient-animate">
+								Global Innovation Hub
 							</span>
-						</div>
-
-						{/* Main Headline */}
-						<div className="space-y-6 mb-8">
-							<h1 className="text-6xl md:text-8xl font-bold tracking-tight">
-								<span className="block text-gray-900">ENYARD</span>
-								<span className="block text-gradient-animate">
-									Global Innovation Hub
-								</span>
-							</h1>
-						</div>
-
-						{/* Subheadline */}
-						<p className="text-lg md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-							ENYARD is a premier global holding company operating across 5+
-							countries with 10+ subsidiaries spanning IT, transportation,
-							tourism, IoT, EduTech, and social media platforms.
-							<br />
-							<br />
-							From Lagoon Technologies to Boobazhop, UAE Chauffeur to JezX—we're
-							building the future across multiple industries with innovative
-							solutions that transform how people live, work, and connect.
-						</p>
-
-						{/* CTA Buttons */}
-						<div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-							<Button
-								size="lg"
-								className="group relative overflow-hidden bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-								onClick={() => {
-									const section = document.getElementById("companies-section");
-									if (section) {
-										section.scrollIntoView({ behavior: "smooth" });
-									}
-								}}>
-								<span className="relative z-10 flex items-center">
-									Explore Our Companies
-									<Rocket className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-								</span>
-							</Button>
-
-							<Button
-								variant="outline"
-								size="lg"
-								className="bg-white/90 backdrop-blur-sm border-gray-200 hover:bg-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 group shadow-sm"
-								onClick={() => {
-									const section = document.getElementById("leaders-section");
-									if (section) {
-										section.scrollIntoView({ behavior: "smooth" });
-									}
-								}}>
-								<span className="flex items-center text-gray-700">
-									Meet Our Leadership
-								</span>
-							</Button>
-						</div>
+						</h1>
 					</div>
 
-					{/* Floating Elements */}
-					<div className="absolute top-20 left-20 w-2 h-2 bg-blue-500 rounded-full animate-pulse opacity-30" />
-					<div
-						className="absolute top-40 right-32 w-3 h-3 bg-purple-500 rounded-full animate-pulse opacity-30"
-						style={{ animationDelay: "1s" }}
-					/>
-					<div
-						className="absolute bottom-40 left-32 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse opacity-30"
-						style={{ animationDelay: "2s" }}
-					/>
-					<div
-						className="absolute top-60 right-20 w-2.5 h-2.5 bg-orange-500 rounded-full animate-pulse opacity-30"
-						style={{ animationDelay: "0.5s" }}
-					/>
-				</section>
+					{/* Subheadline */}
+					<p className="text-lg md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+						ENYARD is a premier global holding company operating across 5+
+						countries with 10+ subsidiaries spanning IT, transportation,
+						tourism, IoT, EduTech, and social media platforms.
+						<br />
+						<br />
+						From Lagoon Technologies to Boobazhop, UAE Chauffeur to JezX—we're
+						building the future across multiple industries with innovative
+						solutions that transform how people live, work, and connect.
+					</p>
 
-				{/* Stats Section */}
-				<section className="py-24 relative">
-					<div className="container">
-						<div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-							{stats.map((stat, index) => (
-								<Card
-									key={index}
-									className="p-8 text-center magnetic-card glass">
-									<stat.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-									<div className="text-4xl font-bold text-black mb-2">
-										{stat.value}
-									</div>
-									<div className="text-muted-foreground">{stat.label}</div>
-								</Card>
-							))}
-						</div>
+					{/* CTA Buttons */}
+					<div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+						<Button
+							size="lg"
+							className="group relative overflow-hidden bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+							onClick={() => {
+								const section = document.getElementById("companies-section");
+								if (section) {
+									section.scrollIntoView({ behavior: "smooth" });
+								}
+							}}>
+							<span className="relative z-10 flex items-center">
+								Explore Our Companies
+								<Rocket className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+							</span>
+						</Button>
+
+						<Button
+							variant="outline"
+							size="lg"
+							className="bg-white/90 backdrop-blur-sm border-gray-200 hover:bg-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 group shadow-sm"
+							onClick={() => {
+								const section = document.getElementById("leaders-section");
+								if (section) {
+									section.scrollIntoView({ behavior: "smooth" });
+								}
+							}}>
+							<span className="flex items-center text-gray-700">
+								Meet Our Leadership
+							</span>
+						</Button>
 					</div>
-				</section>
+				</div>
 
-				{/* Mission Section */}
-				<section className="md:py-24 relative overflow-hidden">
-					<div className="absolute grid-line opacity-20" />
-					<div className="container relative z-10">
-						<div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-center">
-							<div className="lg:basis-1/2">
-								<h2 className="text-5xl font-bold mb-8 text-black text-wrap">
-									Our Mission & Vision
-								</h2>
-								<p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-									To pioneer the future through{" "}
-									<strong>innovation-first</strong> approach, combining deep
-									research with practical implementation to create solutions
-									that set industry standards. We believe in transforming ideas
-									into reality through systematic innovation, rigorous
-									development, and real-world validation.
-								</p>
-								<div className="space-y-4">
-									<div className="flex items-center space-x-3">
-										<div className="w-2 h-2 rounded-full bg-gradient-primary" />
-										<span>
-											<strong>Innovation-First Philosophy</strong> - Every
-											solution starts with breakthrough thinking
-										</span>
-									</div>
-									<div className="flex items-center space-x-3">
-										<div className="w-2 h-2 rounded-full bg-gradient-primary" />
-										<span>
-											<strong>Deep Research Integration</strong> - Systematic
-											analysis and market validation
-										</span>
-									</div>
-									<div className="flex items-center space-x-3">
-										<div className="w-2 h-2 rounded-full bg-gradient-primary" />
-										<span>
-											<strong>Practical Implementation</strong> - Real-world
-											deployment and continuous optimization
-										</span>
-									</div>
+				{/* Floating Elements */}
+				<div className="absolute top-20 left-20 w-2 h-2 bg-blue-500 rounded-full animate-pulse opacity-30" />
+				<div
+					className="absolute top-40 right-32 w-3 h-3 bg-purple-500 rounded-full animate-pulse opacity-30"
+					style={{ animationDelay: "1s" }}
+				/>
+				<div
+					className="absolute bottom-40 left-32 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse opacity-30"
+					style={{ animationDelay: "2s" }}
+				/>
+				<div
+					className="absolute top-60 right-20 w-2.5 h-2.5 bg-orange-500 rounded-full animate-pulse opacity-30"
+					style={{ animationDelay: "0.5s" }}
+				/>
+			</section>
+
+			{/* Stats Section */}
+			<section className="py-24 relative">
+				<div className="container">
+					<div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+						{stats.map((stat, index) => (
+							<Card key={index} className="p-8 text-center magnetic-card glass">
+								<stat.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
+								<div className="text-4xl font-bold text-black mb-2">
+									{stat.value}
 								</div>
-							</div>
-
-							<div className="relative lg:basis-1/2">
-								<div className="glass-strong rounded-3xl p-3 md:p-6 magnetic-card overflow-hidden">
-									{/* Innovative Code Editor Display */}
-									<div className="bg-gray-900 rounded-2xl">
-										{/* Editor Header */}
-										<div className="flex items-center space-x-2 px-4 py-2">
-											<div className="flex space-x-1.5">
-												<div className="w-3 h-3 rounded-full bg-red-500"></div>
-												<div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-												<div className="w-3 h-3 rounded-full bg-green-500"></div>
-											</div>
-											<div className="flex-1 text-center">
-												<span className="text-gray-400 text-sm font-mono">
-													innovation.js
-												</span>
-											</div>
-										</div>
-										<hr className="border-gray-700" />
-										{/* Code Content */}
-										<div className="font-mono p-4 text-sm text-gray-300 space-y-2 h-80 overflow-auto">
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">1</span>
-												<span className="text-blue-400">class</span>{" "}
-												<span className="text-yellow-400">
-													ENYARDInnovation
-												</span>{" "}
-												<span className="text-gray-400">&#123;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">2</span>
-												<span className="text-purple-400">constructor</span>
-												<span className="text-gray-400">() &#123;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">3</span>
-												<span className="text-gray-400 ml-4">this.</span>
-												<span className="text-green-400">philosophy</span>{" "}
-												<span className="text-gray-400">=</span>{" "}
-												<span className="text-orange-400">
-													'Innovation-First'
-												</span>
-												<span className="text-gray-400">;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">4</span>
-												<span className="text-gray-400 ml-4">this.</span>
-												<span className="text-green-400">approach</span>{" "}
-												<span className="text-gray-400">=</span>{" "}
-												<span className="text-orange-400">
-													'Research-Driven'
-												</span>
-												<span className="text-gray-400">;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">5</span>
-												<span className="text-gray-400 ml-4">this.</span>
-												<span className="text-green-400">execution</span>{" "}
-												<span className="text-gray-400">=</span>{" "}
-												<span className="text-orange-400">
-													'Practical-Implementation'
-												</span>
-												<span className="text-gray-400">;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">6</span>
-												<span className="text-gray-400">&#125;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">7</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">8</span>
-												<span className="text-purple-400">async</span>{" "}
-												<span className="text-yellow-400">createFuture</span>
-												<span className="text-gray-400">() &#123;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">9</span>
-												<span className="text-gray-400 ml-4">const</span>{" "}
-												<span className="text-green-400">research</span>{" "}
-												<span className="text-gray-400">=</span>{" "}
-												<span className="text-purple-400">await</span>{" "}
-												<span className="text-yellow-400">this.</span>
-												<span className="text-green-400">deepAnalysis</span>
-												<span className="text-gray-400">();</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">10</span>
-												<span className="text-gray-400 ml-4">const</span>{" "}
-												<span className="text-green-400">innovation</span>{" "}
-												<span className="text-gray-400">=</span>{" "}
-												<span className="text-yellow-400">this.</span>
-												<span className="text-green-400">breakthrough</span>
-												<span className="text-gray-400">(</span>
-												<span className="text-green-400">research</span>
-												<span className="text-gray-400">);</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">11</span>
-												<span className="text-gray-400 ml-4">return</span>{" "}
-												<span className="text-yellow-400">this.</span>
-												<span className="text-green-400">implement</span>
-												<span className="text-gray-400">(</span>
-												<span className="text-green-400">innovation</span>
-												<span className="text-gray-400">);</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">12</span>
-												<span className="text-gray-400">&#125;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">13</span>
-												<span className="text-gray-400">&#125;</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">14</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">15</span>
-												<span className="text-gray-400">//</span>{" "}
-												<span className="text-green-400">
-													Building tomorrow, today
-												</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">16</span>
-												<span className="text-gray-400">const</span>{" "}
-												<span className="text-green-400">enyard</span>{" "}
-												<span className="text-gray-400">=</span>{" "}
-												<span className="text-purple-400">new</span>{" "}
-												<span className="text-yellow-400">
-													ENYARDInnovation
-												</span>
-												<span className="text-gray-400">();</span>
-											</div>
-											<div className="flex">
-												<span className="text-gray-600 mr-4 w-8">17</span>
-												<span className="text-yellow-400">enyard.</span>
-												<span className="text-green-400">createFuture</span>
-												<span className="text-gray-400">();</span>
-											</div>
-										</div>
-
-										{/* Animated Cursor */}
-										<div className="absolute bottom-4 left-4 w-2 h-5 bg-green-400 animate-pulse"></div>
-
-										{/* Floating Code Elements */}
-										<div className="absolute top-20 right-6 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60"></div>
-										<div
-											className="absolute bottom-20 right-8 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-60"
-											style={{ animationDelay: "1s" }}></div>
-										<div
-											className="absolute top-32 right-4 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-ping opacity-60"
-											style={{ animationDelay: "2s" }}></div>
-									</div>
-								</div>
-							</div>
-						</div>
+								<div className="text-muted-foreground">{stat.label}</div>
+							</Card>
+						))}
 					</div>
-				</section>
+				</div>
+			</section>
 
-				{/* Values Section */}
-				<section className="py-24 relative">
-					<div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30" />
-					<div className="container relative z-10">
-						<div className="text-center mb-16">
-							<h2 className="text-5xl font-bold mb-8 text-black">
-								Our Core Values
+			{/* Mission Section */}
+			<section className="md:py-24 relative overflow-hidden">
+				<div className="absolute grid-line opacity-20" />
+				<div className="container relative z-10">
+					<div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-center">
+						<div className="lg:basis-1/2">
+							<h2 className="text-5xl font-bold mb-8 text-black text-wrap">
+								Our Mission & Vision
 							</h2>
-							<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-								The fundamental principles that drive our innovation-first
-								approach and shape every solution we create.
+							<p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+								To pioneer the future through <strong>innovation-first</strong>{" "}
+								approach, combining deep research with practical implementation
+								to create solutions that set industry standards. We believe in
+								transforming ideas into reality through systematic innovation,
+								rigorous development, and real-world validation.
 							</p>
+							<div className="space-y-4">
+								<div className="flex items-center space-x-3">
+									<div className="w-2 h-2 rounded-full bg-gradient-primary" />
+									<span>
+										<strong>Innovation-First Philosophy</strong> - Every
+										solution starts with breakthrough thinking
+									</span>
+								</div>
+								<div className="flex items-center space-x-3">
+									<div className="w-2 h-2 rounded-full bg-gradient-primary" />
+									<span>
+										<strong>Deep Research Integration</strong> - Systematic
+										analysis and market validation
+									</span>
+								</div>
+								<div className="flex items-center space-x-3">
+									<div className="w-2 h-2 rounded-full bg-gradient-primary" />
+									<span>
+										<strong>Practical Implementation</strong> - Real-world
+										deployment and continuous optimization
+									</span>
+								</div>
+							</div>
 						</div>
 
-						<div className="grid md:grid-cols-3 gap-8">
-							{values.map((value, index) => (
-								<Card
-									key={index}
-									className="p-8 magnetic-card glass relative overflow-hidden group hover:scale-105 transition-all duration-500">
+						<div className="relative lg:basis-1/2">
+							<div className="glass-strong rounded-3xl p-3 md:p-6 magnetic-card overflow-hidden">
+								{/* Innovative Code Editor Display */}
+								<div className="bg-gray-900 rounded-2xl">
+									{/* Editor Header */}
+									<div className="flex items-center space-x-2 px-4 py-2">
+										<div className="flex space-x-1.5">
+											<div className="w-3 h-3 rounded-full bg-red-500"></div>
+											<div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+											<div className="w-3 h-3 rounded-full bg-green-500"></div>
+										</div>
+										<div className="flex-1 text-center">
+											<span className="text-gray-400 text-sm font-mono">
+												innovation.js
+											</span>
+										</div>
+									</div>
+									<hr className="border-gray-700" />
+									{/* Code Content */}
+									<div className="font-mono p-4 text-sm text-gray-300 space-y-2 h-80 overflow-auto">
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">1</span>
+											<span className="text-blue-400">class</span>{" "}
+											<span className="text-yellow-400">ENYARDInnovation</span>{" "}
+											<span className="text-gray-400">&#123;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">2</span>
+											<span className="text-purple-400">constructor</span>
+											<span className="text-gray-400">() &#123;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">3</span>
+											<span className="text-gray-400 ml-4">this.</span>
+											<span className="text-green-400">philosophy</span>{" "}
+											<span className="text-gray-400">=</span>{" "}
+											<span className="text-orange-400">
+												'Innovation-First'
+											</span>
+											<span className="text-gray-400">;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">4</span>
+											<span className="text-gray-400 ml-4">this.</span>
+											<span className="text-green-400">approach</span>{" "}
+											<span className="text-gray-400">=</span>{" "}
+											<span className="text-orange-400">'Research-Driven'</span>
+											<span className="text-gray-400">;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">5</span>
+											<span className="text-gray-400 ml-4">this.</span>
+											<span className="text-green-400">execution</span>{" "}
+											<span className="text-gray-400">=</span>{" "}
+											<span className="text-orange-400">
+												'Practical-Implementation'
+											</span>
+											<span className="text-gray-400">;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">6</span>
+											<span className="text-gray-400">&#125;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">7</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">8</span>
+											<span className="text-purple-400">async</span>{" "}
+											<span className="text-yellow-400">createFuture</span>
+											<span className="text-gray-400">() &#123;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">9</span>
+											<span className="text-gray-400 ml-4">const</span>{" "}
+											<span className="text-green-400">research</span>{" "}
+											<span className="text-gray-400">=</span>{" "}
+											<span className="text-purple-400">await</span>{" "}
+											<span className="text-yellow-400">this.</span>
+											<span className="text-green-400">deepAnalysis</span>
+											<span className="text-gray-400">();</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">10</span>
+											<span className="text-gray-400 ml-4">const</span>{" "}
+											<span className="text-green-400">innovation</span>{" "}
+											<span className="text-gray-400">=</span>{" "}
+											<span className="text-yellow-400">this.</span>
+											<span className="text-green-400">breakthrough</span>
+											<span className="text-gray-400">(</span>
+											<span className="text-green-400">research</span>
+											<span className="text-gray-400">);</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">11</span>
+											<span className="text-gray-400 ml-4">return</span>{" "}
+											<span className="text-yellow-400">this.</span>
+											<span className="text-green-400">implement</span>
+											<span className="text-gray-400">(</span>
+											<span className="text-green-400">innovation</span>
+											<span className="text-gray-400">);</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">12</span>
+											<span className="text-gray-400">&#125;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">13</span>
+											<span className="text-gray-400">&#125;</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">14</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">15</span>
+											<span className="text-gray-400">//</span>{" "}
+											<span className="text-green-400">
+												Building tomorrow, today
+											</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">16</span>
+											<span className="text-gray-400">const</span>{" "}
+											<span className="text-green-400">enyard</span>{" "}
+											<span className="text-gray-400">=</span>{" "}
+											<span className="text-purple-400">new</span>{" "}
+											<span className="text-yellow-400">ENYARDInnovation</span>
+											<span className="text-gray-400">();</span>
+										</div>
+										<div className="flex">
+											<span className="text-gray-600 mr-4 w-8">17</span>
+											<span className="text-yellow-400">enyard.</span>
+											<span className="text-green-400">createFuture</span>
+											<span className="text-gray-400">();</span>
+										</div>
+									</div>
+
+									{/* Animated Cursor */}
+									<div className="absolute bottom-4 left-4 w-2 h-5 bg-green-400 animate-pulse"></div>
+
+									{/* Floating Code Elements */}
+									<div className="absolute top-20 right-6 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60"></div>
 									<div
-										className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-500`}
-									/>
-									<div className="relative z-10">
-										<div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-white group-hover:to-gray-50 transition-all duration-500 shadow-lg">
-											<value.icon className="h-8 w-8 text-primary" />
-										</div>
-										<h3 className="text-2xl font-bold mb-4 text-center">
-											{value.title}
-										</h3>
-										<p className="text-muted-foreground leading-relaxed text-center">
-											{value.description}
-										</p>
-									</div>
-								</Card>
-							))}
+										className="absolute bottom-20 right-8 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-60"
+										style={{ animationDelay: "1s" }}></div>
+									<div
+										className="absolute top-32 right-4 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-ping opacity-60"
+										style={{ animationDelay: "2s" }}></div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</section>
+				</div>
+			</section>
 
-				{/* Subsidiaries Section */}
-				<section id="companies-section" className="py-24 relative">
-					<div className="absolute inset-0 mesh-background opacity-10" />
-					<div className="container relative z-10">
-						<div className="text-center mb-16">
-							<h2 className="text-5xl font-bold mb-8 text-black">
-								Our Subsidiaries
-							</h2>
-							<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-								A diverse portfolio of companies operating across multiple
-								industries and geographies, each delivering exceptional value in
-								their respective markets.
-							</p>
-						</div>
+			{/* Values Section */}
+			<section className="py-24 relative">
+				<div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30" />
+				<div className="container relative z-10">
+					<div className="text-center mb-16">
+						<h2 className="text-5xl font-bold mb-8 text-black">
+							Our Core Values
+						</h2>
+						<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+							The fundamental principles that drive our innovation-first
+							approach and shape every solution we create.
+						</p>
+					</div>
 
-						<div className="flex flex-wrap justify-center gap-6">
-							{subsidiaries.map((company, index) => (
-								<Card
-									key={index}
-									className="
+					<div className="grid md:grid-cols-3 gap-8">
+						{values.map((value, index) => (
+							<Card
+								key={index}
+								className="p-8 magnetic-card glass relative overflow-hidden group hover:scale-105 transition-all duration-500">
+								<div
+									className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-500`}
+								/>
+								<div className="relative z-10">
+									<div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-white group-hover:to-gray-50 transition-all duration-500 shadow-lg">
+										<value.icon className="h-8 w-8 text-primary" />
+									</div>
+									<h3 className="text-2xl font-bold mb-4 text-center">
+										{value.title}
+									</h3>
+									<p className="text-muted-foreground leading-relaxed text-center">
+										{value.description}
+									</p>
+								</div>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Subsidiaries Section */}
+			<section id="companies-section" className="py-24 relative">
+				<div className="absolute inset-0 mesh-background opacity-10" />
+				<div className="container relative z-10">
+					<div className="text-center mb-16">
+						<h2 className="text-5xl font-bold mb-8 text-black">
+							Our Subsidiaries
+						</h2>
+						<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+							A diverse portfolio of companies operating across multiple
+							industries and geographies, each delivering exceptional value in
+							their respective markets.
+						</p>
+					</div>
+
+					<div className="flex flex-wrap justify-center gap-6">
+						{subsidiaries.map((company, index) => (
+							<Card
+								key={index}
+								className="
 				p-4 sm:p-6 md:p-8 
 				m-2 
 				w-[90%] sm:w-[300px] md:w-[340px] 
@@ -856,148 +828,146 @@ const About = () => {
 				hover:shadow-xl hover:scale-105 
 				transition-all duration-500
 			">
-									<div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-									<div className="relative z-10 text-center">
-										<div className="flex items-center justify-center w-[80px] h-[80px] mx-auto mb-6 rounded-2xl bg-white transition-all duration-500">
-											<img
-												src={company.logo}
-												alt={company.name}
-												className="w-[80px] h-[80px] object-contain"
-											/>
-										</div>
-
-										<h3 className="text-xl font-bold mb-3 text-black">
-											{company.name}
-										</h3>
-										<p className="text-sm text-blue-600 font-medium mb-2">
-											{company.industry}
-										</p>
-										<p className="text-sm text-muted-foreground">
-											{company.location}
-										</p>
-									</div>
-								</Card>
-							))}
-						</div>
-					</div>
-				</section>
-
-				{/* Brands Section */}
-				<section className="py-24 relative">
-					<div className="absolute inset-0 bg-gradient-to-br from-pink-50/20 to-purple-50/20" />
-					<div className="container relative z-10">
-						<div className="text-center mb-16">
-							<h2 className="text-5xl font-bold mb-8 text-black">
-								Our Innovative Brands
-							</h2>
-							<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-								Revolutionary digital platforms and lifestyle brands that
-								connect, entertain, and enhance the lives of millions of users
-								worldwide.
-							</p>
-						</div>
-
-						<div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-							{brands.map((brand, index) => (
-								<Card
-									key={index}
-									className="p-6 magnetic-card glass relative overflow-hidden group hover:shadow-2xl hover:scale-110 transition-all duration-500">
-									<div
-										className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-									/>
-									<div className="relative z-10 text-center">
-										<div
-											className={`flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${brand.color} group-hover:scale-110 transition-all duration-500 shadow-lg text-3xl`}>
-											{brand.logo}
-										</div>
-										<h3 className="text-lg font-bold mb-2 text-black group-hover:text-gray-800 transition-colors">
-											{brand.name}
-										</h3>
-										<p className="text-xs text-blue-600 font-medium mb-2">
-											{brand.category}
-										</p>
-										<p className="text-xs text-muted-foreground leading-relaxed">
-											{brand.description}
-										</p>
-									</div>
-
-									{/* Floating Elements */}
-									<div
-										className="absolute top-2 right-2 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-										style={{ animationDelay: `${index * 0.2}s` }}></div>
-									<div
-										className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-										style={{ animationDelay: `${index * 0.3}s` }}></div>
-								</Card>
-							))}
-						</div>
-
-						{/* Decorative Elements */}
-						<div className="absolute top-20 left-10 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse opacity-30"></div>
-						<div
-							className="absolute top-40 right-20 w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse opacity-30"
-							style={{ animationDelay: "1s" }}></div>
-						<div
-							className="absolute bottom-20 left-1/4 w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse opacity-30"
-							style={{ animationDelay: "2s" }}></div>
-					</div>
-				</section>
-
-				{/* Team Section */}
-				<section id="leaders-section" className="py-24 relative">
-					<div className="absolute inset-0 mesh-background opacity-10" />
-					<div className="container relative z-10">
-						<div className="text-center mb-16">
-							<h2 className="text-5xl font-bold mb-8 text-black">
-								Meet Our Leadership
-							</h2>
-							<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-								Experienced leaders driving innovation and growth across our
-								global portfolio of companies, with expertise spanning multiple
-								industries and markets.
-							</p>
-						</div>
-
-						<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-							{team.map((member, index) => (
-								<Card
-									key={index}
-									className="p-6 magnetic-card glass relative overflow-hidden group hover:shadow-lg transition-all duration-300">
-									<div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-									<div className="relative z-10 text-center">
+								<div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+								<div className="relative z-10 text-center">
+									<div className="flex items-center justify-center w-[80px] h-[80px] mx-auto mb-6 rounded-2xl bg-white transition-all duration-500">
 										<img
-											src={member.profile}
-											alt={member.name}
-											className="w-[150px] h-[150px] object-cover rounded-full mx-auto mb-4 shadow-md border border-gray-200"
+											src={company.logo}
+											alt={company.name}
+											className="w-[80px] h-[80px] object-contain"
 										/>
-
-										<h3 className="text-xl font-bold mb-2 text-black">
-											{member.name}
-										</h3>
-										<p className="text-sm text-green-600 font-medium mb-2">
-											{member.position}
-										</p>
-										<p className="text-sm text-muted-foreground">
-											{member.description}
-										</p>
 									</div>
-								</Card>
-							))}
-						</div>
+
+									<h3 className="text-xl font-bold mb-3 text-black">
+										{company.name}
+									</h3>
+									<p className="text-sm text-blue-600 font-medium mb-2">
+										{company.industry}
+									</p>
+									<p className="text-sm text-muted-foreground">
+										{company.location}
+									</p>
+								</div>
+							</Card>
+						))}
 					</div>
-				</section>
-				{/* Enhanced Bottom CTA */}
-				<EnhancedCTA
-					visible={true}
-					onStartTrial={() => setIsDialogOpen(true)}
-					onBookDemo={() => console.log("Book Demo Clicked")}
-				/>
+				</div>
+			</section>
 
-				<BusinessForm isOpen={isDialogOpen} onOpenChange={setIsDialogOpen} />
+			{/* Brands Section */}
+			<section className="py-24 relative">
+				<div className="absolute inset-0 bg-gradient-to-br from-pink-50/20 to-purple-50/20" />
+				<div className="container relative z-10">
+					<div className="text-center mb-16">
+						<h2 className="text-5xl font-bold mb-8 text-black">
+							Our Innovative Brands
+						</h2>
+						<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+							Revolutionary digital platforms and lifestyle brands that connect,
+							entertain, and enhance the lives of millions of users worldwide.
+						</p>
+					</div>
 
-				<Footer />
-			</div>
-		</>
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+						{brands.map((brand, index) => (
+							<Card
+								key={index}
+								className="p-6 magnetic-card glass relative overflow-hidden group hover:shadow-2xl hover:scale-110 transition-all duration-500">
+								<div
+									className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+								/>
+								<div className="relative z-10 text-center">
+									<div
+										className={`flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${brand.color} group-hover:scale-110 transition-all duration-500 shadow-lg text-3xl`}>
+										{brand.logo}
+									</div>
+									<h3 className="text-lg font-bold mb-2 text-black group-hover:text-gray-800 transition-colors">
+										{brand.name}
+									</h3>
+									<p className="text-xs text-blue-600 font-medium mb-2">
+										{brand.category}
+									</p>
+									<p className="text-xs text-muted-foreground leading-relaxed">
+										{brand.description}
+									</p>
+								</div>
+
+								{/* Floating Elements */}
+								<div
+									className="absolute top-2 right-2 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+									style={{ animationDelay: `${index * 0.2}s` }}></div>
+								<div
+									className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+									style={{ animationDelay: `${index * 0.3}s` }}></div>
+							</Card>
+						))}
+					</div>
+
+					{/* Decorative Elements */}
+					<div className="absolute top-20 left-10 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse opacity-30"></div>
+					<div
+						className="absolute top-40 right-20 w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse opacity-30"
+						style={{ animationDelay: "1s" }}></div>
+					<div
+						className="absolute bottom-20 left-1/4 w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse opacity-30"
+						style={{ animationDelay: "2s" }}></div>
+				</div>
+			</section>
+
+			{/* Team Section */}
+			<section id="leaders-section" className="py-24 relative">
+				<div className="absolute inset-0 mesh-background opacity-10" />
+				<div className="container relative z-10">
+					<div className="text-center mb-16">
+						<h2 className="text-5xl font-bold mb-8 text-black">
+							Meet Our Leadership
+						</h2>
+						<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+							Experienced leaders driving innovation and growth across our
+							global portfolio of companies, with expertise spanning multiple
+							industries and markets.
+						</p>
+					</div>
+
+					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+						{team.map((member, index) => (
+							<Card
+								key={index}
+								className="p-6 magnetic-card glass relative overflow-hidden group hover:shadow-lg transition-all duration-300">
+								<div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+								<div className="relative z-10 text-center">
+									<img
+										src={member.profile}
+										alt={member.name}
+										className="w-[150px] h-[150px] object-cover rounded-full mx-auto mb-4 shadow-md border border-gray-200"
+									/>
+
+									<h3 className="text-xl font-bold mb-2 text-black">
+										{member.name}
+									</h3>
+									<p className="text-sm text-green-600 font-medium mb-2">
+										{member.position}
+									</p>
+									<p className="text-sm text-muted-foreground">
+										{member.description}
+									</p>
+								</div>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
+			{/* Enhanced Bottom CTA */}
+			<EnhancedCTA
+				visible={true}
+				onStartTrial={() => setIsDialogOpen(true)}
+				onBookDemo={() => console.log("Book Demo Clicked")}
+			/>
+
+			<BusinessForm isOpen={isDialogOpen} onOpenChange={setIsDialogOpen} />
+
+			<Footer />
+		</div>
 	);
 };
 
