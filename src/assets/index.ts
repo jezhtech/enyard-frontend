@@ -6,7 +6,18 @@ import arshitha from "./leaders/Arshitha.png";
 import jibisha from "./leaders/Jibisha.png";
 import jinuMartin from "./leaders/JinuMartin.png";
 import shabin from "./leaders/shabin.png";
+import linkedin from "./linkedinLogo.png";
 
 
 
-export { lagoonTech, chauffer, fcFleet, goyaka, arshitha , jibisha , jinuMartin,shabin};
+export {
+	lagoonTech,
+	chauffer,
+	fcFleet,
+	goyaka,
+	arshitha,
+	jibisha,
+	jinuMartin,
+	shabin,
+	linkedin,
+};

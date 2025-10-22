@@ -13,6 +13,7 @@ import {
 	jibisha,
 	jinuMartin,
 	shabin,
+	linkedin,
 } from "../assets";
 import EnhancedCTA from "@/components/EnhancedCTA";
 import BusinessForm from "@/components/BusinessForm";
@@ -284,24 +285,29 @@ const About = () => {
 			position: "Investor",
 			description: "Strategic leadership and corporate governance",
 			profile: jinuMartin,
+			linkedin:
+				"https://www.linkedin.com/in/jinu-martin-64512269/?originalSubdomain=ae",
 		},
 		{
 			name: "Shabin",
 			position: "Director & CEO",
 			description: "Executive leadership and business development",
 			profile: shabin,
+			linkedin: "https://www.linkedin.com/in/shabin-jezh",
 		},
 		{
 			name: "Jibisha",
 			position: "Operational Manager",
 			description: "Day-to-day operations and team management",
 			profile: jibisha,
+			linkedin: "https://www.linkedin.com/in/jibisha-xavier-825689273/",
 		},
 		{
 			name: "Arshitha",
 			position: "Operational Manager",
 			description: "Day-to-day operations and team management",
 			profile: arshitha,
+			linkedin: "https://www.linkedin.com/in/arshithams/",
 		},
 	];
 
@@ -948,6 +954,13 @@ const About = () => {
 								key={index}
 								className="p-6 magnetic-card glass relative overflow-hidden group hover:shadow-lg transition-all duration-300">
 								<div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+								<a href={member.linkedin} target="blank">
+									<img
+										src={linkedin}
+										alt="LinkedIn logo"
+										className="absolute top-2 right-2 w-5 h-5 md:w-6 md:h-6"
+									/>
+								</a>
 								<div className="relative z-10 text-center">
 									<img
 										src={member.profile}
