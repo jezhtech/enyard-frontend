@@ -609,7 +609,20 @@ const About = () => {
 						<div className="relative lg:basis-1/2">
 							<div className="glass-strong rounded-3xl p-3 md:p-6 magnetic-card overflow-hidden">
 								{/* Innovative Code Editor Display */}
-								<div className="bg-gray-900 rounded-2xl">
+								<div
+									className="
+    bg-gray-900
+    rounded-2xl
+    w-[60vw]             
+    sm:w-[70vw]          
+    md:w-[50vw]          
+    lg:w-[40vw]          
+    xl:w-[35vw]          
+    max-w-[600px]        
+    min-w-[320px]        
+    transition-all
+    duration-300
+  ">
 									{/* Editor Header */}
 									<div className="flex items-center space-x-2 px-4 py-2">
 										<div className="flex space-x-1.5">
