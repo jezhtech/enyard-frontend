@@ -14,3 +14,7 @@ export const getImageUrl = (filename: string, extension: string) => {
     import.meta.env.VITE_BACKEND_URL || "http://localhost:8000"
   }/uploads/users/${filename}.${extension}`;
 };
+
+export function redirectToExternalSite(url: string): void {
+	window.open(url, "_blank", "noopener,noreferrer");
+}
