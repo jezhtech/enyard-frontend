@@ -281,7 +281,7 @@ const About = () => {
 	const team = [
 		{
 			name: "Jinu Martin",
-			position: "Director",
+			position: "Investor",
 			description: "Strategic leadership and corporate governance",
 			profile: jinuMartin,
 		},
