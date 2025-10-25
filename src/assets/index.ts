@@ -60,7 +60,7 @@ export const ClientsLogo = {
 import arshitha from "./leaders/Arshitha.png";
 import jibisha from "./leaders/Jibisha.png";
 import jinuMartin from "./leaders/JinuMartin.png";
-import shabin from "./leaders/Shabin.png";
+import shabin from "./leaders/shabin.png";
 
 export const Leaders = {
 	arshitha,
