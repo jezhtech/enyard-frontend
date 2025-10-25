@@ -4,17 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Users, Target, Award, Lightbulb, Rocket, Heart } from "lucide-react";
-import {
-	lagoonTech,
-	chauffer,
-	fcFleet,
-	goyaka,
-	arshitha,
-	jibisha,
-	jinuMartin,
-	shabin,
-	linkedin,
-} from "../assets";
+import { Companies, Brands, Leaders, Social } from "@/assets";
 import EnhancedCTA from "@/components/EnhancedCTA";
 import BusinessForm from "@/components/BusinessForm";
 
@@ -199,31 +189,31 @@ const About = () => {
 			name: "Lagoon Technologies LLC",
 			industry: "IT & Software Development",
 			location: "UAE",
-			logo: lagoonTech,
+			logo: Companies.lagoonTech,
 		},
 		{
 			name: "Lagoon Technologies Private Limited",
 			industry: "IT & Software Development",
 			location: "India",
-			logo: lagoonTech,
+			logo: Companies.lagoonTech,
 		},
 		{
 			name: "UAE Chauffeur",
 			industry: "Luxury Transportation",
 			location: "UAE",
-			logo: chauffer,
+			logo: Companies.chauffeurUAE,
 		},
 		{
 			name: "First Class Fleet",
 			industry: "Premium Fleet Management",
 			location: "International",
-			logo: fcFleet,
+			logo: Companies.fcFleet,
 		},
 		{
 			name: "Goyaka Tours & Travels",
 			industry: "Travel & Tourism",
 			location: "UAE",
-			logo: goyaka,
+			logo: Companies.goyaka,
 		},
 	];
 
@@ -232,50 +222,50 @@ const About = () => {
 			name: "Boobazhop",
 			category: "E-commerce Platform",
 			description: "Innovative online shopping experience",
-			logo: "🛍️",
-			color: "from-pink-500 to-purple-600",
+			logo: Brands.boobaZhop,
+			color: "from-white-100 to-pink-200",
 		},
 		{
 			name: "Booba Taxi",
 			category: "Transportation App",
 			description: "Smart taxi booking platform",
-			logo: "🚕",
-			color: "from-yellow-500 to-orange-600",
+			logo: Brands.boobaTaxi,
+			color: "from-yellow-400 to-red-600",
 		},
 		{
 			name: "JezX",
 			category: "Iot and Hosting Provider",
 			description: "Connected device management",
-			logo: "💬",
-			color: "from-blue-500 to-cyan-600",
+			logo: Brands.jezX,
+			color: "from-blue-400 to-cyan-200",
 		},
 		{
 			name: "NexorX",
 			category: "EduTech Platform",
 			description: "Educational technology solutions",
-			logo: "🔗",
+			logo: Brands.nexorX,
 			color: "from-green-500 to-emerald-600",
 		},
 		{
 			name: "Azra Martin",
 			category: "Event Management Partner",
 			description: "Event management and planning",
-			logo: "👗",
+			logo: Brands.azra,
 			color: "from-red-500 to-pink-600",
 		},
 		{
 			name: "Enyard Media",
 			category: "Digital Media",
 			description: "Content creation and distribution",
-			logo: "📺",
+			logo: Brands.enyard,
 			color: "from-indigo-500 to-purple-600",
 		},
 		{
 			name: "Ricspace",
 			category: "Social Media Platform",
 			description: "Social media marketing and engagement",
-			logo: "📚",
-			color: "from-teal-500 to-blue-600",
+			logo: Brands.ricSpace,
+			color: "from-cyan-200 to-blue-100",
 		},
 	];
 
@@ -284,7 +274,7 @@ const About = () => {
 			name: "Jinu Martin",
 			position: "Investor",
 			description: "Strategic leadership and corporate governance",
-			profile: jinuMartin,
+			profile: Leaders.jinuMartin,
 			linkedin:
 				"https://www.linkedin.com/in/jinu-martin-64512269/?originalSubdomain=ae",
 		},
@@ -292,21 +282,21 @@ const About = () => {
 			name: "Shabin",
 			position: "Director & CEO",
 			description: "Executive leadership and business development",
-			profile: shabin,
+			profile: Leaders.shabin,
 			linkedin: "https://www.linkedin.com/in/shabin-jezh",
 		},
 		{
 			name: "Jibisha",
 			position: "Operational Manager",
 			description: "Day-to-day operations and team management",
-			profile: jibisha,
+			profile: Leaders.jibisha,
 			linkedin: "https://www.linkedin.com/in/jibisha-xavier-825689273/",
 		},
 		{
 			name: "Arshitha",
 			position: "Operational Manager",
 			description: "Day-to-day operations and team management",
-			profile: arshitha,
+			profile: Leaders.arshitha,
 			linkedin: "https://www.linkedin.com/in/arshithams/",
 		},
 	];
@@ -895,11 +885,13 @@ const About = () => {
 								<div
 									className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
 								/>
-								<div className="relative z-10 text-center">
-									<div
-										className={`flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${brand.color} group-hover:scale-110 transition-all duration-500 shadow-lg text-3xl`}>
-										{brand.logo}
-									</div>
+								<div className="flex flex-col items-center justify-center text-center">
+									<img
+										src={brand.logo}
+										className="w-[5rem] h-[5rem]"
+										alt={brand.name + " logo"}
+									/>
+
 									<h3 className="text-lg font-bold mb-2 text-black group-hover:text-gray-800 transition-colors">
 										{brand.name}
 									</h3>
@@ -956,7 +948,7 @@ const About = () => {
 								<div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 								<a href={member.linkedin} target="blank">
 									<img
-										src={linkedin}
+										src={Social.linkedin}
 										alt="LinkedIn logo"
 										className="absolute top-2 right-2 w-5 h-5 md:w-6 md:h-6"
 									/>
