@@ -29,76 +29,82 @@ import { useAuthStore } from "@/store/authStore";
 import AuthLayout from "./pages/auth/AuthLayout";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import DocX from "./pages/DocX";
+import WorkX365 from "./pages/WorkX365";
+import GitX from "./pages/GitX";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const { checkAuth } = useAuthStore();
+	const { checkAuth } = useAuthStore();
 
-  useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+	useEffect(() => {
+		checkAuth();
+	}, [checkAuth]);
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route element={<AuthLayout />}>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-            </Route>
-            <Route
-              path="/admin"
-              element={
-                <ProtectedRoute>
-                  <AdminPanel />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <ClientDashboard />
-                </ProtectedRoute>
-              }
-            />
+	return (
+		<QueryClientProvider client={queryClient}>
+			<TooltipProvider>
+				<Toaster />
+				<Sonner />
+				<BrowserRouter>
+					<ScrollToTop />
+					<Routes>
+						<Route path="/" element={<Index />} />
+						<Route element={<AuthLayout />}>
+							<Route path="/login" element={<Login />} />
+							<Route path="/register" element={<Register />} />
+						</Route>
+						<Route
+							path="/admin"
+							element={
+								<ProtectedRoute>
+									<AdminPanel />
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							path="/dashboard"
+							element={
+								<ProtectedRoute>
+									<ClientDashboard />
+								</ProtectedRoute>
+							}
+						/>
 
-            {/* Company Routes */}
-            <Route path="/about" element={<About />} />
-            <Route path="/career" element={<Career />} />
+						{/* Company Routes */}
+						<Route path="/about" element={<About />} />
+						<Route path="/career" element={<Career />} />
 
-            {/* Product Routes */}
-            <Route path="/products/timex" element={<TimeX />} />
-            <Route path="/products/corex" element={<CoreX />} />
-            <Route path="/products/fleetx" element={<FleetX />} />
-            <Route path="/products/xsafety" element={<XSafety />} />
-            <Route path="/products/medzorx" element={<MedzorX />} />
-            <Route path="/products/penquinx" element={<Penquin />} />
+						{/* Product Routes */}
+						<Route path="/products/timex" element={<TimeX />} />
+						<Route path="/products/corex" element={<CoreX />} />
+						<Route path="/products/fleetx" element={<FleetX />} />
+						<Route path="/products/xsafety" element={<XSafety />} />
+						<Route path="/products/medzorx" element={<MedzorX />} />
+						<Route path="/products/penquinx" element={<Penquin />} />
+						<Route path="/products/docx" element={<DocX />} />
+						<Route path="/products/workx365" element={<WorkX365 />} />
+						<Route path="/products/gitx" element={<GitX />} />
 
-            {/* Resource Routes */}
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/documentation" element={<Documentation />} />
-            <Route path="/downloads" element={<Downloads />} />
+						{/* Resource Routes */}
+						<Route path="/blog" element={<Blog />} />
+						<Route path="/documentation" element={<Documentation />} />
+						<Route path="/downloads" element={<Downloads />} />
 
-            {/* Other Routes */}
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/security" element={<Security />} />
+						{/* Other Routes */}
+						<Route path="/contact" element={<Contact />} />
+						<Route path="/privacy" element={<Privacy />} />
+						<Route path="/terms" element={<Terms />} />
+						<Route path="/security" element={<Security />} />
 
-            {/* Catch-all route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+						{/* Catch-all route */}
+						<Route path="*" element={<NotFound />} />
+					</Routes>
+				</BrowserRouter>
+			</TooltipProvider>
+		</QueryClientProvider>
+	);
 };
 
 export default App;
