@@ -8,47 +8,51 @@ export interface Logo {
 }
 const InfiniteLogoScroll = () => {
   const clients: Logo[] = [
-	{
-		src: ClientsLogo.adarsh,
-		alt: "Adarsh Logo",
-	},
-	{
-		src: ClientsLogo.dssc,
-		alt: "DSSC Logo",
-	},
-	{
-		src: ClientsLogo.lgConstruction,
-		alt: "LG Construction Logo",
-	},
-	{
-		src: ClientsLogo.ramakrishnaCollege,
-		alt: "Ramakrishna College Logo",
-	},
-	{
-		src: ClientsLogo.rojavanamSchool,
-		alt: "Rojavanam International School Logo",
-	},
-	{
-		src: ClientsLogo.sidone,
-		alt: "Sidone Logo",
-	},
-	{
-		src: ClientsLogo.fcFleet,
-		alt: "Fc Fleet Logo",
-	},
-];
+		{
+			src: ClientsLogo.adarsh,
+			alt: "Adarsh Logo",
+		},
+		{
+			src: ClientsLogo.dssc,
+			alt: "DSSC Logo",
+		},
+		{
+			src: ClientsLogo.lgConstruction,
+			alt: "LG Construction Logo",
+		},
+		{
+			src: ClientsLogo.ramakrishnaCollege,
+			alt: "Ramakrishna College Logo",
+		},
+		{
+			src: ClientsLogo.rojavanamSchool,
+			alt: "Rojavanam International School Logo",
+		},
+		{
+			src: ClientsLogo.sidone,
+			alt: "Sidone Logo",
+		},
+		{
+			src: ClientsLogo.fcFleet,
+			alt: "Fc Fleet Logo",
+		},
+		{
+			src: ClientsLogo.chicago,
+			alt: "chicago Logo",
+		},
+	];
 	const [sliderWidth, setSliderWidth] = useState("280px");
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth < 640) {
 				// Mobile
-				setSliderWidth("180px");
+				setSliderWidth("100px");
 			} else if (window.innerWidth < 1024) {
 				// Tablet
-				setSliderWidth("220px");
+				setSliderWidth("150px");
 			} else {
 				// Desktop
-				setSliderWidth("250px");
+				setSliderWidth("150px");
 			}
 		};
 
@@ -58,6 +62,10 @@ const InfiniteLogoScroll = () => {
 	}, []);
 	return (
 		<div className="w-full py-12  shadow-inner items-center overflow-hidden">
+			<h1 className="w-full flex items-center justify-center gap-5 text-4xl sm:text-1xl md:text-3xl lg:text-4xl  font-bold">
+				<span className="block text-black">Our</span>
+				<span className="block text-gradient-animate">Clients</span>
+			</h1>
 			<Slider
 				width={sliderWidth}
 				duration={20}
@@ -75,10 +83,6 @@ const InfiniteLogoScroll = () => {
 					</Slider.Slide>
 				))}
 			</Slider>
-			<h1 className="w-full flex items-center justify-center gap-5 text-4xl sm:text-2xl md:text-4xl lg:text-6xl  font-bold">
-				<span className="block text-black">Our</span>
-				<span className="block text-gradient-animate">Clients</span>
-			</h1>
 		</div>
 	);
 };

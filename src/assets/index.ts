@@ -16,12 +16,12 @@ export const Companies = {
 /* ------------------------------------------------------------------ */
 /*                            BRAND LOGOS                             */
 /* ------------------------------------------------------------------ */
-import boobaTaxi from "./brands/Booba Taxi.png";
-import boobaZhop from "./brands/Boobazhop.png";
+import boobaTaxi from "./brands/boobaTaxi.png";
+import boobaZhop from "./brands/boobazhop.png";
 import jezX from "./brands/jezX.png";
-import ricSpace from "./brands/Ricspace.png";
-import enyard from "./brands/Enyard.png";
-import nexorX from "./brands/nexorX.png";
+import ricSpace from "./brands/ricspace.png";
+import enyard from "./brands/enyard.png";
+import nexorX from "./brands/nexora.png";
 import azra from "./brands/Azra.png";
 
 export const Brands = {
@@ -43,6 +43,7 @@ import lgConstruction from "./clients/lg_construction_logo.png";
 import ramakrishnaCollege from "./clients/Ramakrishna_college_logo.png";
 import rojavanamSchool from "./clients/Rojavanam_internation_school_logo.png";
 import sidone from "./clients/sidone_logo.png";
+import chicago from "./clients/chicago.png";
 
 export const ClientsLogo = {
 	adarsh,
@@ -52,6 +53,7 @@ export const ClientsLogo = {
 	rojavanamSchool,
 	sidone,
 	fcFleet,
+	chicago,
 };
 
 /* ------------------------------------------------------------------ */

@@ -233,6 +233,13 @@ const About = () => {
 			color: "from-yellow-400 to-red-600",
 		},
 		{
+			name: "Azra Martin",
+			category: "Event Management Partner",
+			description: "Event management and planning",
+			logo: Brands.azra,
+			color: "from-red-500 to-pink-600",
+		},
+		{
 			name: "JezX",
 			category: "Iot and Hosting Provider",
 			description: "Connected device management",
@@ -246,13 +253,7 @@ const About = () => {
 			logo: Brands.nexorX,
 			color: "from-green-500 to-emerald-600",
 		},
-		{
-			name: "Azra Martin",
-			category: "Event Management Partner",
-			description: "Event management and planning",
-			logo: Brands.azra,
-			color: "from-red-500 to-pink-600",
-		},
+
 		{
 			name: "Enyard Media",
 			category: "Digital Media",
@@ -886,11 +887,7 @@ const About = () => {
 									className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
 								/>
 								<div className="flex flex-col items-center justify-center text-center">
-									<img
-										src={brand.logo}
-										className="w-[5rem] h-[5rem]"
-										alt={brand.name + " logo"}
-									/>
+									<img src={brand.logo} alt={brand.name + " logo"} />
 
 									<h3 className="text-lg font-bold mb-2 text-black group-hover:text-gray-800 transition-colors">
 										{brand.name}
