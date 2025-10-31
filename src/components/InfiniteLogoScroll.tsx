@@ -62,23 +62,30 @@ const InfiniteLogoScroll = () => {
 	}, []);
 	return (
 		<div className="w-full py-12  shadow-inner items-center overflow-hidden">
-			<h1 className="w-full flex items-center justify-center gap-5 text-4xl sm:text-1xl md:text-3xl lg:text-4xl  font-bold">
+			<h1 className="w-full flex items-center justify-center gap-5 text-4xl sm:text-2xl md:text-4xl lg:text-6xl  font-bold mb-10">
 				<span className="block text-black">Our</span>
 				<span className="block text-gradient-animate">Clients</span>
 			</h1>
 			<Slider
 				width={sliderWidth}
-				duration={20}
+				duration={25}
 				pauseOnHover={false}
 				blurBorders={false}>
 				{clients.map((logo, index) => (
 					<Slider.Slide key={index}>
-						<div className="flex items-center justify-center px-8">
-							<img
-								src={logo.src}
-								alt={logo.alt}
-								className="object-contain h-35 w-70 transition-transform duration-500 hover:scale-110"
-							/>
+						<div className="group relative">
+							<div className="flex items-center justify-center px-8 transition-transform duration-500 group-hover:scale-110">
+								<img
+									src={logo.src}
+									alt={logo.alt}
+									className="
+              object-contain
+              transition-all duration-500
+              grayscale
+              group-hover:grayscale-0
+            "
+								/>
+							</div>
 						</div>
 					</Slider.Slide>
 				))}

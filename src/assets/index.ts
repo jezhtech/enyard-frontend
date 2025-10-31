@@ -3,7 +3,7 @@
 /* ------------------------------------------------------------------ */
 import lagoonTech from "./companies/lagoon-technology.png";
 import chauffeurUAE from "./companies/chauffeur-UAE.png";
-import fcFleet from "./companies/fcfleet.png";
+import fcFleet from "./clients/fcfleet.png";
 import goyaka from "./companies/goyaka.png";
 
 export const Companies = {
@@ -37,13 +37,13 @@ export const Brands = {
 /* ------------------------------------------------------------------ */
 /*                            CLIENT LOGOS                            */
 /* ------------------------------------------------------------------ */
-import adarsh from "./clients/Adarsh_Logo.png";
-import dssc from "./clients/DSSC_logo.png";
-import lgConstruction from "./clients/lg_construction_logo.png";
-import ramakrishnaCollege from "./clients/Ramakrishna_college_logo.png";
-import rojavanamSchool from "./clients/Rojavanam_internation_school_logo.png";
-import sidone from "./clients/sidone_logo.png";
-import chicago from "./clients/chicago.png";
+import adarsh from "./clients/adarsh.png";
+import dssc from "./clients/dssc.png";
+import lgConstruction from "./clients/LG construction.png";
+import ramakrishnaCollege from "./clients/ramakrishnaClg.png";
+import rojavanamSchool from "./clients/rojavanam.png";
+import sidone from "./clients/sidone.png";
+import chicago from "./clients/Chicago.png";
 
 export const ClientsLogo = {
 	adarsh,
