@@ -75,7 +75,9 @@ export const Leaders = {
 /*                            SOCIAL ICONS                            */
 /* ------------------------------------------------------------------ */
 import linkedin from "./social/linkedinLogo.png";
+import teamWork from "./social/TeamWork.jpg";
 
 export const Social = {
 	linkedin,
+	teamWork,
 };
