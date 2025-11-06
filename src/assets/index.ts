@@ -17,10 +17,10 @@ export const Companies = {
 /*                            BRAND LOGOS                             */
 /* ------------------------------------------------------------------ */
 import boobaTaxi from "./brands/boobaTaxi.png";
-import boobaZhop from "./brands/boobaZhop.png";
+import boobaZhop from "./brands/Boobazhop.png";
 import jezX from "./brands/jezX.png";
-import ricSpace from "./brands/ricspace.png";
-import enyard from "./brands/enyard.png";
+import ricSpace from "./brands/Ricspace.png";
+import enyard from "./brands/Enyard.png";
 import nexorX from "./brands/nexora.png";
 import azra from "./brands/Azra.png";
 
