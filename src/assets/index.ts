@@ -17,7 +17,7 @@ export const Companies = {
 /*                            BRAND LOGOS                             */
 /* ------------------------------------------------------------------ */
 import boobaTaxi from "./brands/boobaTaxi.png";
-import boobaZhop from "./brands/temporaryName.png";
+import boobaZhop from "./brands/BoobaZhop.png";
 import jezX from "./brands/jezX.png";
 import ricSpace from "./brands/Ricspace.png";
 import enyard from "./brands/Enyard.png";
