@@ -1,83 +1,83 @@
 /* ------------------------------------------------------------------ */
 /*                          COMPANY LOGOS                             */
 /* ------------------------------------------------------------------ */
-import lagoonTech from "./companies/lagoon-technology-temp.png";
-import chauffeurUAE from "./companies/chauffeur-UAE-temp.png";
-import fcFleet from "./clients/fcfleet-temp.png";
-import goyaka from "./companies/goyaka-temp.png";
+import lagoontech from "./companies/lagoon-technology.png";
+import chauffeuruae from "./companies/chauffeur-uae.png";
+import fcfleet from "./clients/fcfleet.png";
+import goyaka from "./companies/goyaka.png";
 
 export const Companies = {
-	lagoonTech,
-	chauffeurUAE,
-	fcFleet,
+	lagoontech,
+	chauffeuruae,
+	fcfleet,
 	goyaka,
 };
 
 /* ------------------------------------------------------------------ */
 /*                            BRAND LOGOS                             */
 /* ------------------------------------------------------------------ */
-import boobaTaxi from "./brands/boobaTaxi-temp.png";
-import boobaZhop from "./brands/BoobaZhop-temp.png";
-import jezX from "./brands/jezX-temp.png";
-import ricSpace from "./brands/Ricspace-temp.png";
-import enyard from "./brands/Enyard-temp.png";
-import nexorX from "./brands/nexora-temp.png";
-import azra from "./brands/Azra-temp.png";
+import boobataxi from "./brands/boobataxi.png";
+import boobazhop from "./brands/boobazhop.png";
+import jezx from "./brands/jezx.png";
+import ricspace from "./brands/ricspace.png";
+import enyard from "./brands/enyard.png";
+import nexora from "./brands/nexora.png";
+import azra from "./brands/azra.png";
 
 export const Brands = {
-	boobaTaxi,
-	boobaZhop,
-	jezX,
-	ricSpace,
+	boobataxi,
+	boobazhop,
+	jezx,
+	ricspace,
 	enyard,
-	nexorX,
+	nexora,
 	azra,
 };
 
 /* ------------------------------------------------------------------ */
 /*                            CLIENT LOGOS                            */
 /* ------------------------------------------------------------------ */
-import adarsh from "./clients/adarsh-temp.png";
-import dssc from "./clients/dssc-temp.png";
-import lgConstruction from "./clients/LG construction-temp.png";
-import ramakrishnaCollege from "./clients/ramakrishnaClg-temp.png";
-import rojavanamSchool from "./clients/rojavanam-temp.png";
-import sidone from "./clients/sidone-temp.png";
-import chicago from "./clients/Chicago-temp.png";
+import adarsh from "./clients/adarsh.png";
+import chicago from "./clients/chicago.png";
+import dssc from "./clients/dssc.png";
+import lgconstruction from "./clients/lgconstruction.png";
+import ramakrishnaclg from "./clients/ramakrishnaclg.png";
+import rojavanam from "./clients/rojavanam.png";
+import sidone from "./clients/sidone.png";
 
 export const ClientsLogo = {
 	adarsh,
-	dssc,
-	lgConstruction,
-	ramakrishnaCollege,
-	rojavanamSchool,
-	sidone,
-	fcFleet,
 	chicago,
+	dssc,
+	lgconstruction,
+	ramakrishnaclg,
+	rojavanam,
+	sidone,
+	fcfleet,
 };
 
 /* ------------------------------------------------------------------ */
 /*                            LEADERSHIP                              */
 /* ------------------------------------------------------------------ */
-import arshitha from "./leaders/Arshitha-temp.png";
-import jibisha from "./leaders/Jibisha-temp.png";
-import jinuMartin from "./leaders/JinuMartin-temp.png";
-import shabin from "./leaders/shabin-temp.png";
+import arshitha from "./leaders/arshitha.png";
+import jibisha from "./leaders/jibisha.png";
+import jinumartin from "./leaders/jinumartin.png";
+import shabin from "./leaders/shabin.png";
 
 export const Leaders = {
 	arshitha,
 	jibisha,
-	jinuMartin,
+	jinumartin,
 	shabin,
 };
 
 /* ------------------------------------------------------------------ */
 /*                            SOCIAL ICONS                            */
 /* ------------------------------------------------------------------ */
-import linkedin from "./social/linkedinLogo-temp.png";
-import teamWork from "./social/TeamWork-temp.jpg";
+import linkedin from "./social/linkedinlogo.png";
+import teamwork from "./social/teamwork.jpg";
 
 export const Social = {
 	linkedin,
-	teamWork,
+	teamwork,
 };

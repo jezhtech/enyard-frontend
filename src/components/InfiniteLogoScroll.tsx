@@ -17,15 +17,15 @@ const InfiniteLogoScroll = () => {
 			alt: "DSSC Logo",
 		},
 		{
-			src: ClientsLogo.lgConstruction,
+			src: ClientsLogo.lgconstruction,
 			alt: "LG Construction Logo",
 		},
 		{
-			src: ClientsLogo.ramakrishnaCollege,
+			src: ClientsLogo.ramakrishnaclg,
 			alt: "Ramakrishna College Logo",
 		},
 		{
-			src: ClientsLogo.rojavanamSchool,
+			src: ClientsLogo.rojavanam,
 			alt: "Rojavanam International School Logo",
 		},
 		{
@@ -33,7 +33,7 @@ const InfiniteLogoScroll = () => {
 			alt: "Sidone Logo",
 		},
 		{
-			src: ClientsLogo.fcFleet,
+			src: ClientsLogo.fcfleet,
 			alt: "Fc Fleet Logo",
 		},
 		{
