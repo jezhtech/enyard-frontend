@@ -21,8 +21,8 @@ import {
 	CheckCircle,
 	Star,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const Contact = () => {
 	const [scrollY, setScrollY] = useState(0);
@@ -104,7 +104,7 @@ const Contact = () => {
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.CONTACT} />
+			<SeoMeta path={PAGE_PATHS.CONTACT} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

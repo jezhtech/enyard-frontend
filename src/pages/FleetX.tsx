@@ -19,8 +19,8 @@ import {
 	Route,
 } from "lucide-react";
 import { redirectToExternalSite } from "../lib/utils";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const FleetX = () => {
 	const [activeFeature, setActiveFeature] = useState(0);
@@ -197,7 +197,7 @@ console.log('🚗 Fleet Management Ready');
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.FLEETX} />
+			<SeoMeta path={PAGE_PATHS.FLEETX} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

@@ -18,8 +18,8 @@ import {
 	Package,
 	DollarSign,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const CoreX = () => {
 	const [activeModule, setActiveModule] = useState(0);
@@ -158,7 +158,7 @@ console.log('🚀 ERP System Ready');`;
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.COREX} />
+			<SeoMeta path={PAGE_PATHS.COREX} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

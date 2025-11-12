@@ -5,7 +5,7 @@ interface Props {
 	path: string;
 }
 
-export const SEO = ({ path }: Props) => {
+export const SeoMeta = ({ path }: Props) => {
 	const meta = getMeta(path);
 
 	if (!meta) return null;

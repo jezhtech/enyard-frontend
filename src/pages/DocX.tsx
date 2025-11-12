@@ -17,8 +17,8 @@ import {
 	SlidersVertical,
 	CircleGauge,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const DocX = () => {
 	const [typedText, setTypedText] = useState("");
@@ -129,7 +129,7 @@ const DocX = () => {
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.DOCX} />
+			<SeoMeta path={PAGE_PATHS.DOCX} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

@@ -7,8 +7,8 @@ import { Users, Target, Award, Lightbulb, Rocket, Heart } from "lucide-react";
 import { Companies, Brands, Leaders, Social } from "@/assets";
 import EnhancedCTA from "@/components/EnhancedCTA";
 import BusinessForm from "@/components/BusinessForm";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const About = () => {
 	const [scrollY, setScrollY] = useState(0);
@@ -330,7 +330,7 @@ const About = () => {
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.ABOUT} />
+			<SeoMeta path={PAGE_PATHS.ABOUT} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

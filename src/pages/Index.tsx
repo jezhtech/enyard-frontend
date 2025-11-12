@@ -7,13 +7,13 @@ import PenquinCountdown from "@/components/PenquinCountdown";
 import InnovativeFeatures from "@/components/InnovativeFeatures";
 import ParallaxSection from "@/components/ParallaxSection";
 import InfiniteLogoScroll from "../components/InfiniteLogoScroll";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const Index = () => {
 	return (
 		<>
-			<SEO path={PAGE_PATHS.HOME} />
+			<SeoMeta path={PAGE_PATHS.HOME} />
 			<div className="min-h-screen">
 				<Navigation />
 				<main>

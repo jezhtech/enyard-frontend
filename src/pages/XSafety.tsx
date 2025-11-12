@@ -18,8 +18,8 @@ import {
 	Activity,
 	CheckCircle,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const XSafety = () => {
 	const [typedText, setTypedText] = useState("");
@@ -162,7 +162,7 @@ console.log('✈️ Aviation Safety System Online');`;
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.XSAFETY} />
+			<SeoMeta path={PAGE_PATHS.XSAFETY} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

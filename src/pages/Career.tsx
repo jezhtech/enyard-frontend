@@ -17,7 +17,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Social } from "@/assets";
 import { PAGE_PATHS } from "@/seo/routeMeta";
-import { SEO } from "@/components/Seo";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const Career = () => {
 	const navigate = useNavigate();
@@ -121,7 +121,7 @@ const Career = () => {
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.CAREER} />
+			<SeoMeta path={PAGE_PATHS.CAREER} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

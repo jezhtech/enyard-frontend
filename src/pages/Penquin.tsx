@@ -15,8 +15,8 @@ import {
 	CheckCircle,
 	ArrowRight,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const Penquin = () => {
 	const [activeModule, setActiveModule] = useState(0);
@@ -154,7 +154,7 @@ learningPlatform.startLearningSession('vulnerability-labs');
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.PENQUINX} />
+			<SeoMeta path={PAGE_PATHS.PENQUINX} />
 			<div className="min-h-screen flex flex-col">
 				<Navigation />
 				<main className="flex-grow">

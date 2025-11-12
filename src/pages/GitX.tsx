@@ -14,8 +14,8 @@ import {
 	FolderUp,
 	FileClock,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const GitX = () => {
 	const [typedText, setTypedText] = useState("");
@@ -106,7 +106,7 @@ const GitX = () => {
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.GITX} />
+			<SeoMeta path={PAGE_PATHS.GITX} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

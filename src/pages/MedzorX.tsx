@@ -18,8 +18,8 @@ import {
 	Stethoscope,
 	FileText,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const MedzorX = () => {
 	const [activeModule, setActiveModule] = useState(0);
@@ -189,7 +189,7 @@ console.log('🏥 Hospital System Online');`;
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.MEDZORX} />
+			<SeoMeta path={PAGE_PATHS.MEDZORX} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

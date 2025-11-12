@@ -16,8 +16,8 @@ import {
 	Terminal,
 	Zap,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const TimeX = () => {
 	const [typedText, setTypedText] = useState("");
@@ -104,7 +104,7 @@ const TimeX = () => {
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.TIMEX} />
+			<SeoMeta path={PAGE_PATHS.TIMEX} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 

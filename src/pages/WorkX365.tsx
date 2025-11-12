@@ -14,8 +14,8 @@ import {
 	FolderUp,
 	FileClock,
 } from "lucide-react";
-import { SEO } from "@/components/Seo";
 import { PAGE_PATHS } from "@/seo/routeMeta";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const WorkX365 = () => {
 	const [typedText, setTypedText] = useState("");
@@ -106,7 +106,7 @@ const WorkX365 = () => {
 
 	return (
 		<>
-			<SEO path={PAGE_PATHS.WORKX365} />
+			<SeoMeta path={PAGE_PATHS.WORKX365} />
 			<div className="min-h-screen bg-background">
 				<Navigation />
 
