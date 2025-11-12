@@ -7,22 +7,27 @@ import PenquinCountdown from "@/components/PenquinCountdown";
 import InnovativeFeatures from "@/components/InnovativeFeatures";
 import ParallaxSection from "@/components/ParallaxSection";
 import InfiniteLogoScroll from "../components/InfiniteLogoScroll";
+import { SEO } from "@/components/Seo";
+import { PAGE_PATHS } from "@/seo/routeMeta";
 
 const Index = () => {
 	return (
-		<div className="min-h-screen">
-			<Navigation />
-			<main>
-				<VercelHero />
-				<PenquinCountdown />
-				<InnovativeFeatures />
-				<InfiniteMarquee />
-				<ProductsGrid />
-				<InfiniteLogoScroll />
-				<ParallaxSection />
-			</main>
-			<Footer />
-		</div>
+		<>
+			<SEO path={PAGE_PATHS.HOME} />
+			<div className="min-h-screen">
+				<Navigation />
+				<main>
+					<VercelHero />
+					<PenquinCountdown />
+					<InnovativeFeatures />
+					<InfiniteMarquee />
+					<ProductsGrid />
+					<InfiniteLogoScroll />
+					<ParallaxSection />
+				</main>
+				<Footer />
+			</div>
+		</>
 	);
 };
 
