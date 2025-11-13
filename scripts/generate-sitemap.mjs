@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Final output location → dist/sitemap.xml
-const distDir = resolve(__dirname, "../dist");
+const distDir = resolve(__dirname, "../public");
 const outputPath = resolve(distDir, "sitemap.xml");
 
 // Ensure dist folder exists (important!)
