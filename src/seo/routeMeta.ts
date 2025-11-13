@@ -15,6 +15,11 @@ export enum PAGE_PATHS {
 	ABOUT = "/about",
 	CONTACT = "/contact",
 	CAREER = "/career",
+	BLOG = "/blog",
+	DOCUMENTATION = "/documentation",
+	DOWNLOADS = "/downloads",
+	REGISTER = "/register",
+	LOGIN = "/login",
 
 	// Products
 	TIMEX = "/products/timex",
@@ -173,6 +178,111 @@ export const SEO_CONFIG: RouteMeta[] = [
 			"@context": "https://schema.org",
 			"@type": "careerPage",
 			url: "https://enyard.in/career",
+			mainEntity: {
+				"@type": "ContactPoint",
+				telephone: "+91-91505-37718",
+				contactType: "customer service",
+				email: "info@enyard.in",
+			},
+		},
+	},
+	// ───────────────────────────────
+	// Blog PAGE
+	// ───────────────────────────────
+	{
+		path: PAGE_PATHS.BLOG,
+		title: "Blogs | ENYARD ",
+		description:
+			"Insights, tutorials, and thought leadership on AI, software development, and the future of technology innovation.",
+		canonical: "https://enyard.in/blogs",
+		schema: {
+			"@context": "https://schema.org",
+			"@type": "BlogPage",
+			url: "https://enyard.in/blogs",
+			mainEntity: {
+				"@type": "ContactPoint",
+				telephone: "+91-91505-37718",
+				contactType: "customer service",
+				email: "info@enyard.in",
+			},
+		},
+	},
+	// ───────────────────────────────
+	// Documentation PAGE
+	// ───────────────────────────────
+	{
+		path: PAGE_PATHS.DOCUMENTATION,
+		title: "Documentations | ENYARD ",
+		description:
+			"Comprehensive guides, API references, and tutorials to help you integrate and maximize the potential of ENYARD solutions.",
+		canonical: "https://enyard.in/documentation",
+		schema: {
+			"@context": "https://schema.org",
+			"@type": "Document Page",
+			url: "https://enyard.in/documentation",
+			mainEntity: {
+				"@type": "ContactPoint",
+				telephone: "+91-91505-37718",
+				contactType: "customer service",
+				email: "info@enyard.in",
+			},
+		},
+	},
+	// ───────────────────────────────
+	// Download PAGE
+	// ───────────────────────────────
+	{
+		path: PAGE_PATHS.DOWNLOADS,
+		title: "Downloads | ENYARD ",
+		description:
+			"Access all ENYARD applications, documentation, resources, and tools. Everything you need to get started and succeed with our solutions.",
+		canonical: "https://enyard.in/downloads",
+		schema: {
+			"@context": "https://schema.org",
+			"@type": "Download Page",
+			url: "https://enyard.in/downloads",
+			mainEntity: {
+				"@type": "ContactPoint",
+				telephone: "+91-91505-37718",
+				contactType: "customer service",
+				email: "info@enyard.in",
+			},
+		},
+	},
+	// ───────────────────────────────
+	// Register PAGE
+	// ───────────────────────────────
+	{
+		path: PAGE_PATHS.REGISTER,
+		title: "Register | ENYARD ",
+		description:
+			"Create your ENYARD account to access our AI-powered software solutions and resources. Join us today!",
+		canonical: "https://enyard.in/register",
+		schema: {
+			"@context": "https://schema.org",
+			"@type": "register Page",
+			url: "https://enyard.in/register",
+			mainEntity: {
+				"@type": "ContactPoint",
+				telephone: "+91-91505-37718",
+				contactType: "customer service",
+				email: "info@enyard.in",
+			},
+		},
+	},
+	// ───────────────────────────────
+	// Login  PAGE
+	// ───────────────────────────────
+	{
+		path: PAGE_PATHS.LOGIN,
+		title: "Login | ENYARD ",
+		description:
+			"Access your ENYARD account to utilize our AI-powered software solutions and resources. Welcome back!",
+		canonical: "https://enyard.in/login",
+		schema: {
+			"@context": "https://schema.org",
+			"@type": "login Page",
+			url: "https://enyard.in/login",
 			mainEntity: {
 				"@type": "ContactPoint",
 				telephone: "+91-91505-37718",
