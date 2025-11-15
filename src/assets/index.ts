@@ -44,6 +44,7 @@ import lgconstruction from "./clients/lgconstruction.png";
 import ramakrishnaclg from "./clients/ramakrishnaclg.png";
 import rojavanam from "./clients/rojavanam.png";
 import sidone from "./clients/sidone.png";
+import rapidinfo from "./clients/rapidinfo.png";
 
 export const ClientsLogo = {
 	adarsh,
@@ -54,6 +55,7 @@ export const ClientsLogo = {
 	rojavanam,
 	sidone,
 	fcfleet,
+	rapidinfo,
 };
 
 /* ------------------------------------------------------------------ */

@@ -7,7 +7,7 @@ export interface Logo {
 	alt: string;
 }
 const InfiniteLogoScroll = () => {
-  const clients: Logo[] = [
+	const clients: Logo[] = [
 		{
 			src: ClientsLogo.adarsh,
 			alt: "Adarsh Logo",
@@ -40,6 +40,10 @@ const InfiniteLogoScroll = () => {
 			src: ClientsLogo.chicago,
 			alt: "chicago Logo",
 		},
+		{
+			src: ClientsLogo.rapidinfo,
+			alt: "Rapid-info Logo",
+		},
 	];
 	const [sliderWidth, setSliderWidth] = useState("280px");
 	useEffect(() => {
@@ -63,8 +67,9 @@ const InfiniteLogoScroll = () => {
 	return (
 		<div className="w-full py-12  shadow-inner items-center overflow-hidden">
 			<h1 className="w-full flex items-center justify-center gap-5 text-4xl sm:text-2xl md:text-4xl lg:text-6xl  font-bold mb-10">
-				<span className="block text-black">Our</span>
-				<span className="block text-gradient-animate">Clients</span>
+				<span className="text-2xl md:text-4xl font-bold mb-4 text-black">
+					Our Clients
+				</span>
 			</h1>
 			<Slider
 				width={sliderWidth}

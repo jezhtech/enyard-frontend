@@ -61,34 +61,16 @@ const Navigation = () => {
 						"AI-powered attendance management with camera integration",
 				},
 				{
-					label: "CoreX",
-					href: "/products/corex",
-					icon: Building2,
-					description: "Complete ERP solution for modern enterprises",
-				},
-				{
-					label: "FleetX",
-					href: "/products/fleetx",
-					icon: Truck,
-					description: "Smart fleet booking and management system",
+					label: "XSafety",
+					href: "/products/xsafety",
+					icon: Shield,
+					description: "Advanced safety management system for airlines",
 				},
 			],
 		},
 		{
 			title: "Specialized Solutions",
 			items: [
-				{
-					label: "XSafety",
-					href: "/products/xsafety",
-					icon: Shield,
-					description: "Advanced safety management system for airlines",
-				},
-				{
-					label: "MedzorX",
-					href: "/products/medzorx",
-					icon: Heart,
-					description: "Advanced hospital management system",
-				},
 				{
 					label: "PenquinX",
 					href: "/products/penquinx",
@@ -98,15 +80,8 @@ const Navigation = () => {
 			],
 		},
 		{
-			title: "Add-on Solutions",
+			title: "Plug-in Solutions",
 			items: [
-				{
-					label: "DocX",
-					href: "/products/docX",
-					icon: FileCode,
-					description:
-						"Secure and efficient document management system for businesses",
-				},
 				{
 					label: "WorkX 365",
 					href: "/products/workx365",
