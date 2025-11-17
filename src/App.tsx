@@ -32,6 +32,9 @@ import Register from "./pages/auth/Register";
 import DocX from "./pages/DocX";
 import WorkX365 from "./pages/WorkX365";
 import GitX from "./pages/GitX";
+import VerifyEmail from "./pages/auth/VerifyEmail";
+import PhoneNumber from "./pages/auth/PhoneNumber";
+import OtpVerification from "./pages/auth/OtpVerification";
 
 const queryClient = new QueryClient();
 
@@ -52,9 +55,13 @@ const App = () => {
 					<Routes>
 						<Route path="/" element={<Index />} />
 						<Route element={<AuthLayout />}>
-							<Route path="/login" element={<Login />} />
-							<Route path="/register" element={<Register />} />
+							<Route path="auth/login" element={<Login />} />
+							<Route path="auth/register" element={<Register />} />
 						</Route>
+						<Route path="auth/verify-email" element={<VerifyEmail />} />
+						<Route path="auth/verify-phone" element={<PhoneNumber />} />
+						<Route path="auth/otp-verification" element={<OtpVerification />} />
+
 						<Route
 							path="/admin"
 							element={

@@ -51,7 +51,7 @@ const Login = () => {
 	return (
 		<>
 			<SeoMeta path={PAGE_PATHS.LOGIN} />
-			<TabsContent value="/login">
+			<TabsContent value="/auth/login">
 				<Card className="glass border-0 shadow-enyard">
 					<CardHeader>
 						<CardTitle>Client Login</CardTitle>
@@ -106,7 +106,7 @@ const Login = () => {
 									Forgot password?
 								</Link>
 								<Link
-									to="/register"
+									to="/auth/register"
 									className="text-sm text-primary hover:underline">
 									Sign up
 								</Link>

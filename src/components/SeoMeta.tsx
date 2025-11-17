@@ -13,8 +13,11 @@ export const SeoMeta = ({ path }: Props) => {
 	return (
 		<Helmet prioritizeSeoTags>
 			<title>{meta.title}</title>
-			<meta name="description" content={meta.description} />
-			<link rel="canonical" href={meta.canonical} />
+			{meta.description && (
+				<meta name="description" content={meta.description} />
+			)}
+			{meta.canonical && <link rel="canonical" href={meta.canonical} />}
+
 			{meta.keywords && (
 				<meta name="keywords" content={meta.keywords.join(", ")} />
 			)}

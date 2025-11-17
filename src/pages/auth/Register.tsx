@@ -11,78 +11,83 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { authService } from "@/services/auth";
 import { SeoMeta } from "@/components/SeoMeta";
 import { PAGE_PATHS } from "@/seo/routeMeta";
 
+const nameRegex = /^[A-Z a-z]+$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const Register = () => {
-	const [showPassword, setShowPassword] = useState(false);
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
+
 	const navigate = useNavigate();
 	const { toast } = useToast();
 
+	// -------------------------------
+	// Registration submission handler
+	// -------------------------------
 	const handleRegister = async (e: React.FormEvent) => {
 		e.preventDefault();
 		setIsLoading(true);
-		try {
-			await authService.register({ firstName, lastName, email, password });
-			toast({
-				title: "Registration Successful",
-				description: "You can now log in.",
-			});
-			navigate("/login");
-		} catch (error: any) {
-			toast({
-				title: "Registration Failed",
-				description: error.message || "An unexpected error occurred.",
-				variant: "destructive",
-			});
-		} finally {
-			setIsLoading(false);
-		}
+		navigate("/auth/verify-email");
 	};
 
 	return (
 		<>
 			<SeoMeta path={PAGE_PATHS.REGISTER} />
-			<TabsContent value="/register">
+			<TabsContent value="/auth/register">
 				<Card className="glass border-0 shadow-enyard">
 					<CardHeader>
 						<CardTitle>Register</CardTitle>
 						<CardDescription>Create a new client account</CardDescription>
 					</CardHeader>
+
 					<CardContent>
 						<form onSubmit={handleRegister} className="space-y-4">
+							{/* First Name */}
 							<div className="space-y-2">
-								<Label htmlFor="name">First Name</Label>
+								<Label htmlFor="firstName">First Name</Label>
 								<Input
 									id="firstName"
 									type="text"
 									placeholder="First Name"
 									className="glass"
 									value={firstName}
-									onChange={(e) => setFirstName(e.target.value)}
+									onChange={(e) => {
+										const value = e.target.value;
+										if (nameRegex.test(value)) {
+											setFirstName(value);
+										}
+									}}
 									required
 								/>
 							</div>
+
+							{/* Last Name */}
 							<div className="space-y-2">
-								<Label htmlFor="name">Last Name</Label>
+								<Label htmlFor="lastName">Last Name</Label>
 								<Input
 									id="lastName"
 									type="text"
 									placeholder="Last Name"
 									className="glass"
 									value={lastName}
-									onChange={(e) => setLastName(e.target.value)}
+									onChange={(e) => {
+										const value = e.target.value;
+										if (nameRegex.test(value)) {
+											setLastName(value);
+										}
+									}}
 									required
 								/>
 							</div>
+
+							{/* Email */}
 							<div className="space-y-2">
 								<Label htmlFor="email">Email</Label>
 								<Input
@@ -91,47 +96,27 @@ const Register = () => {
 									placeholder="your@company.com"
 									className="glass"
 									value={email}
-									onChange={(e) => setEmail(e.target.value)}
+									onChange={(e) => {
+										const value = e.target.value;
+										if (emailRegex.test(value)) {
+											setEmail(value);
+										}
+									}}
 									required
 								/>
-							</div>
-							<div className="space-y-2">
-								<Label htmlFor="password">Password</Label>
-								<div className="relative">
-									<Input
-										id="password"
-										type={showPassword ? "text" : "password"}
-										placeholder="Create a password"
-										className="glass pr-10"
-										value={password}
-										onChange={(e) => setPassword(e.target.value)}
-										required
-									/>
-									<Button
-										type="button"
-										variant="ghost"
-										size="sm"
-										className="absolute right-0 top-0 h-full px-3"
-										onClick={() => setShowPassword(!showPassword)}>
-										{showPassword ? (
-											<EyeOff className="h-4 w-4" />
-										) : (
-											<Eye className="h-4 w-4" />
-										)}
-									</Button>
-								</div>
 							</div>
 							<Button className="w-full" type="submit" disabled={isLoading}>
 								{isLoading ? (
 									<Loader2 className="h-4 w-4 animate-spin" />
 								) : (
-									"Create Account"
+									"Verify Email"
 								)}
 							</Button>
 						</form>
+
 						<div className="mt-4 text-center text-sm">
 							Already have an account?{" "}
-							<Link to="/login" className="underline">
+							<Link to="/auth/login" className="underline">
 								Sign in
 							</Link>
 						</div>
