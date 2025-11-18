@@ -1,8 +1,8 @@
 export interface RouteMeta {
 	path: string;
 	title: string;
-	description: string;
-	canonical: string;
+	description?: string;
+	canonical?: string;
 	ogImage?: string;
 	robots?: string;
 	keywords?: string[];
@@ -18,8 +18,13 @@ export enum PAGE_PATHS {
 	BLOG = "/blog",
 	DOCUMENTATION = "/documentation",
 	DOWNLOADS = "/downloads",
-	REGISTER = "/register",
-	LOGIN = "/login",
+
+	// Auth
+	VerifyEmail = "/auth/verify-email",
+	REGISTER = "/auth/register",
+	LOGIN = "/auth/login",
+	PHONE = "/auth/verify-phone",
+	OTP_VERIFICATION = "/auth/otp-verification",
 
 	// Products
 	TIMEX = "/products/timex",
@@ -34,6 +39,19 @@ export enum PAGE_PATHS {
 }
 
 export const SEO_CONFIG: RouteMeta[] = [
+	// Auth Pages
+	{
+		path: PAGE_PATHS.VerifyEmail,
+		title: "Email Verification | ENYARD ",
+	},
+	{
+		path: PAGE_PATHS.PHONE,
+		title: "Register | ENYARD ",
+	},
+	{
+		path: PAGE_PATHS.OTP_VERIFICATION,
+		title: "OTP Verifications | ENYARD ",
+	},
 	// ───────────────────────────────
 	// HOME PAGE
 	// ───────────────────────────────
@@ -257,7 +275,7 @@ export const SEO_CONFIG: RouteMeta[] = [
 		title: "Register | ENYARD ",
 		description:
 			"Create your ENYARD account to access our AI-powered software solutions and resources. Join us today!",
-		canonical: "https://enyard.in/register",
+		canonical: "https://enyard.in/auth/register",
 		schema: {
 			"@context": "https://schema.org",
 			"@type": "register Page",

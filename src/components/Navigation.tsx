@@ -339,7 +339,7 @@ const Navigation = () => {
 							</>
 						) : (
 							<>
-								<Link to="/login">
+								<Link to="/auth/login">
 									<Button
 										variant="ghost"
 										size="sm"
@@ -347,7 +347,7 @@ const Navigation = () => {
 										Login
 									</Button>
 								</Link>
-								<Link to="/register">
+								<Link to="/auth/register">
 									<Button
 										size="sm"
 										className="hover:scale-105 transition-transform">
@@ -451,13 +451,13 @@ const Navigation = () => {
 									</>
 								) : (
 									<>
-										<Link to="/login">
+										<Link to="/auth/login">
 											<Button variant="ghost" size="sm">
 												Login
 											</Button>
 										</Link>
-										<Link to="/admin">
-											<Button size="sm">Admin</Button>
+										<Link to="/auth/register">
+											<Button size="sm">Register</Button>
 										</Link>
 									</>
 								)}
