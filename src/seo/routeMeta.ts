@@ -275,7 +275,7 @@ export const SEO_CONFIG: RouteMeta[] = [
 		title: "Register | ENYARD ",
 		description:
 			"Create your ENYARD account to access our AI-powered software solutions and resources. Join us today!",
-		canonical: "https://enyard.in/register",
+		canonical: "https://enyard.in/auth/register",
 		schema: {
 			"@context": "https://schema.org",
 			"@type": "register Page",

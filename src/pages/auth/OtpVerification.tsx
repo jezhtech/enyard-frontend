@@ -9,15 +9,19 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { toast } from "@/components/ui/use-toast";
+import useApiRequest from "@/hooks/useApiRequest";
 import { PAGE_PATHS } from "@/seo/routeMeta";
 import { Loader2 } from "lucide-react";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { getIdToken } from "@/firebase/auth";
 
 const OtpVerification = () => {
 	const navigate = useNavigate();
 	const [otp, setOtp] = useState(["", "", "", "", "", ""]);
 	const [isLoading, setIsLoading] = useState(false);
+	const { post } = useApiRequest();
 
 	const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -52,6 +56,44 @@ const OtpVerification = () => {
 		}
 
 		setIsLoading(true);
+		try {
+			// 2. Retrieve Firebase ID token
+			let idToken: string | null = null;
+			try {
+				idToken = await getIdToken();
+			} catch (tokenErr) {
+				console.warn("Failed to get ID token:", tokenErr);
+			}
+
+			// 3. Build headers
+			const headers = idToken
+				? { Authorization: `Bearer ${idToken}` }
+				: undefined;
+
+			// 4. Make backend POST call using your helper
+			const payload = await post(
+				"/api/auth/verify-otp",
+				{ otp: fullOtp },
+				{ headers }
+			);
+
+			toast({
+				title: "Phone number verified successfully",
+				description: "try to logged in.",
+			});
+			navigate("/");
+
+			// 6. Navigate to OTP validation
+		} catch (err: any) {
+			toast({
+				title: "invalid OTP",
+				description: "try again",
+				variant: "destructive",
+			});
+			return;
+		} finally {
+			setIsLoading(false);
+		}
 
 		// Simulate OTP verification success
 		setTimeout(() => {

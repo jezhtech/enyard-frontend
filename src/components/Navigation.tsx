@@ -451,13 +451,13 @@ const Navigation = () => {
 									</>
 								) : (
 									<>
-										<Link to="/login">
+										<Link to="/auth/login">
 											<Button variant="ghost" size="sm">
 												Login
 											</Button>
 										</Link>
-										<Link to="/admin">
-											<Button size="sm">Admin</Button>
+										<Link to="/auth/register">
+											<Button size="sm">Register</Button>
 										</Link>
 									</>
 								)}

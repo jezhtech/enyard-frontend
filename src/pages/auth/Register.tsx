@@ -15,26 +15,88 @@ import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { SeoMeta } from "@/components/SeoMeta";
 import { PAGE_PATHS } from "@/seo/routeMeta";
-
-const nameRegex = /^[A-Z a-z]+$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import useAuth from "@/hooks/useAuth";
+import useApiRequest from "@/hooks/useApiRequest";
+import { getIdToken } from "@/firebase/auth";
 
 const Register = () => {
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
-	const [email, setEmail] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
 
 	const navigate = useNavigate();
-	const { toast } = useToast();
+	const {
+		verifyEmail,
+		signUp,
+		error: authError,
+		loading: authLoading,
+		clearError,
+	} = useAuth();
+	const { post } = useApiRequest();
 
-	// -------------------------------
-	// Registration submission handler
-	// -------------------------------
-	const handleRegister = async (e: React.FormEvent) => {
+	const { toast } = useToast();
+	const handleVerify = async () => {
+		try {
+			await verifyEmail();
+			alert("Verification email sent.");
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+		clearError();
 		setIsLoading(true);
+		// Validation
+		if (password !== confirmPassword) {
+			alert("Passwords don't match");
+			setIsLoading(false);
+			return;
+		}
+
+		if (password.length < 6) {
+			alert("Password must be at least 6 characters");
+			setIsLoading(false);
+			return;
+		}
+		try {
+			// Step 1: Create Firebase user
+			await signUp(name, email, password);
+		} catch (err) {
+			toast({
+				variant: "destructive",
+				title: "Registration Failed",
+				description: err.message,
+			});
+			setIsLoading(false);
+			return;
+		}
 		navigate("/auth/verify-email");
+		await verifyEmail();
+
+		try {
+			// Retrieve ID token from Firebase and attach to Authorization header
+			let token: string | null = null;
+			try {
+				token = await getIdToken();
+			} catch (tokenErr) {
+				console.warn("Failed to get ID token:", tokenErr);
+			}
+
+			const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+
+			await post("/api/auth/register-firebase", { name }, { headers });
+		} catch (err) {
+			toast({
+				title: "Registration Failed",
+				description: err.message,
+			});
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	return (
@@ -48,45 +110,23 @@ const Register = () => {
 					</CardHeader>
 
 					<CardContent>
-						<form onSubmit={handleRegister} className="space-y-4">
+						<form onSubmit={handleSubmit} className="space-y-4">
 							{/* First Name */}
 							<div className="space-y-2">
-								<Label htmlFor="firstName">First Name</Label>
+								<Label htmlFor="name">Name</Label>
 								<Input
-									id="firstName"
+									id="name"
 									type="text"
-									placeholder="First Name"
+									placeholder="Name"
 									className="glass"
-									value={firstName}
+									value={name}
 									onChange={(e) => {
 										const value = e.target.value;
-										if (nameRegex.test(value)) {
-											setFirstName(value);
-										}
+										setName(value);
 									}}
 									required
 								/>
 							</div>
-
-							{/* Last Name */}
-							<div className="space-y-2">
-								<Label htmlFor="lastName">Last Name</Label>
-								<Input
-									id="lastName"
-									type="text"
-									placeholder="Last Name"
-									className="glass"
-									value={lastName}
-									onChange={(e) => {
-										const value = e.target.value;
-										if (nameRegex.test(value)) {
-											setLastName(value);
-										}
-									}}
-									required
-								/>
-							</div>
-
 							{/* Email */}
 							<div className="space-y-2">
 								<Label htmlFor="email">Email</Label>
@@ -98,13 +138,42 @@ const Register = () => {
 									value={email}
 									onChange={(e) => {
 										const value = e.target.value;
-										if (emailRegex.test(value)) {
-											setEmail(value);
-										}
+										setEmail(value);
 									}}
 									required
 								/>
 							</div>
+							{/* Password */}
+							<div className="space-y-2">
+								<Label htmlFor="password">Password</Label>
+								<Input
+									id="password"
+									type="password"
+									className="glass"
+									value={password}
+									onChange={(e) => {
+										const value = e.target.value;
+										setPassword(value);
+									}}
+									required
+								/>
+							</div>
+							{/* Password */}
+							<div className="space-y-2">
+								<Label htmlFor="confirmpassword">Confirm Password</Label>
+								<Input
+									id="Confirmpassword"
+									type="password"
+									className="glass"
+									value={confirmPassword}
+									onChange={(e) => {
+										const value = e.target.value;
+										setConfirmPassword(value);
+									}}
+									required
+								/>
+							</div>
+
 							<Button className="w-full" type="submit" disabled={isLoading}>
 								{isLoading ? (
 									<Loader2 className="h-4 w-4 animate-spin" />
