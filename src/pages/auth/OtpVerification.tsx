@@ -48,6 +48,7 @@ const OtpVerification = () => {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+		const phone = localStorage.getItem("phone");
 
 		const fullOtp = otp.join("");
 		if (fullOtp.length !== 6) {
@@ -72,8 +73,8 @@ const OtpVerification = () => {
 
 			// 4. Make backend POST call using your helper
 			const payload = await post(
-				"/api/auth/verify-otp",
-				{ otp: fullOtp },
+				"/api/sms/verify-otp",
+				{ phone, otp: fullOtp },
 				{ headers }
 			);
 
@@ -81,7 +82,8 @@ const OtpVerification = () => {
 				title: "Phone number verified successfully",
 				description: "try to logged in.",
 			});
-			navigate("/");
+			localStorage.setItem("penguinX", "Registered");
+			navigate("");
 
 			// 6. Navigate to OTP validation
 		} catch (err: any) {
