@@ -67,19 +67,15 @@ const PhoneNumber = () => {
 
 			// 4. Make backend POST call using your helper
 			const payload = await post(
-				"/api/auth/request-otp",
+				"/api/sms/request-otp",
 				{ phone },
 				{ headers }
 			);
 
-			// 5. Handle OTP for local development
-			if (payload?.otp) {
-				toast({ title: `OTP: ${payload.otp}` });
-			}
-
 			toast({ title: "Verification code sent" });
 
 			// 6. Navigate to OTP validation
+			localStorage.setItem("phone", phone);
 			navigate("/auth/otp-verification");
 		} catch (err: any) {
 			console.error("Request OTP failed:", err);

@@ -41,6 +41,7 @@ export function useApiRequest<T = unknown>() {
 				}
 
 				const result = response.data;
+				console.log(result);
 				if (!result.success) {
 					throw new Error(result.message || "Request failed");
 				}

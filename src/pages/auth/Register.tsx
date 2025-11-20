@@ -37,14 +37,6 @@ const Register = () => {
 	const { post } = useApiRequest();
 
 	const { toast } = useToast();
-	const handleVerify = async () => {
-		try {
-			await verifyEmail();
-			alert("Verification email sent.");
-		} catch (err) {
-			console.error(err);
-		}
-	};
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -64,7 +56,11 @@ const Register = () => {
 		}
 		try {
 			// Step 1: Create Firebase user
-			await signUp(name, email, password);
+			const user = await signUp(name, email, password);
+			if (!user.emailVerified) {
+				await verifyEmail();
+				navigate("/auth/verify-email");
+			}
 		} catch (err) {
 			toast({
 				variant: "destructive",
@@ -74,8 +70,6 @@ const Register = () => {
 			setIsLoading(false);
 			return;
 		}
-		navigate("/auth/verify-email");
-		await verifyEmail();
 
 		try {
 			// Retrieve ID token from Firebase and attach to Authorization header
